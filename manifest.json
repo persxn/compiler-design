@@ -1,0 +1,1234 @@
+{
+ "schema": 3,
+ "books": [
+  {
+   "name": "compiler-design",
+   "title": "Compiler Design: the lab and exam coding book",
+   "for": "a B.Tech computer science student who can write C programs and has met compiler-design theory in lectures, but has never written a scanner, a parser or a Lex/Yacc program alone, and must do so in the lab exam and work the algorithms by hand in the semester paper",
+   "parts": [
+    {
+     "title": "Part I · See the whole compiler at once",
+     "chapters": [
+      {
+       "n": 1,
+       "title": "Follow one statement through a compiler",
+       "file": null,
+       "state": "planned",
+       "words": 0,
+       "sections": [
+        {
+         "id": "1.1",
+         "title": "What happens between prog.c and a.out: watching gcc stop after each stage",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "compile-pipeline",
+          "preprocessor",
+          "assembler",
+          "linker"
+         ],
+         "anchor": "11-what-happens-between-progc-and-aout-watching-gcc-stop-after-each-stage"
+        },
+        {
+         "id": "1.2",
+         "title": "The phases of a compiler, traced on pos = init + rate * 60",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "compiler-phase",
+          "front-end",
+          "back-end"
+         ],
+         "anchor": "12-the-phases-of-a-compiler-traced-on-pos--init--rate--60"
+        },
+        {
+         "id": "1.3",
+         "title": "Tokens, lexemes and patterns",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "token",
+          "lexeme",
+          "pattern"
+         ],
+         "anchor": "13-tokens-lexemes-and-patterns"
+        },
+        {
+         "id": "1.4",
+         "title": "The symbol table: the notebook every phase shares",
+         "kind": "short",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "symbol-table-idea"
+         ],
+         "anchor": "14-the-symbol-table-the-notebook-every-phase-shares"
+        },
+        {
+         "id": "1.5",
+         "title": "Passes, interpreters, cross compilers and compiler-construction tools",
+         "kind": "short",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "compiler-pass",
+          "interpreter",
+          "cross-compiler"
+         ],
+         "anchor": "15-passes-interpreters-cross-compilers-and-compiler-construction-tools"
+        },
+        {
+         "id": "1.6",
+         "title": "How a lab exam program is written, built, run and marked",
+         "kind": "short",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "lab-exam-cycle"
+         ],
+         "anchor": "16-how-a-lab-exam-program-is-written-built-run-and-marked"
+        },
+        {
+         "id": "1.7",
+         "title": "Practice: trace a new statement through every phase by hand",
+         "kind": "practice",
+         "level": 2,
+         "state": "planned",
+         "words": 0,
+         "teaches": [],
+         "anchor": "17-practice-trace-a-new-statement-through-every-phase-by-hand"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Part II · Scanning: from characters to tokens",
+     "chapters": [
+      {
+       "n": 2,
+       "title": "Write a lexical analyzer in C",
+       "file": null,
+       "state": "planned",
+       "words": 0,
+       "sections": [
+        {
+         "id": "2.1",
+         "title": "Reading source one character at a time, with one character of lookahead",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "lookahead",
+          "ungetc"
+         ],
+         "anchor": "21-reading-source-one-character-at-a-time-with-one-character-of-lookahead"
+        },
+        {
+         "id": "2.2",
+         "title": "Recognising identifiers and telling keywords apart",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "identifier-scan",
+          "keyword-table"
+         ],
+         "anchor": "22-recognising-identifiers-and-telling-keywords-apart"
+        },
+        {
+         "id": "2.3",
+         "title": "Numbers, operators and the longest-match rule",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "number-scan",
+          "longest-match"
+         ],
+         "anchor": "23-numbers-operators-and-the-longest-match-rule"
+        },
+        {
+         "id": "2.4",
+         "title": "Skipping white space and both kinds of C comment",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "comment-skip"
+         ],
+         "anchor": "24-skipping-white-space-and-both-kinds-of-c-comment"
+        },
+        {
+         "id": "2.5",
+         "title": "Transition diagrams: drawing the scanner before writing it",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "transition-diagram"
+         ],
+         "anchor": "25-transition-diagrams-drawing-the-scanner-before-writing-it"
+        },
+        {
+         "id": "2.6",
+         "title": "Input buffering: buffer pairs and sentinels",
+         "kind": "short",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "buffer-pair",
+          "sentinel"
+         ],
+         "anchor": "26-input-buffering-buffer-pairs-and-sentinels"
+        },
+        {
+         "id": "2.7",
+         "title": "Lexical errors and line numbers",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "lexical-error"
+         ],
+         "anchor": "27-lexical-errors-and-line-numbers"
+        },
+        {
+         "id": "2.8",
+         "title": "A symbol table in C: insert, search, display, delete with a hash table",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "symbol-table",
+          "hash-chaining"
+         ],
+         "anchor": "28-a-symbol-table-in-c-insert-search-display-delete-with-a-hash-table"
+        },
+        {
+         "id": "2.9",
+         "title": "Practice: a complete scanner for a C subset that fills a symbol table",
+         "kind": "practice",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [],
+         "anchor": "29-practice-a-complete-scanner-for-a-c-subset-that-fills-a-symbol-table"
+        }
+       ]
+      },
+      {
+       "n": 3,
+       "title": "Regular expressions and finite automata",
+       "file": null,
+       "state": "planned",
+       "words": 0,
+       "sections": [
+        {
+         "id": "3.1",
+         "title": "Regular expressions as patterns: union, concatenation, star and the shorthands",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "regex",
+          "regular-definition"
+         ],
+         "anchor": "31-regular-expressions-as-patterns-union-concatenation-star-and-the-shorthands"
+        },
+        {
+         "id": "3.2",
+         "title": "From a regular expression to an NFA: Thompson's construction",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "nfa",
+          "thompson-construction"
+         ],
+         "anchor": "32-from-a-regular-expression-to-an-nfa-thompsons-construction"
+        },
+        {
+         "id": "3.3",
+         "title": "Epsilon-closure and the subset construction, by hand and in C",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "epsilon-closure",
+          "subset-construction"
+         ],
+         "anchor": "33-epsilon-closure-and-the-subset-construction-by-hand-and-in-c"
+        },
+        {
+         "id": "3.4",
+         "title": "A DFA straight from a regular expression: nullable, firstpos, lastpos, followpos",
+         "kind": "lesson",
+         "level": 2,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "followpos",
+          "direct-dfa"
+         ],
+         "anchor": "34-a-dfa-straight-from-a-regular-expression-nullable-firstpos-lastpos-followpos"
+        },
+        {
+         "id": "3.5",
+         "title": "Minimising a DFA by splitting groups",
+         "kind": "lesson",
+         "level": 2,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "dfa-minimisation"
+         ],
+         "anchor": "35-minimising-a-dfa-by-splitting-groups"
+        },
+        {
+         "id": "3.6",
+         "title": "A table-driven DFA recogniser in C",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "dfa-simulation"
+         ],
+         "anchor": "36-a-table-driven-dfa-recogniser-in-c"
+        },
+        {
+         "id": "3.7",
+         "title": "Practice: one regular expression carried to a minimal DFA and a C recogniser",
+         "kind": "practice",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [],
+         "anchor": "37-practice-one-regular-expression-carried-to-a-minimal-dfa-and-a-c-recogniser"
+        }
+       ]
+      },
+      {
+       "n": 4,
+       "title": "Lex and Flex programs",
+       "file": null,
+       "state": "planned",
+       "words": 0,
+       "sections": [
+        {
+         "id": "4.1",
+         "title": "The first Lex program: the three parts of a .l file, flex, gcc, run",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "lex-structure",
+          "yylex",
+          "yytext"
+         ],
+         "anchor": "41-the-first-lex-program-the-three-parts-of-a-l-file-flex-gcc-run"
+        },
+        {
+         "id": "4.2",
+         "title": "Patterns and actions: longest match first, then the earlier rule",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "lex-rule-order",
+          "lex-pattern"
+         ],
+         "anchor": "42-patterns-and-actions-longest-match-first-then-the-earlier-rule"
+        },
+        {
+         "id": "4.3",
+         "title": "Counting programs: lines, words, characters, vowels and consonants",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "lex-counting",
+          "yyleng"
+         ],
+         "anchor": "43-counting-programs-lines-words-characters-vowels-and-consonants"
+        },
+        {
+         "id": "4.4",
+         "title": "A Lex scanner for keywords, identifiers, numbers and operators",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "lex-token-scanner"
+         ],
+         "anchor": "44-a-lex-scanner-for-keywords-identifiers-numbers-and-operators"
+        },
+        {
+         "id": "4.5",
+         "title": "Reading files and ending input: yyin, yyout, yywrap and noyywrap",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "yyin",
+          "yywrap"
+         ],
+         "anchor": "45-reading-files-and-ending-input-yyin-yyout-yywrap-and-noyywrap"
+        },
+        {
+         "id": "4.6",
+         "title": "Start conditions: removing comments and scanning strings",
+         "kind": "lesson",
+         "level": 2,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "start-condition"
+         ],
+         "anchor": "46-start-conditions-removing-comments-and-scanning-strings"
+        },
+        {
+         "id": "4.7",
+         "title": "When flex or gcc complains: the usual errors and their cures",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "lex-errors"
+         ],
+         "anchor": "47-when-flex-or-gcc-complains-the-usual-errors-and-their-cures"
+        },
+        {
+         "id": "4.8",
+         "title": "Practice: the lab set of Lex programs, written from the question alone",
+         "kind": "practice",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [],
+         "anchor": "48-practice-the-lab-set-of-lex-programs-written-from-the-question-alone"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Part III · Parsing: from tokens to structure",
+     "chapters": [
+      {
+       "n": 5,
+       "title": "Grammars ready for parsing",
+       "file": null,
+       "state": "planned",
+       "words": 0,
+       "sections": [
+        {
+         "id": "5.1",
+         "title": "Context-free grammars, derivations and parse trees",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "cfg",
+          "derivation",
+          "parse-tree"
+         ],
+         "anchor": "51-context-free-grammars-derivations-and-parse-trees"
+        },
+        {
+         "id": "5.2",
+         "title": "Ambiguity, and how precedence and associativity remove it",
+         "kind": "lesson",
+         "level": 2,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "ambiguity",
+          "precedence-grammar"
+         ],
+         "anchor": "52-ambiguity-and-how-precedence-and-associativity-remove-it"
+        },
+        {
+         "id": "5.3",
+         "title": "Eliminating left recursion, by hand and in C",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "left-recursion"
+         ],
+         "anchor": "53-eliminating-left-recursion-by-hand-and-in-c"
+        },
+        {
+         "id": "5.4",
+         "title": "Left factoring, by hand and in C",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "left-factoring"
+         ],
+         "anchor": "54-left-factoring-by-hand-and-in-c"
+        },
+        {
+         "id": "5.5",
+         "title": "FIRST sets, by hand and in C",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "first-set"
+         ],
+         "anchor": "55-first-sets-by-hand-and-in-c"
+        },
+        {
+         "id": "5.6",
+         "title": "FOLLOW sets, by hand and in C",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "follow-set"
+         ],
+         "anchor": "56-follow-sets-by-hand-and-in-c"
+        },
+        {
+         "id": "5.7",
+         "title": "Practice: transform and compute for exam grammars",
+         "kind": "practice",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [],
+         "anchor": "57-practice-transform-and-compute-for-exam-grammars"
+        }
+       ]
+      },
+      {
+       "n": 6,
+       "title": "Top-down parsers",
+       "file": null,
+       "state": "planned",
+       "words": 0,
+       "sections": [
+        {
+         "id": "6.1",
+         "title": "A recursive-descent parser in C",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "recursive-descent"
+         ],
+         "anchor": "61-a-recursive-descent-parser-in-c"
+        },
+        {
+         "id": "6.2",
+         "title": "Building the LL(1) parsing table",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "ll1-table"
+         ],
+         "anchor": "62-building-the-ll1-parsing-table"
+        },
+        {
+         "id": "6.3",
+         "title": "Is a grammar LL(1)? Finding the conflict",
+         "kind": "lesson",
+         "level": 2,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "ll1-conflict"
+         ],
+         "anchor": "63-is-a-grammar-ll1-finding-the-conflict"
+        },
+        {
+         "id": "6.4",
+         "title": "A table-driven predictive parser in C, with its stack trace",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "predictive-parser"
+         ],
+         "anchor": "64-a-table-driven-predictive-parser-in-c-with-its-stack-trace"
+        },
+        {
+         "id": "6.5",
+         "title": "Error recovery: panic mode and synch entries",
+         "kind": "short",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "panic-mode"
+         ],
+         "anchor": "65-error-recovery-panic-mode-and-synch-entries"
+        },
+        {
+         "id": "6.6",
+         "title": "Practice: grammar to table to parser for a new language",
+         "kind": "practice",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [],
+         "anchor": "66-practice-grammar-to-table-to-parser-for-a-new-language"
+        }
+       ]
+      },
+      {
+       "n": 7,
+       "title": "Bottom-up parsers",
+       "file": null,
+       "state": "planned",
+       "words": 0,
+       "sections": [
+        {
+         "id": "7.1",
+         "title": "Shift-reduce parsing and handles, with a C program",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "shift-reduce",
+          "handle"
+         ],
+         "anchor": "71-shift-reduce-parsing-and-handles-with-a-c-program"
+        },
+        {
+         "id": "7.2",
+         "title": "Operator-precedence parsing: relations, table and a C parser",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "operator-precedence"
+         ],
+         "anchor": "72-operator-precedence-parsing-relations-table-and-a-c-parser"
+        },
+        {
+         "id": "7.3",
+         "title": "LR(0) items, closure and goto: the canonical collection",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "lr0-item",
+          "closure",
+          "goto-function"
+         ],
+         "anchor": "73-lr0-items-closure-and-goto-the-canonical-collection"
+        },
+        {
+         "id": "7.4",
+         "title": "The SLR(1) parsing table",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "slr-table"
+         ],
+         "anchor": "74-the-slr1-parsing-table"
+        },
+        {
+         "id": "7.5",
+         "title": "CLR(1) and LALR(1) tables by hand",
+         "kind": "lesson",
+         "level": 2,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "lr1-item",
+          "clr-table",
+          "lalr-table"
+         ],
+         "anchor": "75-clr1-and-lalr1-tables-by-hand"
+        },
+        {
+         "id": "7.6",
+         "title": "Shift-reduce and reduce-reduce conflicts",
+         "kind": "lesson",
+         "level": 2,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "lr-conflict"
+         ],
+         "anchor": "76-shift-reduce-and-reduce-reduce-conflicts"
+        },
+        {
+         "id": "7.7",
+         "title": "The LR driver in C: one table, one stack",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "lr-driver"
+         ],
+         "anchor": "77-the-lr-driver-in-c-one-table-one-stack"
+        },
+        {
+         "id": "7.8",
+         "title": "Practice: the full bottom-up question set",
+         "kind": "practice",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [],
+         "anchor": "78-practice-the-full-bottom-up-question-set"
+        }
+       ]
+      },
+      {
+       "n": 8,
+       "title": "Yacc and Bison programs",
+       "file": null,
+       "state": "planned",
+       "words": 0,
+       "sections": [
+        {
+         "id": "8.1",
+         "title": "The first Yacc program: the parts of a .y file and linking it with Lex",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "yacc-structure",
+          "yyparse",
+          "yylval"
+         ],
+         "anchor": "81-the-first-yacc-program-the-parts-of-a-y-file-and-linking-it-with-lex"
+        },
+        {
+         "id": "8.2",
+         "title": "Validating arithmetic expressions",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "yacc-validator"
+         ],
+         "anchor": "82-validating-arithmetic-expressions"
+        },
+        {
+         "id": "8.3",
+         "title": "A calculator: values, precedence and associativity",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "yacc-precedence",
+          "yacc-value"
+         ],
+         "anchor": "83-a-calculator-values-precedence-and-associativity"
+        },
+        {
+         "id": "8.4",
+         "title": "Recognising languages: identifiers, a^n b^n and other classics",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "yacc-language"
+         ],
+         "anchor": "84-recognising-languages-identifiers-an-bn-and-other-classics"
+        },
+        {
+         "id": "8.5",
+         "title": "Reading Bison's conflict reports with -v and the .output file",
+         "kind": "lesson",
+         "level": 2,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "yacc-conflict-report"
+         ],
+         "anchor": "85-reading-bisons-conflict-reports-with--v-and-the-output-file"
+        },
+        {
+         "id": "8.6",
+         "title": "Infix to postfix with semantic actions",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "semantic-action"
+         ],
+         "anchor": "86-infix-to-postfix-with-semantic-actions"
+        },
+        {
+         "id": "8.7",
+         "title": "Practice: the lab set of Yacc programs, written from the question alone",
+         "kind": "practice",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [],
+         "anchor": "87-practice-the-lab-set-of-yacc-programs-written-from-the-question-alone"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Part IV · Translating, optimising and generating code",
+     "chapters": [
+      {
+       "n": 9,
+       "title": "Syntax-directed translation and intermediate code",
+       "file": null,
+       "state": "planned",
+       "words": 0,
+       "sections": [
+        {
+         "id": "9.1",
+         "title": "Syntax-directed definitions: synthesised and inherited attributes, annotated parse trees",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "sdd",
+          "synthesised-attribute",
+          "inherited-attribute"
+         ],
+         "anchor": "91-syntax-directed-definitions-synthesised-and-inherited-attributes-annotated-parse-trees"
+        },
+        {
+         "id": "9.2",
+         "title": "Three-address code and its kinds of instruction",
+         "kind": "lesson",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "three-address-code"
+         ],
+         "anchor": "92-three-address-code-and-its-kinds-of-instruction"
+        },
+        {
+         "id": "9.3",
+         "title": "Quadruples, triples and indirect triples, in C",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "quadruple",
+          "triple",
+          "indirect-triple"
+         ],
+         "anchor": "93-quadruples-triples-and-indirect-triples-in-c"
+        },
+        {
+         "id": "9.4",
+         "title": "Generating three-address code for expressions with Yacc",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "tac-generation"
+         ],
+         "anchor": "94-generating-three-address-code-for-expressions-with-yacc"
+        },
+        {
+         "id": "9.5",
+         "title": "Boolean expressions, if and while: labels and backpatching",
+         "kind": "lesson",
+         "level": 2,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "control-flow-tac",
+          "backpatching"
+         ],
+         "anchor": "95-boolean-expressions-if-and-while-labels-and-backpatching"
+        },
+        {
+         "id": "9.6",
+         "title": "Type checking and type conversion",
+         "kind": "short",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "type-checking"
+         ],
+         "anchor": "96-type-checking-and-type-conversion"
+        },
+        {
+         "id": "9.7",
+         "title": "Practice: from source to three-address code for a new program",
+         "kind": "practice",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [],
+         "anchor": "97-practice-from-source-to-three-address-code-for-a-new-program"
+        }
+       ]
+      },
+      {
+       "n": 10,
+       "title": "Optimisation, code generation and the run-time picture",
+       "file": null,
+       "state": "planned",
+       "words": 0,
+       "sections": [
+        {
+         "id": "10.1",
+         "title": "Basic blocks, leaders and flow graphs, in C",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "basic-block",
+          "leader",
+          "flow-graph"
+         ],
+         "anchor": "101-basic-blocks-leaders-and-flow-graphs-in-c"
+        },
+        {
+         "id": "10.2",
+         "title": "Local optimisation: constant folding, propagation, common subexpressions, dead code",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "constant-folding",
+          "cse",
+          "dead-code"
+         ],
+         "anchor": "102-local-optimisation-constant-folding-propagation-common-subexpressions-dead-code"
+        },
+        {
+         "id": "10.3",
+         "title": "The DAG of a basic block",
+         "kind": "lesson",
+         "level": 2,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "dag"
+         ],
+         "anchor": "103-the-dag-of-a-basic-block"
+        },
+        {
+         "id": "10.4",
+         "title": "Loop optimisation: code motion, induction variables, strength reduction",
+         "kind": "lesson",
+         "level": 2,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "code-motion",
+          "strength-reduction"
+         ],
+         "anchor": "104-loop-optimisation-code-motion-induction-variables-strength-reduction"
+        },
+        {
+         "id": "10.5",
+         "title": "Peephole optimisation",
+         "kind": "short",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "peephole"
+         ],
+         "anchor": "105-peephole-optimisation"
+        },
+        {
+         "id": "10.6",
+         "title": "A simple code generator: register and address descriptors, getreg",
+         "kind": "lesson",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "code-generator",
+          "getreg"
+         ],
+         "anchor": "106-a-simple-code-generator-register-and-address-descriptors-getreg"
+        },
+        {
+         "id": "10.7",
+         "title": "Activation records and storage allocation",
+         "kind": "short",
+         "level": 1,
+         "state": "planned",
+         "words": 0,
+         "teaches": [
+          "activation-record"
+         ],
+         "anchor": "107-activation-records-and-storage-allocation"
+        },
+        {
+         "id": "10.8",
+         "title": "Practice: the mini compiler, end to end",
+         "kind": "practice",
+         "level": 3,
+         "state": "planned",
+         "words": 0,
+         "teaches": [],
+         "anchor": "108-practice-the-mini-compiler-end-to-end"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "compiler-design:2.1",
+   "to": "compiler-design:1.3",
+   "idea": "token"
+  },
+  {
+   "from": "compiler-design:2.5",
+   "to": "compiler-design:1.3",
+   "idea": "pattern"
+  },
+  {
+   "from": "compiler-design:3.1",
+   "to": "compiler-design:1.3",
+   "idea": "pattern"
+  },
+  {
+   "from": "compiler-design:3.6",
+   "to": "compiler-design:2.5",
+   "idea": "transition-diagram"
+  },
+  {
+   "from": "compiler-design:4.1",
+   "to": "compiler-design:3.1",
+   "idea": "regex"
+  },
+  {
+   "from": "compiler-design:4.4",
+   "to": "compiler-design:1.3",
+   "idea": "token"
+  },
+  {
+   "from": "compiler-design:4.4",
+   "to": "compiler-design:2.8",
+   "idea": "symbol-table"
+  },
+  {
+   "from": "compiler-design:5.1",
+   "to": "compiler-design:1.3",
+   "idea": "token"
+  },
+  {
+   "from": "compiler-design:6.1",
+   "to": "compiler-design:5.5",
+   "idea": "first-set"
+  },
+  {
+   "from": "compiler-design:6.1",
+   "to": "compiler-design:5.3",
+   "idea": "left-recursion"
+  },
+  {
+   "from": "compiler-design:6.2",
+   "to": "compiler-design:5.5",
+   "idea": "first-set"
+  },
+  {
+   "from": "compiler-design:6.2",
+   "to": "compiler-design:5.6",
+   "idea": "follow-set"
+  },
+  {
+   "from": "compiler-design:7.4",
+   "to": "compiler-design:5.6",
+   "idea": "follow-set"
+  },
+  {
+   "from": "compiler-design:8.1",
+   "to": "compiler-design:4.1",
+   "idea": "yylex"
+  },
+  {
+   "from": "compiler-design:8.1",
+   "to": "compiler-design:5.1",
+   "idea": "cfg"
+  },
+  {
+   "from": "compiler-design:8.3",
+   "to": "compiler-design:5.2",
+   "idea": "precedence-grammar"
+  },
+  {
+   "from": "compiler-design:8.5",
+   "to": "compiler-design:7.6",
+   "idea": "lr-conflict"
+  },
+  {
+   "from": "compiler-design:9.1",
+   "to": "compiler-design:5.1",
+   "idea": "parse-tree"
+  },
+  {
+   "from": "compiler-design:9.4",
+   "to": "compiler-design:8.3",
+   "idea": "yacc-value"
+  },
+  {
+   "from": "compiler-design:10.1",
+   "to": "compiler-design:9.2",
+   "idea": "three-address-code"
+  },
+  {
+   "from": "compiler-design:10.3",
+   "to": "compiler-design:9.3",
+   "idea": "quadruple"
+  },
+  {
+   "from": "compiler-design:10.8",
+   "to": "compiler-design:9.4",
+   "idea": "tac-generation"
+  },
+  {
+   "from": "compiler-design:10.8",
+   "to": "compiler-design:4.4",
+   "idea": "lex-token-scanner"
+  }
+ ],
+ "chapter_edges": [
+  {
+   "from": "compiler-design:10",
+   "to": "compiler-design:4",
+   "ideas": 1
+  },
+  {
+   "from": "compiler-design:10",
+   "to": "compiler-design:9",
+   "ideas": 3
+  },
+  {
+   "from": "compiler-design:2",
+   "to": "compiler-design:1",
+   "ideas": 2
+  },
+  {
+   "from": "compiler-design:3",
+   "to": "compiler-design:1",
+   "ideas": 1
+  },
+  {
+   "from": "compiler-design:3",
+   "to": "compiler-design:2",
+   "ideas": 1
+  },
+  {
+   "from": "compiler-design:4",
+   "to": "compiler-design:1",
+   "ideas": 1
+  },
+  {
+   "from": "compiler-design:4",
+   "to": "compiler-design:2",
+   "ideas": 1
+  },
+  {
+   "from": "compiler-design:4",
+   "to": "compiler-design:3",
+   "ideas": 1
+  },
+  {
+   "from": "compiler-design:5",
+   "to": "compiler-design:1",
+   "ideas": 1
+  },
+  {
+   "from": "compiler-design:6",
+   "to": "compiler-design:5",
+   "ideas": 4
+  },
+  {
+   "from": "compiler-design:7",
+   "to": "compiler-design:5",
+   "ideas": 1
+  },
+  {
+   "from": "compiler-design:8",
+   "to": "compiler-design:4",
+   "ideas": 1
+  },
+  {
+   "from": "compiler-design:8",
+   "to": "compiler-design:5",
+   "ideas": 2
+  },
+  {
+   "from": "compiler-design:8",
+   "to": "compiler-design:7",
+   "ideas": 1
+  },
+  {
+   "from": "compiler-design:9",
+   "to": "compiler-design:5",
+   "ideas": 1
+  },
+  {
+   "from": "compiler-design:9",
+   "to": "compiler-design:8",
+   "ideas": 1
+  }
+ ]
+}
