@@ -1912,7 +1912,7 @@ The `while` takes `L1` (its start) and `L2` (its end); the `if` inside takes `L3
 ### A lab program from a blank file
 
 <!-- q: idea=three-address-code type=build unseen="tac-interpreter" wrong="ifFalse jumps when the condition is true" -->
-**5. tacrun.c: run three-address code.** Write `tacrun.c`, an interpreter for the three-address code that `tiny-tac` writes. It reads the code on standard input, one instruction per line: a label line `L1:`; a copy `x = y`; a binary assignment `x = y op z`, where `op` is one of `+ - * /` or the comparisons `< <= > >= == !=` (which give 1 or 0); a unary minus `x = minus y`; `goto L`; and `if a goto L` or `ifFalse a goto L`, where `a` is an address or a comparison `y relop z`. Words are separated by blanks. An address is a number (it starts with a digit or `.`) or a name; every name starts at 0, and values are `double`s. It runs the code from the first line, and when it falls off the end, prints `name = value` (with `%g`) for each name that is not a temporary (`t` followed by a digit), in the order the names were first met. On a jump to a label that does not exist, it prints `tacrun: no label L9` to standard error and exits with status 1; after 100,000 instructions it stops with `tacrun: stopped after 100000 steps` and status 1, so that an endless loop ends.
+**5. tacrun.c: run three-address code.** Write `tacrun.c`, an interpreter for the three-address code that `tiny-tac` writes. It reads the code on standard input, one instruction per line: a label line `L1:`; a copy `x = y`; a binary assignment `x = y op z`, where `op` is one of `+ - * /` or the comparisons `< <= > >= == !=` (which give 1 or 0); a unary minus `x = minus y`; `goto L`; and `if a goto L` or `ifFalse a goto L`, where `a` is an address or a comparison `y relop z`. Words are separated by blanks. An address is a number (it starts with a digit, `.` or `-`, as in `-3`, which an optimiser may write) or a name; every name starts at 0, and values are `double`s. It runs the code from the first line, and when it falls off the end, prints `name = value` (with `%g`) for each name that is not a temporary (`t` followed by a digit), in the order the names were first met. On a jump to a label that does not exist, it prints `tacrun: no label L9` to standard error and exits with status 1; after 100,000 instructions it stops with `tacrun: stopped after 100000 steps` and status 1, so that an endless loop ends.
 
 **Done when** `./tacrun` with the code of `gcd.tiny` (task 4) as its input prints exactly the model's output below. You can test that without anyone marking it: in the understudy folder (the one that holds `book/`), in the terminal, run `python3 scripts/us_practice.py check compiler-design 9.7 --in ~/cdlab/ch9`. It builds your `tacrun.c` and compares what it prints for this input with the model. Then test it, as habit 3 asks, on an empty input, on `goto L9`, and on `x = 1`, `L1:`, `goto L1`, an endless loop.
 
@@ -1963,7 +1963,7 @@ int var(const char *s)              /* the index of name s, made if new */
 
 double get(const char *s)           /* a number's value, or a name's */
 {
-    if (isdigit((unsigned char)s[0]) || s[0] == '.')
+    if (isdigit((unsigned char)s[0]) || s[0] == '.' || s[0] == '-')
         return strtod(s, NULL);
     return val[var(s)];
 }
