@@ -21,6 +21,7 @@ Sources read 2026-11-21 as reading material only:
 ## Facts that change
 
 - flex's generated scanner calls `yywrap()` at end of input; with no `%option noyywrap` and no `-lfl` (or `-ll`) the link fails with "undefined reference to `yywrap'". [Run, 2026-11-21]
+- libfl (`-lfl`) holds a `yywrap` that returns 1 and a `main` that calls `yylex` until it returns 0 (flex 2.6.4 src/libmain.c, libyywrap.c). Flex does not minimise its DFA; `flex -v` shows used/allocated-so-far counts, not limits (src/main.c). [Flex source 2.6.4, 2026-11-21]
 - On many lab machines the flex library is linked as `-lfl`; `-ll` is the AT&T lex name and exists only where a libl alias is installed. [Flex manual, 2026-11-21]
 - `yacc` on Linux is usually GNU Bison in Yacc mode (`bison -y`); `yacc -d file.y` writes `y.tab.c` and `y.tab.h`. Plain `bison -d file.y` writes `file.tab.c` and `file.tab.h` instead. [Run, 2026-11-21]
 - GCC 13 only warns about calling `yylex` or `yyerror` with no declaration (`-Wimplicit-function-declaration`); from GCC 14 this is an error by default. [Run, 2026-11-21; GCC 14 porting, 2026-11-21]

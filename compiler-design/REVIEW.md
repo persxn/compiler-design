@@ -27,3 +27,13 @@
 - Open: 3.2 (3806 words), 3.3 (3558) and 3.5 (3042) above the lesson range; thompson, subset and minimise are long programs shown whole with no build-up (check NOTE), too big for this pass; 3.1 the quoting advice is said both after match-abb and in "When it goes wrong" (left: the second carries the real message).
 - Score 9: accuracy 9, depth 9, clarity 8, sequencing 9, practical 9, exercises 9, completeness 9, efficiency 7. Lowest: 3.2 3806 words with a 189-line program shown whole; repeats cut, size remains.
 - 2026-11-21 chapter 3 reviewed; open: 3.2/3.3/3.5 over length; thompson, subset, minimise without build-up
+
+## Chapter 4: Lex and Flex programs
+
+- Risks: 18 items (18 marked, 0 destructive, 0 unrun, 0 dangling). Settled: 0 by PRACTICES.md, 13 run, 2 one look (source: flex 2.6.4 source), 2 known for certain, 1 reworded as uncertain; each now a `checked` mark.
+- One read: 2 case, 0 order, 3 page, 0 words, 0 repeats fixed.
+- Fixed: 4.1 "on Linux both names run the same Flex 2.6.4" now says `lex` is usually another name for `flex` and to type `flex` if `lex` is missing; 4.1 said Flex minimises its DFA and that the `-v` numbers after the slash are limits (flex has no minimisation step; the second number is space allocated so far), corrected, and 4.8 task 6's "minimisation of 3.5 ... the four squares are in there" made to agree; 4.5 libfl's `main` "calls yylex once" now "until it returns 0" (libmain.c); 4.8 task 3 "prints `identifier if` for every keyword" now "every keyword as an identifier"; 4.4 "get this wrong and the scanner stops at the first identifier" and the matching When-it-goes-wrong entry contradicted question 2 (with the `!= END` loop the scan never ends), both now describe the endless `id` lines; 4.4 operator class `[-+*/=<>();]` "nine" now ten; 4.6 question 1 `"a // b"` "ten characters" now eight; 4.7 table "a blank before a `<COND>` pattern" now "between `<COND>` and its pattern".
+- Not run: none (every scratch claim, the 4.7 question 3 GCC messages and the 4.8 task 6 swapped-rules warning were run in a scratch folder with flex 2.6.4 and GCC 13).
+- Open: none. 4.1 (2724 words) and 4.4 (2749) are the longest sections, within the range previous chapters kept.
+- Score 9: accuracy 9, depth 9, clarity 9, sequencing 9, practical 9, exercises 9, completeness 9, efficiency 8. Lowest: 4.1 and 4.4 are long (about 2700 words each).
+- 2026-11-21 chapter 4 reviewed; open: none

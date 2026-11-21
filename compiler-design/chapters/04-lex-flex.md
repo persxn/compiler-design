@@ -17,9 +17,9 @@
 
 `tiny-scan.c` in chapter 2 took about a hundred and fifty lines of C to recognise eighteen kinds of token. Most of those lines did the same few jobs again and again: read a character, decide whether it can continue the lexeme, push back the one that cannot, compare the lexeme against a list. Then chapter 3 showed that every pattern in that scanner can be written as a regular expression in one line, and that a program can turn a regular expression into a DFA without any thinking on your part: `thompson`, `subset` and `minimise` did exactly that.
 
-Put those two facts together and you get Lex. You write the patterns as regular expressions, and next to each pattern a few lines of C saying what to do when it matches. A program reads that list, builds one DFA for all the patterns together, and writes the whole scanner in C for you: the reading, the lookahead, the pushing back, the longest match. The original program, written at Bell Labs in the 1970s, was called `lex`; the one on every Linux machine today is its free rewrite, Flex. In the lab you will be asked for "a Lex program" and you will run it with `lex` or `flex`; on Linux both names run the same Flex 2.6.4.
-<!-- risk: history: lex written at Bell Labs in the 1970s (Lesk and Schmidt, 1975); flex as its free rewrite -->
-<!-- risk: on the book's Linux machines `lex` is flex 2.6.4 under another name; some lab machines have no `lex` link -->
+Put those two facts together and you get Lex. You write the patterns as regular expressions, and next to each pattern a few lines of C saying what to do when it matches. A program reads that list, builds one DFA for all the patterns together, and writes the whole scanner in C for you: the reading, the lookahead, the pushing back, the longest match. The original program, written at Bell Labs in the 1970s, was called `lex`; the one on every Linux machine today is its free rewrite, Flex. In the lab you will be asked for "a Lex program" and you will run it with `lex` or `flex`; on most Linux machines `lex` is only another name for `flex` (on the book's machine, Flex 2.6.4). If a lab machine answers `lex: command not found`, type `flex`.
+<!-- checked: how=known date=2026-11-21 ref="Lesk and Schmidt, Bell Labs 1975; flex by Vern Paxson" h=ad2bb94f -->
+<!-- checked: how=reworded date=2026-11-21 ref="lex -> flex link on build machine (lex 2.6.4); text now says lex may be missing, use flex" h=ad2bb94f -->
 
 This section writes the smallest useful Lex program, builds it and runs it, and then opens up what Flex made, so that when the examiner points at `yylex` or `yytext` you can say exactly what it is.
 
@@ -147,8 +147,8 @@ $ flex -v first.l 2>&1 | grep -E 'NFA states|DFA states'
 
 About seventeen hundred lines for your sixteen. Most of it is the same in every scanner Flex writes: buffer handling, the end-of-input logic, error messages. The parts that come from your rules are tables. `yy_nxt` is the transition table of chapter 3, squeezed to save space, and `yy_accept` says, for each DFA state, which rule (if any) accepts there. `YY_DECL` is the line that becomes the head of the scanner function: `int yylex (void)`.
 
-The `-v` option makes Flex report what it built. From your four patterns it made a Thompson-style NFA (each pattern's NFA joined by ε-edges from one new start state, as in section 3.2), then ran the subset construction of section 3.3 to get a DFA, then minimised it. You did all three steps by hand for `(a|b)*abb`; Flex did them for four patterns at once, in the time it took to press Enter. The numbers before each slash are what it used, the numbers after are its limits.
-<!-- risk: flex -v statistics format and the meaning of the counts (NFA/DFA states used against limits) are flex 2.6.4's -->
+The `-v` option makes Flex report what it built. From your four patterns it made a Thompson-style NFA (each pattern's NFA joined by ε-edges from one new start state, as in section 3.2), then ran the subset construction of section 3.3 to get a DFA. You did both steps by hand for `(a|b)*abb`; Flex did them for four patterns at once, in the time it took to press Enter. Unlike section 3.5, Flex does not minimise the DFA; it packs it into compressed tables instead. The number before each slash is what it used; the number after is the room it has set aside so far, which it enlarges when a bigger specification needs more.
+<!-- checked: how=source date=2026-11-21 ref="flex 2.6.4 src/main.c (used/current_mns), nfa.c MNS_INCREMENT; no minimisation step; text corrected" h=5038e371 -->
 
 ### What yylex does with your input
 
@@ -288,7 +288,7 @@ Lex patterns are the regular expressions of section 3.1 with some extra notation
 | `^r` | `r`, but only at the start of a line |
 | `r$` | `r`, but only at the end of a line |
 | `r/s` | `r`, but only when `s` follows; `s` is not part of the lexeme |
-<!-- risk: in flex a negated class [^...] matches newline unless \n is listed; . does not match newline -->
+<!-- checked: how=run date=2026-11-21 ref="scratch p.l: [^x]+ matched abab\n (5)" h=dd7badc4 -->
 
 Blanks end a pattern. The pattern `end if` is the pattern `end` followed by an action that starts with `if`; to match a blank, quote it (`"end if"`) or escape it (`end\ if`). Section 4.7 shows the strange message GCC gives when you forget.
 
@@ -304,7 +304,7 @@ digit    [0-9]
 ```
 
 Flex puts parentheses around a name's expression when it substitutes it, so `{digit}+` means `([0-9])+`, as you would hope. Section 4.4 writes Tiny's scanner this way.
-<!-- risk: flex wraps {name} expansions in parentheses; AT&T lex (and flex -l) does not -->
+<!-- checked: how=run date=2026-11-21 ref="scratch p.l: {ab}+ matched abab; flex -l matched abbb" h=a4c39403 -->
 
 ### Actions
 
@@ -616,7 +616,7 @@ lines 0, words 0, characters 0
 The first run agrees with the table: 2 lines, 4 words, 13 characters, longest word `10;`. On `prog.tiny` the program and `wc` agree: 7 lines, 37 words, 162 characters (`wc` prints them in that order, then the file name). The longest word is `statement,` from the comment on line 1, comma included, because to `wc` and to this program a word is anything between blanks. The empty input gives zeros and no "longest word" line, which is what the `if (words > 0)` is for; without it the program would print an empty word of length 0.
 
 `wc -c` counts bytes, not characters. For a file of plain ASCII, like every file in this book, the two are the same.
-<!-- risk: wc counts bytes for -c; the equality with this program holds for ASCII input only -->
+<!-- checked: how=known date=2026-11-21 ref="wc -c counts bytes; yyleng counts bytes too" h=df8e0ce9 -->
 
 ### Vowels and consonants
 
@@ -698,7 +698,7 @@ The other shortcut is to count characters with `chars++` in every rule. That is 
 <summary>Answer</summary>
 
 Each match adds one character, whatever its length, so `chars` ends up as the number of matches: 37 words plus 7 newlines plus 32 runs of blanks, 76. Change both actions to add `yyleng` (`chars += yyleng;`). Only the newline rule may use `chars++`, because its lexeme is always exactly one character.
-<!-- risk: the count 76 came from a scratch run of count.l with chars++ in every rule, not pasted in the chapter -->
+<!-- checked: how=run date=2026-11-21 ref="scratch count.l with chars++: lines 7, words 37, characters 76" h=e675885c -->
 
 </details>
 
@@ -709,7 +709,7 @@ Each match adds one character, whatever its length, so `chars` ends up as the nu
 <summary>Answer</summary>
 
 Flex prints a `rule cannot be matched` warning for the vowel rule's line. The program prints `vowels 0, consonants 11`: every vowel matches both patterns with length 1, and the tie goes to the letter rule, now written first.
-<!-- risk: swapped vowels.l run in a scratch folder on the build machine, not in the chapter -->
+<!-- checked: how=run date=2026-11-21 ref="scratch: vowels.l:9 rule cannot be matched; vowels 0, consonants 11" h=27fe0264 -->
 
 </details>
 
@@ -742,10 +742,10 @@ Where the picture of identical stations breaks: `gettoken` returned a token and 
 <!-- teaches: lex-token-scanner = token scanner in Lex, return in an action, yylineno -->
 So far no action has contained `return`, so `yylex` ran to the end of the input in one call. An action may say `return IF;`. Then `yylex` stops at once and returns `IF` to its caller, with `yytext` still holding `if`. The next call of `yylex` starts a new walk exactly where the last one stopped. Nothing is lost between calls: the buffer and the position are kept in Flex's own static variables. That is how a Lex scanner hands over one token at a time.
 
-At the end of the input `yylex` returns 0. So the token codes must keep 0 for "end", and every real token must have a different, non-zero code. In `tiny-scan.c`, `ID` was 0 and `END` was 19. In `tiny.l` the list starts with `END`, so `END` is 0 and `ID` is 1; that one change makes the loop `while ((t = yylex()) != END)` stop at exactly the right moment. Get this wrong and the scanner stops at the first identifier, because returning `ID` would look like the end of input.
+At the end of the input `yylex` returns 0. So the token codes must keep 0 for "end", and every real token must have a different, non-zero code. In `tiny-scan.c`, `ID` was 0 and `END` was 19. In `tiny.l` the list starts with `END`, so `END` is 0 and `ID` is 1; that one change makes the loop `while ((t = yylex()) != END)` stop at exactly the right moment. Get this wrong and the end of input looks like a token: with `ID` as 0, a caller that stops at 0 stops at the first identifier, and the loop above, which waits for `END`, never stops at all (question 2 below).
 
 `%option yylineno` asks Flex to keep the line number in the global `int yylineno`, starting at 1 and going up by one for every newline the scanner matches, whichever rule matched it. It replaces `next`, `back`, `line` and `tokline` from section 2.7. Because no Tiny token contains a newline, `yylineno` during a token's action is the line the token is on.
-<!-- risk: flex's yylineno counts every matched newline, including those inside a multi-line match such as a block comment, and is not decremented on back-up (it only counts after a rule is chosen) -->
+<!-- checked: how=run date=2026-11-21 ref="scratch ln.l: 3-line comment action sees 3; backed-up newline not counted" h=04b0ce3c -->
 
 ### tiny.l
 
@@ -1008,13 +1008,13 @@ symbol table:
 
 The first output line is section 1.2's token stream, letter for letter. On the second line `pos` is `<id,1>` three times and `rate` is `<id,3>`: `install` found them in the notebook and gave back their old entry numbers, so the table at the end has only three entries. The program reaches the C function `install` straight from an action, because an action is ordinary C inside `yylex`, and `install` is defined above it in the `%{ ... %}` block.
 
-Two patterns use new notation. `"if"|"while"` is one rule with a union, so both keywords share one action. `[-+*/=<>();]` is a class of nine single-character operators; the `-` is first in the class so that it is taken literally and not as a range.
+Two patterns use new notation. `"if"|"while"` is one rule with a union, so both keywords share one action. `[-+*/=<>();]` is a class of ten single-character operators; the `-` is first in the class so that it is taken literally and not as a range.
 
 To use section 2.8's hash table instead, replace the loop in `install` with that section's search and insert. The rest of the specification does not change: the scanner does not care how the notebook is kept.
 
 ### When it goes wrong
 
-**The scanner stops after the first identifier.** `ID` is 0, so `main` takes the first `return ID;` for the end of input. Put `END` first in the `enum`.
+**After the last token, `id` lines without end.** `ID` is 0 and `END` is not, so the 0 that `yylex` returns at the end of input is taken for `ID` (question 2 below). Put `END` first in the `enum`.
 
 **Every token is reported on line 1.** `%option yylineno` is missing; `yylineno` then stays at its starting value.
 
@@ -1067,7 +1067,7 @@ line 1: error: letters after a number: 1.5e
 <summary>Answer</summary>
 
 In their `enum`, `ID` is 0 and `END` is 18. At the end of the input `yylex` returns 0, which their program takes for `ID`: it is not `END`, so the loop prints a line for a token called `id` and asks again, and `yylex` returns 0 again, for ever. Nothing ever returns 18, so the loop never ends. Put `END` first in the `enum`, so that 0 means the end and nothing else. The tempting answer blames the identifier rule, because `id` is what is printed; but the rule is never running at that point.
-<!-- risk: the endless `  8  id` output came from a scratch run of the changed tiny.l, not pasted in the chapter -->
+<!-- checked: how=run date=2026-11-21 ref="scratch tiny.l with END last: endless "  8  id"" h=c6e24838 -->
 
 </details>
 
@@ -1104,13 +1104,13 @@ This section shows the three things that decide where a Lex scanner reads, where
 On the assembly line, the scanner station takes its raw material from an input belt and puts its product on an output belt. `yyin` is the input belt and `yyout` the output belt. Nothing in the station cares where the belts come from: standard input, a file, anything C can open as a `FILE *`. Swap the belt, and the same station works on different material.
 
 When the input belt runs empty, the station does not just stop. It asks the foreman one question: "Is there another belt?" That question is a call to the function `yywrap`. If the foreman says no, the station shuts down and `yylex` returns 0. If the foreman says yes, the foreman has already swapped in a new belt, and the station carries on. The picture breaks in one way: the foreman is your code, and Flex trusts it completely. If `yywrap` says "yes, there is more" without swapping the belt, the station finds the same empty belt, asks again, and goes on asking for ever.
-<!-- risk: not run: flex calling yywrap again and again when it returns 0 without a new yyin -->
+<!-- checked: how=run date=2026-11-21 ref="scratch w.l: yywrap returning 0 called 1000000+ times, killed by timeout" h=e3543669 -->
 
 ### What yyin, yyout and yywrap are
 
 <!-- teaches: yyin = yyin, yyout -->
 `yyin` and `yyout` are two global variables of type `FILE *` defined in `lex.yy.c`. Both start as `NULL`. On its first call, `yylex` looks at them: if `yyin` is still `NULL` it sets it to `stdin`, and if `yyout` is `NULL` it sets it to `stdout`. So to read a file, you open it and store the pointer in `yyin` **before** the first call of `yylex`; to write to a file, you do the same with `yyout`. `yylex` reads from `yyin` in large blocks, and `ECHO` (including the default rule's copying) writes to `yyout`. Your own `printf` calls are not affected: `printf` always writes to standard output, so an action that should write to the output file must use `fprintf(yyout, ...)`.
-<!-- risk: flex sets yyin to stdin and yyout to stdout on the first yylex call only if they are NULL (flex 2.6.4 manual, "The Generated Scanner") -->
+<!-- checked: how=run date=2026-11-21 ref="generated lex.yy.c: FILE *yyin = NULL; if ( ! yyin ) yyin = stdin in yy_init block" h=c0e67b5b -->
 
 That `NULL` check has a sharp edge. If you write `yyin = fopen(argv[1], "r");` and the file does not exist, `fopen` returns `NULL`, `yyin` is `NULL`, and `yylex` quietly reads the keyboard instead. The program seems to hang. Always test what `fopen` returned.
 
@@ -1120,8 +1120,8 @@ That `NULL` check has a sharp edge. If you write `yyin = fopen(argv[1], "r");` a
 - returns 1: there is no more input, so `yylex` returns 0 to its caller;
 - returns 0: `yywrap` has pointed `yyin` at new input, so `yylex` goes on scanning from there.
 
-Where does `yywrap` come from? Old Lex expected you to link a small library, `libl` (on Linux the Flex library `libfl`, linked with `-lfl`), which contains a `yywrap` that always returns 1, and also a `main` that calls `yylex` once. A program that writes its own `main` and its own `yywrap`, or tells Flex it needs none, does not need the library. `%option noyywrap` is that "none": it makes Flex write `yywrap` as a macro that is always 1, so no function called `yywrap` is needed. You can see it in the generated file:
-<!-- risk: libfl provides both yywrap (returning 1) and main (calling yylex until it returns 0); exact behaviour of libfl's main not run here -->
+Where does `yywrap` come from? Old Lex expected you to link a small library, `libl` (on Linux the Flex library `libfl`, linked with `-lfl`), which contains a `yywrap` that always returns 1, and also a `main` that calls `yylex` until it returns 0. A program that writes its own `main` and its own `yywrap`, or tells Flex it needs none, does not need the library. `%option noyywrap` is that "none": it makes Flex write `yywrap` as a macro that is always 1, so no function called `yywrap` is needed. You can see it in the generated file:
+<!-- checked: how=source date=2026-11-21 ref="flex 2.6.4 src/libmain.c: while (yylex () != 0); text corrected from "once"" h=3d67d8cc -->
 
 <!-- code: id=wrap-inside -->
 ```console
@@ -1337,7 +1337,7 @@ The `yylex` in `main` was called once. All the work of moving between files happ
 <summary>Answer</summary>
 
 Flex is happy: it does not read your C. It writes `#define yywrap() (/*CONSTCOND*/1)` into `lex.yy.c`, the line you saw with `grep` above. Then the C preprocessor meets your definition, `int yywrap(void)`, takes `yywrap(void)` for a use of that macro with one argument, and GCC stops: `error: macro "yywrap" passed 1 arguments, but takes just 0`, at the line of your definition. So nothing is printed, because nothing was built. Use `noyywrap` only when you do not write `yywrap`; when you do write it, leave the option out.
-<!-- risk: message from a scratch build of multi.l with noyywrap added, not pasted in the chapter -->
+<!-- checked: how=run date=2026-11-21 ref="scratch multi.l+noyywrap: multi.l:28:16: error: macro "yywrap" passed 1 arguments, but takes just 0" h=79e839ea -->
 
 </details>
 
@@ -1406,7 +1406,7 @@ A rule is marked by writing the condition in angle brackets in front of its patt
 In an action, `BEGIN(COMMENT);` switches to `COMMENT` and `BEGIN(INITIAL);` switches back. `BEGIN` does not stop the action or return; it sets which board the next walk will use.
 
 Finally, `<<EOF>>` is a special pattern that matches the end of the input. `<COMMENT><<EOF>>` matches the end of the input *while inside a comment*, which is exactly the "comment not closed" case. Its action must end the scan, with `return` or `yyterminate();`, or switch to new input; if it does neither, the scanner keeps hitting the same end of file.
-<!-- risk: an <<EOF>> action that neither returns, calls yyterminate nor switches input loops (flex manual, "End-of-File Rules") -->
+<!-- checked: how=run date=2026-11-21 ref="scratch e.l: <<EOF>> with no return ran 1000000+ times" h=b9e61c71 -->
 
 Here is what Flex does with those words, in the generated file of the comment remover below:
 
@@ -1624,7 +1624,7 @@ You could do all of this without them. Section 2.4 did, in C, and Flex lets an a
 <details>
 <summary>Answer</summary>
 
-`s = "a // b"; ` (with a blank at the end). On the normal board at `"`, the string rule matches the whole literal `"a // b"`, ten characters, far longer than `.`'s one, so it is copied unchanged and its `//` is never seen as a comment. After `; `, the `//` starts a real line comment, which `"//".*` drops. The tempting answer cuts the line at the first `//`.
+`s = "a // b"; ` (with a blank at the end). On the normal board at `"`, the string rule matches the whole literal `"a // b"`, eight characters, far longer than `.`'s one, so it is copied unchanged and its `//` is never seen as a comment. After `; `, the `//` starts a real line comment, which `"//".*` drops. The tempting answer cuts the line at the first `//`.
 
 </details>
 
@@ -1637,7 +1637,7 @@ You could do all of this without them. Section 2.4 did, in C, and Flex lets an a
 With `%x`: `a   b "y" */ c`. The comment is `/*"x*/`, which becomes one blank (between the two blanks the input already had), and the rest of the line is ordinary code, copied, including the stray `*/`.
 
 With `%s`: `a "x*/ b "  c`. Right after `/*`, the scanner is on the comment board, but with `%s` the unmarked rules are active there too. At the `"`, `<COMMENT>[^*\n]+` can match only `"x` (it stops at the `*`), while the unmarked string rule matches `"x*/ b "`, eight characters, and wins by longest match. Its action is `ECHO`, so a piece of the comment is printed, and its `*/` is swallowed as part of a "string". The scanner is still in the comment until the real `*/` near the end, so `y"` and the blank after it are dropped, and that `*/` prints the one blank. For `a /* b c */ d` nothing changed only because no unmarked rule ever matched longer than a comment rule. Inclusive conditions let normal-board rules fire inside comments; for comments and strings, use `%x`.
-<!-- risk: both outputs came from scratch runs of decomment.l with %x and with %s, not pasted in the chapter -->
+<!-- checked: how=run date=2026-11-21 ref="scratch decomment.l %x and %s: outputs as printed" h=f8d7e8e8 -->
 
 </details>
 
@@ -1804,7 +1804,7 @@ space.l:3:6: error: expected ‘(’ before ‘{’ token
 Flex accepted it, and that is the trap. A blank ends a pattern, so the pattern is `end`, and the action is everything after it: `if   { printf("endif\n"); }`, a C `if` with no condition. Flex copies actions without understanding them, so only GCC can notice, and GCC reports `expected ‘(’ before ‘{’ token` at `space.l:3:6`, the rule's line, at the `{` where it expected the `(` of the `if`. Cure: quote the pattern, `"end if"`, or escape the blank, `end\ if`. Whenever GCC reports a syntax error on a rule's line, look first for a blank in the pattern.
 
 **A library function with no header.** `lex.yy.c` includes `stdio.h`, `string.h`, `stdlib.h` and `errno.h` for its own use, so `printf`, `strcmp`, `strcpy` and `atoi` work in actions without your including anything. Anything else needs its header in the `%{ ... %}` block:
-<!-- risk: the headers flex 2.6.4 includes in lex.yy.c (stdio, string, errno, stdlib); other versions may differ -->
+<!-- checked: how=run date=2026-11-21 ref="generated lex.yy.c lines 19-22: stdio, string, errno, stdlib" h=2bf36249 -->
 
 <!-- code: id=err-upper mode=run -->
 ```console
@@ -1909,7 +1909,7 @@ Flex warned at build time: `-s option given but default rule can be matched` (`-
 | Message | From | Cause | Cure |
 |---|---|---|---|
 | `EOF encountered inside an action` | Flex | a `{` in an action is never closed | balance the braces |
-| `unrecognized rule`, `fatal parse error` | Flex | action on the next line, a blank before a `<COND>` pattern, or an unquoted `+`, `*` alone | put the action on the pattern's line; quote special characters |
+| `unrecognized rule`, `fatal parse error` | Flex | action on the next line, a blank between `<COND>` and its pattern, or an unquoted `+`, `*` alone | put the action on the pattern's line; quote special characters |
 | `undefined definition {name}` | Flex | name misspelt or not defined | define it in the definitions section, spelt the same |
 | a flood of `bad character` | Flex | the first `%%` is missing | add `%%` before the rules |
 | `unrecognized %option` | Flex | an option misspelt | check the spelling: `noyywrap nounput noinput` |
@@ -2072,8 +2072,8 @@ int main(void) { yylex(); return 0; }
 
 **The blank in `else if`.** Flex reads the pattern `else` and the action `if printf("keyword else if\n");`. Flex does not read the C, so it is silent about that; GCC reports `expected ‘(’ before ‘printf’` on line 7, the rule's line, because a C `if` needs a condition in brackets. Cure: `"else if"`.
 
-**The keyword rules are below the identifier rule.** Flex warns `rule cannot be matched` twice, for line 7 (the `else` that the blank left as the pattern ties with the identifier rule on `else`) and for line 8, and builds anyway; the program would print `identifier if` for every keyword. Cure: put the keyword rules first.
-<!-- risk: three.l messages from a scratch run (two warnings for lines 7 and 8, GCC error at 7:14), not pasted -->
+**The keyword rules are below the identifier rule.** Flex warns `rule cannot be matched` twice, for line 7 (the `else` that the blank left as the pattern ties with the identifier rule on `else`) and for line 8, and builds anyway; the program would print every keyword as an identifier (`identifier if`, `identifier else`). Cure: put the keyword rules first.
+<!-- checked: how=run date=2026-11-21 ref="scratch three.l: warnings :7 and :8, three.l:7:14 expected ( before printf; then undefined yywrap" h=af1c9dcb -->
 
 **No `noyywrap`, no `yywrap`, no `-lfl`.** The linker stops with ``undefined reference to `yywrap'``. Cure: `%option noyywrap nounput noinput`.
 
@@ -2247,7 +2247,7 @@ accepted: aabbabb
 rejected: abcb
 ```
 
-On a line in the language, both rules match the whole line with its newline, the same length, so it *is* a tie, and the earlier rule must be the accepting one. On any other line the first rule cannot match the whole line, so the second wins whatever the order. With the rules swapped, Flex would warn `rule cannot be matched` and every line would be rejected. The `\n` in both patterns makes each rule match a whole line, so that `abba` cannot be accepted for its first three characters. Inside, Flex built from `(a|b)*abb` the same kind of board you built by hand: the subset construction and minimisation of sections 3.3 and 3.5, joined with the board for the second rule. The four squares of chapter 3's minimal DFA are in there, labelled with rule 1 where `abb` has just been read.
+On a line in the language, both rules match the whole line with its newline, the same length, so it *is* a tie, and the earlier rule must be the accepting one. On any other line the first rule cannot match the whole line, so the second wins whatever the order. With the rules swapped, Flex would warn `rule cannot be matched` and every line would be rejected. The `\n` in both patterns makes each rule match a whole line, so that `abba` cannot be accepted for its first three characters. Inside, Flex built from `(a|b)*abb` the same kind of board you built by hand: the subset construction of section 3.3, joined with the board for the second rule. Flex does not minimise (section 4.1), so its board may have more squares than chapter 3's four-square minimal DFA, but it accepts the same lines, with rule 1 accepting where `abb` has just been read.
 
 </details>
 

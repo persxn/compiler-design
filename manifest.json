@@ -333,8 +333,8 @@
        "n": 4,
        "title": "Lex and Flex programs",
        "file": "compiler-design/chapters/04-lex-flex.md",
-       "state": "written",
-       "words": 19449,
+       "state": "reviewed",
+       "words": 19545,
        "sections": [
         {
          "id": "4.1",
@@ -342,7 +342,7 @@
          "kind": "lesson",
          "level": 1,
          "state": "written",
-         "words": 2678,
+         "words": 2724,
          "teaches": [
           "lex-structure",
           "yylex",
@@ -382,7 +382,7 @@
          "kind": "lesson",
          "level": 1,
          "state": "written",
-         "words": 2717,
+         "words": 2749,
          "teaches": [
           "lex-token-scanner"
          ],
@@ -394,7 +394,7 @@
          "kind": "lesson",
          "level": 1,
          "state": "written",
-         "words": 2227,
+         "words": 2230,
          "teaches": [
           "yyin",
           "yywrap"
@@ -419,7 +419,7 @@
          "kind": "lesson",
          "level": 1,
          "state": "written",
-         "words": 2282,
+         "words": 2283,
          "teaches": [
           "lex-errors"
          ],
@@ -431,7 +431,7 @@
          "kind": "practice",
          "level": 3,
          "state": "written",
-         "words": 2454,
+         "words": 2468,
          "teaches": [],
          "anchor": "48-practice-the-lab-set-of-lex-programs-written-from-the-question-alone"
         }

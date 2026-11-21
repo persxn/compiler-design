@@ -60,6 +60,28 @@
       "state": "reviewed",
       "unrun": 0,
       "words": 20501
+    },
+    "4": {
+      "facts": {
+        "known": 2,
+        "reworded": 1,
+        "run": 13,
+        "source": 2
+      },
+      "planned": 8,
+      "sections": [
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "4.7",
+        "4.8"
+      ],
+      "state": "reviewed",
+      "unrun": 0,
+      "words": 19545
     }
   }
 }
