@@ -620,7 +620,7 @@
        "title": "Bottom-up parsers",
        "file": "compiler-design/chapters/07-bottom-up-parsers.md",
        "state": "written",
-       "words": 29878,
+       "words": 29910,
        "sections": [
         {
          "id": "7.1",
@@ -641,7 +641,7 @@
          "kind": "lesson",
          "level": 3,
          "state": "written",
-         "words": 4788,
+         "words": 4819,
          "teaches": [
           "operator-precedence"
          ],
@@ -679,7 +679,7 @@
          "kind": "lesson",
          "level": 2,
          "state": "written",
-         "words": 3890,
+         "words": 3891,
          "teaches": [
           "lr1-item",
           "clr-table",
@@ -726,17 +726,17 @@
       {
        "n": 8,
        "title": "Yacc and Bison programs",
-       "file": null,
-       "state": "planned",
-       "words": 0,
+       "file": "compiler-design/chapters/08-yacc-bison.md",
+       "state": "written",
+       "words": 18566,
        "sections": [
         {
          "id": "8.1",
          "title": "The first Yacc program: the parts of a .y file and linking it with Lex",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 3185,
          "teaches": [
           "yacc-structure",
           "yyparse",
@@ -749,8 +749,8 @@
          "title": "Validating arithmetic expressions",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2766,
          "teaches": [
           "yacc-validator"
          ],
@@ -761,11 +761,11 @@
          "title": "A calculator: values, precedence and associativity",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2624,
          "teaches": [
-          "yacc-precedence",
-          "yacc-value"
+          "yacc-value",
+          "yacc-precedence"
          ],
          "anchor": "83-a-calculator-values-precedence-and-associativity"
         },
@@ -774,8 +774,8 @@
          "title": "Recognising languages: identifiers, a^n b^n and other classics",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2280,
          "teaches": [
           "yacc-language"
          ],
@@ -786,8 +786,8 @@
          "title": "Reading Bison's conflict reports with -v and the .output file",
          "kind": "lesson",
          "level": 2,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2639,
          "teaches": [
           "yacc-conflict-report"
          ],
@@ -798,8 +798,8 @@
          "title": "Infix to postfix with semantic actions",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2631,
          "teaches": [
           "semantic-action"
          ],
@@ -810,8 +810,8 @@
          "title": "Practice: the lab set of Yacc programs, written from the question alone",
          "kind": "practice",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2441,
          "teaches": [],
          "anchor": "87-practice-the-lab-set-of-yacc-programs-written-from-the-question-alone"
         }
@@ -825,17 +825,17 @@
       {
        "n": 9,
        "title": "Syntax-directed translation and intermediate code",
-       "file": null,
-       "state": "planned",
-       "words": 0,
+       "file": "compiler-design/chapters/09-sdt-intermediate-code.md",
+       "state": "written",
+       "words": 14436,
        "sections": [
         {
          "id": "9.1",
          "title": "Syntax-directed definitions: synthesised and inherited attributes, annotated parse trees",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2483,
          "teaches": [
           "sdd",
           "synthesised-attribute",
@@ -848,8 +848,8 @@
          "title": "Three-address code and its kinds of instruction",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 1948,
          "teaches": [
           "three-address-code"
          ],
@@ -860,8 +860,8 @@
          "title": "Quadruples, triples and indirect triples, in C",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2087,
          "teaches": [
           "quadruple",
           "triple",
@@ -874,8 +874,8 @@
          "title": "Generating three-address code for expressions with Yacc",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 1863,
          "teaches": [
           "tac-generation"
          ],
@@ -886,8 +886,8 @@
          "title": "Boolean expressions, if and while: labels and backpatching",
          "kind": "lesson",
          "level": 2,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 3559,
          "teaches": [
           "control-flow-tac",
           "backpatching"
@@ -899,8 +899,8 @@
          "title": "Type checking and type conversion",
          "kind": "short",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 575,
          "teaches": [
           "type-checking"
          ],
@@ -911,8 +911,8 @@
          "title": "Practice: from source to three-address code for a new program",
          "kind": "practice",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 1921,
          "teaches": [],
          "anchor": "97-practice-from-source-to-three-address-code-for-a-new-program"
         }
@@ -921,17 +921,17 @@
       {
        "n": 10,
        "title": "Optimisation, code generation and the run-time picture",
-       "file": null,
-       "state": "planned",
-       "words": 0,
+       "file": "compiler-design/chapters/10-optimisation-codegen.md",
+       "state": "written",
+       "words": 14527,
        "sections": [
         {
          "id": "10.1",
          "title": "Basic blocks, leaders and flow graphs, in C",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2236,
          "teaches": [
           "basic-block",
           "leader",
@@ -944,8 +944,8 @@
          "title": "Local optimisation: constant folding, propagation, common subexpressions, dead code",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2823,
          "teaches": [
           "constant-folding",
           "cse",
@@ -958,8 +958,8 @@
          "title": "The DAG of a basic block",
          "kind": "lesson",
          "level": 2,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 1484,
          "teaches": [
           "dag"
          ],
@@ -970,8 +970,8 @@
          "title": "Loop optimisation: code motion, induction variables, strength reduction",
          "kind": "lesson",
          "level": 2,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 1728,
          "teaches": [
           "code-motion",
           "strength-reduction"
@@ -983,8 +983,8 @@
          "title": "Peephole optimisation",
          "kind": "short",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 606,
          "teaches": [
           "peephole"
          ],
@@ -995,8 +995,8 @@
          "title": "A simple code generator: register and address descriptors, getreg",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 3080,
          "teaches": [
           "code-generator",
           "getreg"
@@ -1008,8 +1008,8 @@
          "title": "Activation records and storage allocation",
          "kind": "short",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 558,
          "teaches": [
           "activation-record"
          ],
@@ -1020,8 +1020,8 @@
          "title": "Practice: the mini compiler, end to end",
          "kind": "practice",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2012,
          "teaches": [],
          "anchor": "108-practice-the-mini-compiler-end-to-end"
         }
