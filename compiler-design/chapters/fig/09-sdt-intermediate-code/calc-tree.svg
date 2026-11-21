@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 672" width="760" height="672" role="img" aria-labelledby="calc-tree-t calc-tree-d" data-kind="tree" data-count="10">
+<title id="calc-tree-t">Annotated parse tree of 3 * 5 + 4, desk-calculator SDD</title>
+<desc id="calc-tree-d">Tree, top to bottom. E.val = 19 leads to E.val = 15. E.val = 19 leads to +. E.val = 19 leads to T.val = 4. E.val = 15 leads to T.val = 15. T.val = 4 leads to F.val = 4 digit.lexval = 4. T.val = 15 leads to T.val = 3. T.val = 15 leads to *. T.val = 15 leads to F.val = 5 digit.lexval = 5. T.val = 3 leads to F.val = 3 digit.lexval = 3. E.val = 19 is highlighted.</desc>
+<style>.bg{fill:#E6ECF0}.sh{fill:#000000}.box{fill:#FFFFFF;stroke:#000000;stroke-width:2.5}.hot{fill:#FFE600;stroke:#000000;stroke-width:4.5}.mut{fill:#CDD5DC;stroke:#000000;stroke-width:2.5;stroke-dasharray:6 4}.band{fill:#F6F8FA;stroke:#000000;stroke-width:2.5}.note{fill:#FFFFFF;stroke:#000000;stroke-width:1.5}.deco{stroke:#000000;fill:none;stroke-width:2}.ek{stroke:#000000;fill:none;stroke-width:2}.er{stroke:#D92B2B;fill:none;stroke-width:3}.eb{stroke:#1F4BFF;fill:none;stroke-dasharray:7 5;stroke-width:2}.ep{stroke:#1F4BFF;fill:none;stroke-dasharray:7 5;stroke-width:2}.hk{fill:#000000}.hr{fill:#D92B2B}.hb{fill:#1F4BFF}.hp{stroke:#1F4BFF;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5}.dot{fill:#1F4BFF}.tick{fill:#000000}.life{stroke:#3B4651;fill:none;stroke-dasharray:4 5;stroke-width:1.5}.plate{fill:#E6ECF0}.plateb{fill:#F6F8FA}.ink{fill:#000000}.soft{fill:#3B4651}.hink{fill:#000000}.t{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:15px;font-weight:600}.s{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:13px;font-weight:600}.tt{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:17px;font-weight:700}.m{font-family:ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace}@media (prefers-color-scheme:dark){svg:not([data-theme="light"]) .bg{fill:#2A2F36}svg:not([data-theme="light"]) .sh{fill:#000000}svg:not([data-theme="light"]) .box{fill:#343A42;stroke:#ECE9E2}svg:not([data-theme="light"]) .hot{fill:#F2D13A;stroke:#ECE9E2}svg:not([data-theme="light"]) .mut{fill:#1D2126;stroke:#ECE9E2}svg:not([data-theme="light"]) .band{fill:#2F343C;stroke:#ECE9E2}svg:not([data-theme="light"]) .note{fill:#343A42;stroke:#ECE9E2}svg:not([data-theme="light"]) .deco{stroke:#ECE9E2}svg:not([data-theme="light"]) .ek{stroke:#ECE9E2}svg:not([data-theme="light"]) .er{stroke:#FF7B72}svg:not([data-theme="light"]) .eb{stroke:#8EA6FF}svg:not([data-theme="light"]) .ep{stroke:#8EA6FF}svg:not([data-theme="light"]) .hk{fill:#ECE9E2}svg:not([data-theme="light"]) .hr{fill:#FF7B72}svg:not([data-theme="light"]) .hb{fill:#8EA6FF}svg:not([data-theme="light"]) .hp{stroke:#8EA6FF}svg:not([data-theme="light"]) .dot{fill:#8EA6FF}svg:not([data-theme="light"]) .tick{fill:#ECE9E2}svg:not([data-theme="light"]) .life{stroke:#B9BFC7}svg:not([data-theme="light"]) .plate{fill:#2A2F36}svg:not([data-theme="light"]) .plateb{fill:#2F343C}svg:not([data-theme="light"]) .ink{fill:#ECE9E2}svg:not([data-theme="light"]) .soft{fill:#B9BFC7}svg:not([data-theme="light"]) .hink{fill:#000000}}svg[data-theme="dark"] .bg{fill:#2A2F36}svg[data-theme="dark"] .sh{fill:#000000}svg[data-theme="dark"] .box{fill:#343A42;stroke:#ECE9E2}svg[data-theme="dark"] .hot{fill:#F2D13A;stroke:#ECE9E2}svg[data-theme="dark"] .mut{fill:#1D2126;stroke:#ECE9E2}svg[data-theme="dark"] .band{fill:#2F343C;stroke:#ECE9E2}svg[data-theme="dark"] .note{fill:#343A42;stroke:#ECE9E2}svg[data-theme="dark"] .deco{stroke:#ECE9E2}svg[data-theme="dark"] .ek{stroke:#ECE9E2}svg[data-theme="dark"] .er{stroke:#FF7B72}svg[data-theme="dark"] .eb{stroke:#8EA6FF}svg[data-theme="dark"] .ep{stroke:#8EA6FF}svg[data-theme="dark"] .hk{fill:#ECE9E2}svg[data-theme="dark"] .hr{fill:#FF7B72}svg[data-theme="dark"] .hb{fill:#8EA6FF}svg[data-theme="dark"] .hp{stroke:#8EA6FF}svg[data-theme="dark"] .dot{fill:#8EA6FF}svg[data-theme="dark"] .tick{fill:#ECE9E2}svg[data-theme="dark"] .life{stroke:#B9BFC7}svg[data-theme="dark"] .plate{fill:#2A2F36}svg[data-theme="dark"] .plateb{fill:#2F343C}svg[data-theme="dark"] .ink{fill:#ECE9E2}svg[data-theme="dark"] .soft{fill:#B9BFC7}svg[data-theme="dark"] .hink{fill:#000000}</style>
+<rect class="bg" data-role="bg" x="0" y="0" width="760" height="672"/>
+<rect class="sh" data-role="shadow" data-for="e19" x="388" y="68" width="128" height="48"/>
+<rect class="hot" data-role="node" data-id="e19" data-shape="box" x="384" y="64" width="128" height="48"/>
+<rect class="sh" data-role="shadow" data-for="e15" x="172" y="164" width="128" height="48"/>
+<rect class="box" data-role="node" data-id="e15" data-shape="box" x="168" y="160" width="128" height="48"/>
+<rect class="sh" data-role="shadow" data-for="plus" x="476" y="164" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="plus" data-shape="box" x="472" y="160" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="t4" x="612" y="164" width="112" height="48"/>
+<rect class="box" data-role="node" data-id="t4" data-shape="box" x="608" y="160" width="112" height="48"/>
+<rect class="sh" data-role="shadow" data-for="f4" x="604" y="260" width="128" height="96"/>
+<rect class="box" data-role="node" data-id="f4" data-shape="box" x="600" y="256" width="128" height="96"/>
+<rect class="sh" data-role="shadow" data-for="t15" x="172" y="260" width="128" height="96"/>
+<rect class="box" data-role="node" data-id="t15" data-shape="box" x="168" y="256" width="128" height="96"/>
+<rect class="sh" data-role="shadow" data-for="t3" x="36" y="404" width="112" height="96"/>
+<rect class="box" data-role="node" data-id="t3" data-shape="box" x="32" y="400" width="112" height="96"/>
+<rect class="sh" data-role="shadow" data-for="star" x="188" y="404" width="96" height="96"/>
+<rect class="box" data-role="node" data-id="star" data-shape="box" x="184" y="400" width="96" height="96"/>
+<rect class="sh" data-role="shadow" data-for="f5" x="316" y="404" width="128" height="96"/>
+<rect class="box" data-role="node" data-id="f5" data-shape="box" x="312" y="400" width="128" height="96"/>
+<rect class="sh" data-role="shadow" data-for="f3" x="28" y="548" width="128" height="96"/>
+<rect class="box" data-role="node" data-id="f3" data-shape="box" x="24" y="544" width="128" height="96"/>
+<path class="ek" data-role="edge" data-id="e1" data-from="e19" data-to="e15" d="M448 116L448 136L232 136L232 151"/>
+<path class="hk" data-role="head" data-for="e1" d="M232 160L227 150L237 150Z"/>
+<path class="ek" data-role="edge" data-id="e2" data-from="e19" data-to="plus" d="M448 116L448 136L520 136L520 151"/>
+<path class="hk" data-role="head" data-for="e2" d="M520 160L515 150L525 150Z"/>
+<path class="ek" data-role="edge" data-id="e3" data-from="e19" data-to="t4" d="M448 116L448 136L664 136L664 151"/>
+<path class="hk" data-role="head" data-for="e3" d="M664 160L659 150L669 150Z"/>
+<path class="ek" data-role="edge" data-id="e4" data-from="t4" data-to="f4" d="M664 212L664 247"/>
+<path class="hk" data-role="head" data-for="e4" d="M664 256L659 246L669 246Z"/>
+<path class="ek" data-role="edge" data-id="e5" data-from="e15" data-to="t15" d="M232 212L232 247"/>
+<path class="hk" data-role="head" data-for="e5" d="M232 256L227 246L237 246Z"/>
+<path class="ek" data-role="edge" data-id="e6" data-from="t15" data-to="t3" d="M232 356L232 376L88 376L88 391"/>
+<path class="hk" data-role="head" data-for="e6" d="M88 400L83 390L93 390Z"/>
+<path class="ek" data-role="edge" data-id="e7" data-from="t15" data-to="star" d="M232 356L232 391"/>
+<path class="hk" data-role="head" data-for="e7" d="M232 400L227 390L237 390Z"/>
+<path class="ek" data-role="edge" data-id="e8" data-from="t15" data-to="f5" d="M232 356L232 376L376 376L376 391"/>
+<path class="hk" data-role="head" data-for="e8" d="M376 400L371 390L381 390Z"/>
+<path class="ek" data-role="edge" data-id="e9" data-from="t3" data-to="f3" d="M88 500L88 535"/>
+<path class="hk" data-role="head" data-for="e9" d="M88 544L83 534L93 534Z"/>
+<text class="tt ink" data-role="title" data-id="title"><tspan x="24" y="41">Annotated parse tree of 3 * 5 + 4, desk-calculator SDD</tspan></text>
+<text class="t hink" data-role="label" data-id="e19" data-in="e19" text-anchor="middle"><tspan x="448" y="93.2">E.val = 19</tspan></text>
+<text class="t ink" data-role="label" data-id="e15" data-in="e15" text-anchor="middle"><tspan x="232" y="189.2">E.val = 15</tspan></text>
+<text class="t ink" data-role="label" data-id="plus" data-in="plus" text-anchor="middle"><tspan x="520" y="189.2"><tspan class="m">+</tspan></tspan></text>
+<text class="t ink" data-role="label" data-id="t4" data-in="t4" text-anchor="middle"><tspan x="664" y="189.2">T.val = 4</tspan></text>
+<text class="t ink" data-role="label" data-id="f4" data-in="f4" text-anchor="middle"><tspan x="664" y="289.8">F.val = 4</tspan><tspan x="664" y="309.2">digit.lexval</tspan><tspan x="664" y="328.8">= 4</tspan></text>
+<text class="t ink" data-role="label" data-id="t15" data-in="t15" text-anchor="middle"><tspan x="232" y="309.2">T.val = 15</tspan></text>
+<text class="t ink" data-role="label" data-id="t3" data-in="t3" text-anchor="middle"><tspan x="88" y="453.2">T.val = 3</tspan></text>
+<text class="t ink" data-role="label" data-id="star" data-in="star" text-anchor="middle"><tspan x="232" y="453.2"><tspan class="m">*</tspan></tspan></text>
+<text class="t ink" data-role="label" data-id="f5" data-in="f5" text-anchor="middle"><tspan x="376" y="433.8">F.val = 5</tspan><tspan x="376" y="453.2">digit.lexval</tspan><tspan x="376" y="472.8">= 5</tspan></text>
+<text class="t ink" data-role="label" data-id="f3" data-in="f3" text-anchor="middle"><tspan x="88" y="577.8">F.val = 3</tspan><tspan x="88" y="597.2">digit.lexval</tspan><tspan x="88" y="616.8">= 3</tspan></text>
+</svg>

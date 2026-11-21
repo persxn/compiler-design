@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 536 576" width="536" height="576" role="img" aria-labelledby="decl-tree-t decl-tree-d" data-kind="tree" data-count="8">
+<title id="decl-tree-t">Annotated tree of float a, b, c</title>
+<desc id="decl-tree-d">Tree, top to bottom. D leads to T.type float. D leads to L.inh float. L.inh float leads to L.inh float. L.inh float leads to id c. L.inh float leads to L.inh float. L.inh float leads to id b. L.inh float leads to id a. L.inh float, L.inh float and L.inh float are highlighted.</desc>
+<style>.bg{fill:#E6ECF0}.sh{fill:#000000}.box{fill:#FFFFFF;stroke:#000000;stroke-width:2.5}.hot{fill:#FFE600;stroke:#000000;stroke-width:4.5}.mut{fill:#CDD5DC;stroke:#000000;stroke-width:2.5;stroke-dasharray:6 4}.band{fill:#F6F8FA;stroke:#000000;stroke-width:2.5}.note{fill:#FFFFFF;stroke:#000000;stroke-width:1.5}.deco{stroke:#000000;fill:none;stroke-width:2}.ek{stroke:#000000;fill:none;stroke-width:2}.er{stroke:#D92B2B;fill:none;stroke-width:3}.eb{stroke:#1F4BFF;fill:none;stroke-dasharray:7 5;stroke-width:2}.ep{stroke:#1F4BFF;fill:none;stroke-dasharray:7 5;stroke-width:2}.hk{fill:#000000}.hr{fill:#D92B2B}.hb{fill:#1F4BFF}.hp{stroke:#1F4BFF;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5}.dot{fill:#1F4BFF}.tick{fill:#000000}.life{stroke:#3B4651;fill:none;stroke-dasharray:4 5;stroke-width:1.5}.plate{fill:#E6ECF0}.plateb{fill:#F6F8FA}.ink{fill:#000000}.soft{fill:#3B4651}.hink{fill:#000000}.t{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:15px;font-weight:600}.s{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:13px;font-weight:600}.tt{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:17px;font-weight:700}.m{font-family:ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace}@media (prefers-color-scheme:dark){svg:not([data-theme="light"]) .bg{fill:#2A2F36}svg:not([data-theme="light"]) .sh{fill:#000000}svg:not([data-theme="light"]) .box{fill:#343A42;stroke:#ECE9E2}svg:not([data-theme="light"]) .hot{fill:#F2D13A;stroke:#ECE9E2}svg:not([data-theme="light"]) .mut{fill:#1D2126;stroke:#ECE9E2}svg:not([data-theme="light"]) .band{fill:#2F343C;stroke:#ECE9E2}svg:not([data-theme="light"]) .note{fill:#343A42;stroke:#ECE9E2}svg:not([data-theme="light"]) .deco{stroke:#ECE9E2}svg:not([data-theme="light"]) .ek{stroke:#ECE9E2}svg:not([data-theme="light"]) .er{stroke:#FF7B72}svg:not([data-theme="light"]) .eb{stroke:#8EA6FF}svg:not([data-theme="light"]) .ep{stroke:#8EA6FF}svg:not([data-theme="light"]) .hk{fill:#ECE9E2}svg:not([data-theme="light"]) .hr{fill:#FF7B72}svg:not([data-theme="light"]) .hb{fill:#8EA6FF}svg:not([data-theme="light"]) .hp{stroke:#8EA6FF}svg:not([data-theme="light"]) .dot{fill:#8EA6FF}svg:not([data-theme="light"]) .tick{fill:#ECE9E2}svg:not([data-theme="light"]) .life{stroke:#B9BFC7}svg:not([data-theme="light"]) .plate{fill:#2A2F36}svg:not([data-theme="light"]) .plateb{fill:#2F343C}svg:not([data-theme="light"]) .ink{fill:#ECE9E2}svg:not([data-theme="light"]) .soft{fill:#B9BFC7}svg:not([data-theme="light"]) .hink{fill:#000000}}svg[data-theme="dark"] .bg{fill:#2A2F36}svg[data-theme="dark"] .sh{fill:#000000}svg[data-theme="dark"] .box{fill:#343A42;stroke:#ECE9E2}svg[data-theme="dark"] .hot{fill:#F2D13A;stroke:#ECE9E2}svg[data-theme="dark"] .mut{fill:#1D2126;stroke:#ECE9E2}svg[data-theme="dark"] .band{fill:#2F343C;stroke:#ECE9E2}svg[data-theme="dark"] .note{fill:#343A42;stroke:#ECE9E2}svg[data-theme="dark"] .deco{stroke:#ECE9E2}svg[data-theme="dark"] .ek{stroke:#ECE9E2}svg[data-theme="dark"] .er{stroke:#FF7B72}svg[data-theme="dark"] .eb{stroke:#8EA6FF}svg[data-theme="dark"] .ep{stroke:#8EA6FF}svg[data-theme="dark"] .hk{fill:#ECE9E2}svg[data-theme="dark"] .hr{fill:#FF7B72}svg[data-theme="dark"] .hb{fill:#8EA6FF}svg[data-theme="dark"] .hp{stroke:#8EA6FF}svg[data-theme="dark"] .dot{fill:#8EA6FF}svg[data-theme="dark"] .tick{fill:#ECE9E2}svg[data-theme="dark"] .life{stroke:#B9BFC7}svg[data-theme="dark"] .plate{fill:#2A2F36}svg[data-theme="dark"] .plateb{fill:#2F343C}svg[data-theme="dark"] .ink{fill:#ECE9E2}svg[data-theme="dark"] .soft{fill:#B9BFC7}svg[data-theme="dark"] .hink{fill:#000000}</style>
+<rect class="bg" data-role="bg" x="0" y="0" width="536" height="576"/>
+<rect class="sh" data-role="shadow" data-for="d" x="172" y="68" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="d" data-shape="box" x="168" y="64" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="t" x="28" y="164" width="96" height="64"/>
+<rect class="box" data-role="node" data-id="t" data-shape="box" x="24" y="160" width="96" height="64"/>
+<rect class="sh" data-role="shadow" data-for="l" x="316" y="164" width="96" height="64"/>
+<rect class="hot" data-role="node" data-id="l" data-shape="box" x="312" y="160" width="96" height="64"/>
+<rect class="sh" data-role="shadow" data-for="l1" x="220" y="276" width="96" height="64"/>
+<rect class="hot" data-role="node" data-id="l1" data-shape="box" x="216" y="272" width="96" height="64"/>
+<rect class="sh" data-role="shadow" data-for="idc" x="412" y="276" width="96" height="64"/>
+<rect class="box" data-role="node" data-id="idc" data-shape="box" x="408" y="272" width="96" height="64"/>
+<rect class="sh" data-role="shadow" data-for="l2" x="156" y="388" width="96" height="64"/>
+<rect class="hot" data-role="node" data-id="l2" data-shape="box" x="152" y="384" width="96" height="64"/>
+<rect class="sh" data-role="shadow" data-for="idb" x="284" y="388" width="96" height="64"/>
+<rect class="box" data-role="node" data-id="idb" data-shape="box" x="280" y="384" width="96" height="64"/>
+<rect class="sh" data-role="shadow" data-for="ida" x="156" y="500" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="ida" data-shape="box" x="152" y="496" width="96" height="48"/>
+<path class="ek" data-role="edge" data-id="e1" data-from="d" data-to="t" d="M216 116L216 136L72 136L72 151"/>
+<path class="hk" data-role="head" data-for="e1" d="M72 160L67 150L77 150Z"/>
+<path class="ek" data-role="edge" data-id="e2" data-from="d" data-to="l" d="M216 116L216 136L360 136L360 151"/>
+<path class="hk" data-role="head" data-for="e2" d="M360 160L355 150L365 150Z"/>
+<path class="ek" data-role="edge" data-id="e3" data-from="l" data-to="l1" d="M360 228L360 248L264 248L264 263"/>
+<path class="hk" data-role="head" data-for="e3" d="M264 272L259 262L269 262Z"/>
+<path class="ek" data-role="edge" data-id="e4" data-from="l" data-to="idc" d="M360 228L360 248L456 248L456 263"/>
+<path class="hk" data-role="head" data-for="e4" d="M456 272L451 262L461 262Z"/>
+<path class="ek" data-role="edge" data-id="e5" data-from="l1" data-to="l2" d="M264 340L264 360L200 360L200 375"/>
+<path class="hk" data-role="head" data-for="e5" d="M200 384L195 374L205 374Z"/>
+<path class="ek" data-role="edge" data-id="e6" data-from="l1" data-to="idb" d="M264 340L264 360L328 360L328 375"/>
+<path class="hk" data-role="head" data-for="e6" d="M328 384L323 374L333 374Z"/>
+<path class="ek" data-role="edge" data-id="e7" data-from="l2" data-to="ida" d="M200 452L200 487"/>
+<path class="hk" data-role="head" data-for="e7" d="M200 496L195 486L205 486Z"/>
+<text class="tt ink" data-role="title" data-id="title"><tspan x="24" y="41">Annotated tree of float a, b, c</tspan></text>
+<text class="t ink" data-role="label" data-id="d" data-in="d" text-anchor="middle"><tspan x="216" y="93.2">D</tspan></text>
+<text class="t ink" data-role="label" data-id="t" data-in="t" text-anchor="middle"><tspan x="72" y="187.5">T.type</tspan><tspan x="72" y="207">float</tspan></text>
+<text class="t hink" data-role="label" data-id="l" data-in="l" text-anchor="middle"><tspan x="360" y="187.5">L.inh</tspan><tspan x="360" y="207">float</tspan></text>
+<text class="t hink" data-role="label" data-id="l1" data-in="l1" text-anchor="middle"><tspan x="264" y="299.5">L.inh</tspan><tspan x="264" y="319">float</tspan></text>
+<text class="t ink" data-role="label" data-id="idc" data-in="idc" text-anchor="middle"><tspan x="456" y="309.2"><tspan class="m">id</tspan> c</tspan></text>
+<text class="t hink" data-role="label" data-id="l2" data-in="l2" text-anchor="middle"><tspan x="200" y="411.5">L.inh</tspan><tspan x="200" y="431">float</tspan></text>
+<text class="t ink" data-role="label" data-id="idb" data-in="idb" text-anchor="middle"><tspan x="328" y="421.2"><tspan class="m">id</tspan> b</tspan></text>
+<text class="t ink" data-role="label" data-id="ida" data-in="ida" text-anchor="middle"><tspan x="200" y="525.2"><tspan class="m">id</tspan> a</tspan></text>
+</svg>

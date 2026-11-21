@@ -90,3 +90,7 @@ What this book states that was checked, and how; and the programs and sessions s
 - §8.6: **`error: $1 of 'e' has no declared type`.** A `%union` is declared, and an action uses the value of a symbol whose type was never given: he — how it was checked: run, scratch post.y with %token ID: Bison 3.8.2 error: $1 of 'e' has no declared type, 2026-11-21
 - §8.6: Every `yylval.s` points at the same place, Flex's buffer, where `yytext` lives. By the time `e : ID` runs for `a`, the scanner has already m — how it was checked: run, scratch post.l with yylval.s = yytext on 'a + b': glibc 'double free or corruption (!prev)', exit 134, no output, 2026-11-21
 - §8.7: Not regular: like a^n b^n, it needs to remember an unbounded first half. The `c` makes it easy: the parser shifts every `a` and `b` until th — how it was checked: run, Bison 3.8.2 on s : A s A | B s B | (empty): 2 shift/reduce conflicts, 2026-11-21
+
+## Chapter 9: Syntax-directed translation and intermediate code
+
+- §9.1: **`$0` without `<member>` under `%union`.** Bison stops with `error: $0 of 'list' has no declared type`: it cannot tell the member, since th — how it was checked: run, scratch decl.y with $0: Bison 3.8.2 error: $0 of 'list' has no declared type, 2026-11-21

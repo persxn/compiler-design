@@ -14,6 +14,7 @@
 ## B
 
 - back end: [1.2](chapters/01-one-statement.md#12-the-phases-of-a-compiler-traced-on-pos--init--rate--60)
+- backpatching: [9.5](chapters/09-sdt-intermediate-code.md#95-boolean-expressions-if-and-while-labels-and-backpatching)
 - buffer pair: [2.6](chapters/02-lexical-analyzer.md#26-input-buffering-buffer-pairs-and-sentinels)
 
 ## C
@@ -21,6 +22,7 @@
 - canonical LR(1) table: [7.5](chapters/07-bottom-up-parsers.md#75-clr1-and-lalr1-tables-by-hand)
 - chaining: [2.8](chapters/02-lexical-analyzer.md#28-a-symbol-table-in-c-insert-search-display-delete-with-a-hash-table)
 - closure of a set of items: [7.3](chapters/07-bottom-up-parsers.md#73-lr0-items-closure-and-goto-the-canonical-collection)
+- code layout for if and while: [9.5](chapters/09-sdt-intermediate-code.md#95-boolean-expressions-if-and-while-labels-and-backpatching)
 - comment skipping: [2.4](chapters/02-lexical-analyzer.md#24-skipping-white-space-and-both-kinds-of-c-comment)
 - compile pipeline: [1.1](chapters/01-one-statement.md#11-what-happens-between-progc-and-aout-watching-gcc-stop-after-each-stage)
 - context-free grammar: [5.1](chapters/05-grammars.md#51-context-free-grammars-derivations-and-parse-trees)
@@ -56,6 +58,8 @@
 ## I
 
 - identifier scanning: [2.2](chapters/02-lexical-analyzer.md#22-recognising-identifiers-and-telling-keywords-apart)
+- indirect triple: [9.3](chapters/09-sdt-intermediate-code.md#93-quadruples-triples-and-indirect-triples-in-c)
+- inherited attribute: [9.1](chapters/09-sdt-intermediate-code.md#91-syntax-directed-definitions-synthesised-and-inherited-attributes-annotated-parse-trees)
 - interpreter: [1.5](chapters/01-one-statement.md#15-passes-interpreters-cross-compilers-and-compiler-construction-tools)
 
 ## K
@@ -103,6 +107,10 @@
 - position: [3.4](chapters/03-regex-automata.md#34-a-dfa-straight-from-a-regular-expression-nullable-firstpos-lastpos-followpos)
 - preprocessor: [1.1](chapters/01-one-statement.md#11-what-happens-between-progc-and-aout-watching-gcc-stop-after-each-stage)
 
+## Q
+
+- quadruple: [9.3](chapters/09-sdt-intermediate-code.md#93-quadruples-triples-and-indirect-triples-in-c)
+
 ## R
 
 - recursive-descent parser: [6.1](chapters/06-top-down-parsers.md#61-a-recursive-descent-parser-in-c)
@@ -120,15 +128,21 @@
 - start condition: [4.6](chapters/04-lex-flex.md#46-start-conditions-removing-comments-and-scanning-strings)
 - subset construction: [3.3](chapters/03-regex-automata.md#33-epsilon-closure-and-the-subset-construction-by-hand-and-in-c)
 - symbol table: [1.4](chapters/01-one-statement.md#14-the-symbol-table-the-notebook-every-phase-shares)
+- syntax-directed definition: [9.1](chapters/09-sdt-intermediate-code.md#91-syntax-directed-definitions-synthesised-and-inherited-attributes-annotated-parse-trees)
+- synthesised attribute: [9.1](chapters/09-sdt-intermediate-code.md#91-syntax-directed-definitions-synthesised-and-inherited-attributes-annotated-parse-trees)
 
 ## T
 
 - table-driven predictive parser: [6.4](chapters/06-top-down-parsers.md#64-a-table-driven-predictive-parser-in-c-with-its-stack-trace)
 - Thompson's construction: [3.2](chapters/03-regex-automata.md#32-from-a-regular-expression-to-an-nfa-thompsons-construction)
+- three-address code: [9.2](chapters/09-sdt-intermediate-code.md#92-three-address-code-and-its-kinds-of-instruction)
 - token: [1.3](chapters/01-one-statement.md#13-tokens-lexemes-and-patterns)
 - token scanner in Lex: [4.4](chapters/04-lex-flex.md#44-a-lex-scanner-for-keywords-identifiers-numbers-and-operators)
 - transition diagram: [2.5](chapters/02-lexical-analyzer.md#25-transition-diagrams-drawing-the-scanner-before-writing-it)
 - transition table: [3.6](chapters/03-regex-automata.md#36-a-table-driven-dfa-recogniser-in-c)
+- translation to three-address code: [9.4](chapters/09-sdt-intermediate-code.md#94-generating-three-address-code-for-expressions-with-yacc)
+- triple: [9.3](chapters/09-sdt-intermediate-code.md#93-quadruples-triples-and-indirect-triples-in-c)
+- type checking: [9.6](chapters/09-sdt-intermediate-code.md#96-type-checking-and-type-conversion)
 
 ## U
 

@@ -109,3 +109,17 @@
 - **language recogniser** ([§8.4](chapters/08-yacc-bison.md#84-recognising-languages-identifiers-an-bn-and-other-classics)): A language recogniser is a grammar with a line-list frame: the grammar decides, `yyerror` says no, the action says yes. 2. a^n b^n is `s ...
 - **y.output** ([§8.5](chapters/08-yacc-bison.md#85-reading-bisons-conflict-reports-with--v-and-the-output-file)): Counterexamples are a recent addition to Bison (older Bisons and Berkeley Yacc do not have them); `y.output` is everywhere.
 - **semantic action** ([§8.6](chapters/08-yacc-bison.md#86-infix-to-postfix-with-semantic-actions)): A *semantic action* is the C code attached to a production, run when the parser reduces by it.
+
+## Chapter 9: Syntax-directed translation and intermediate code
+
+- **syntax-directed definition** ([§9.1](chapters/09-sdt-intermediate-code.md#91-syntax-directed-definitions-synthesised-and-inherited-attributes-annotated-parse-trees)): A *syntax-directed definition* (SDD) is a grammar with two things added: - attributes: each grammar symbol may have named values, written `E.val`, `T.type`, `L.inh`.
+- **synthesised attribute** ([§9.1](chapters/09-sdt-intermediate-code.md#91-syntax-directed-definitions-synthesised-and-inherited-attributes-annotated-parse-trees)): (no definition found)
+- **inherited attribute** ([§9.1](chapters/09-sdt-intermediate-code.md#91-syntax-directed-definitions-synthesised-and-inherited-attributes-annotated-parse-trees)): An SDD where every inherited attribute of a symbol in a production depends only on the attributes of the parent and of the symbols to ...
+- **three-address code** ([§9.2](chapters/09-sdt-intermediate-code.md#92-three-address-code-and-its-kinds-of-instruction)): Three-address code (TAC) is a sequence of instructions, each with at most one operator on its right side.
+- **quadruple** ([§9.3](chapters/09-sdt-intermediate-code.md#93-quadruples-triples-and-indirect-triples-in-c)): A *quadruple* is a record with four fields: `op`, `arg1`, `arg2` and `result`.
+- **triple** ([§9.3](chapters/09-sdt-intermediate-code.md#93-quadruples-triples-and-indirect-triples-in-c)): A temporary's value is referred to by the *number of the triple that computes it*, written in parentheses: instead of `t1`, the argument is `(0)`, ...
+- **indirect triple** ([§9.3](chapters/09-sdt-intermediate-code.md#93-quadruples-triples-and-indirect-triples-in-c)): (no definition found)
+- **translation to three-address code** ([§9.4](chapters/09-sdt-intermediate-code.md#94-generating-three-address-code-for-expressions-with-yacc)): `newtemp` keeps a counter and returns `t1`, `t2` ... as fresh strings, so that each can be freed like any other value.
+- **code layout for if and while** ([§9.5](chapters/09-sdt-intermediate-code.md#95-boolean-expressions-if-and-while-labels-and-backpatching)): (no definition found)
+- **backpatching** ([§9.5](chapters/09-sdt-intermediate-code.md#95-boolean-expressions-if-and-while-labels-and-backpatching)): Tiny has no `&&` or `||`, but C has, and so does the paper: "Using backpatching, generate code for `a < b || c < ...
+- **type checking** ([§9.6](chapters/09-sdt-intermediate-code.md#96-type-checking-and-type-conversion)): (no definition found)
