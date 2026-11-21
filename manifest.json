@@ -539,17 +539,17 @@
       {
        "n": 6,
        "title": "Top-down parsers",
-       "file": null,
-       "state": "planned",
-       "words": 0,
+       "file": "compiler-design/chapters/06-top-down-parsers.md",
+       "state": "writing",
+       "words": 4652,
        "sections": [
         {
          "id": "6.1",
          "title": "A recursive-descent parser in C",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 4652,
          "teaches": [
           "recursive-descent"
          ],

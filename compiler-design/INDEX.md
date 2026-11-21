@@ -80,6 +80,7 @@
 
 ## R
 
+- recursive-descent parser: [6.1](chapters/06-top-down-parsers.md#61-a-recursive-descent-parser-in-c)
 - regular definition: [3.1](chapters/03-regex-automata.md#31-regular-expressions-as-patterns-union-concatenation-star-and-the-shorthands)
 - regular expression: [3.1](chapters/03-regex-automata.md#31-regular-expressions-as-patterns-union-concatenation-star-and-the-shorthands)
 - rule order: [4.2](chapters/04-lex-flex.md#42-patterns-and-actions-longest-match-first-then-the-earlier-rule)

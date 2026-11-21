@@ -74,3 +74,7 @@
 - **left factoring** ([§5.4](chapters/05-grammars.md#54-left-factoring-by-hand-and-in-c)): Yes: left factoring does not remove ambiguity.
 - **FIRST set** ([§5.5](chapters/05-grammars.md#55-first-sets-by-hand-and-in-c)): A nonterminal whose FIRST set holds ε is called *nullable*, the word section 3.4 used for a node of a regular expression that can match ...
 - **FOLLOW set** ([§5.6](chapters/05-grammars.md#56-follow-sets-by-hand-and-in-c)): One `if` covers both forms of rule 3, `A -> α B` (β empty) and `A -> α B β` with β nullable. ε never ...
+
+## Chapter 6: Top-down parsers
+
+- **recursive-descent parser** ([§6.1](chapters/06-top-down-parsers.md#61-a-recursive-descent-parser-in-c)): A *recursive-descent parser* is a set of functions, one for each nonterminal, each of which reads the part of the input that its nonterminal derives.
