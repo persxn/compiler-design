@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 416 624" width="416" height="624" role="img" aria-labelledby="pp-stack-t pp-stack-d" data-kind="memory" data-count="12">
+<title id="pp-stack-t">pp's stack for i+i*i, bottom on the left</title>
+<desc id="pp-stack-d">Memory. before move 1: start, E on $. It holds s1. s1 holds $ and E. s1[1] is highlighted. before move 2: E replaced by T R, pushed R first. It holds s2. s2 holds $, R and T. s2[2] is highlighted. before move 4: the terminal i on top, i in hand. It holds s4. s4 holds $, R, Y and i. s4[3] is highlighted. before move 5: i matched and popped. It holds s5. s5 holds $, R and Y. s5[2] is highlighted.</desc>
+<style>.bg{fill:#E6ECF0}.sh{fill:#000000}.box{fill:#FFFFFF;stroke:#000000;stroke-width:2.5}.hot{fill:#FFE600;stroke:#000000;stroke-width:4.5}.mut{fill:#CDD5DC;stroke:#000000;stroke-width:2.5;stroke-dasharray:6 4}.band{fill:#F6F8FA;stroke:#000000;stroke-width:2.5}.note{fill:#FFFFFF;stroke:#000000;stroke-width:1.5}.deco{stroke:#000000;fill:none;stroke-width:2}.ek{stroke:#000000;fill:none;stroke-width:2}.er{stroke:#D92B2B;fill:none;stroke-width:3}.eb{stroke:#1F4BFF;fill:none;stroke-dasharray:7 5;stroke-width:2}.ep{stroke:#1F4BFF;fill:none;stroke-dasharray:7 5;stroke-width:2}.hk{fill:#000000}.hr{fill:#D92B2B}.hb{fill:#1F4BFF}.hp{stroke:#1F4BFF;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5}.dot{fill:#1F4BFF}.tick{fill:#000000}.life{stroke:#3B4651;fill:none;stroke-dasharray:4 5;stroke-width:1.5}.plate{fill:#E6ECF0}.plateb{fill:#F6F8FA}.ink{fill:#000000}.soft{fill:#3B4651}.hink{fill:#000000}.t{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:15px;font-weight:600}.s{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:13px;font-weight:600}.tt{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:17px;font-weight:700}.m{font-family:ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace}@media (prefers-color-scheme:dark){svg:not([data-theme="light"]) .bg{fill:#2A2F36}svg:not([data-theme="light"]) .sh{fill:#000000}svg:not([data-theme="light"]) .box{fill:#343A42;stroke:#ECE9E2}svg:not([data-theme="light"]) .hot{fill:#F2D13A;stroke:#ECE9E2}svg:not([data-theme="light"]) .mut{fill:#1D2126;stroke:#ECE9E2}svg:not([data-theme="light"]) .band{fill:#2F343C;stroke:#ECE9E2}svg:not([data-theme="light"]) .note{fill:#343A42;stroke:#ECE9E2}svg:not([data-theme="light"]) .deco{stroke:#ECE9E2}svg:not([data-theme="light"]) .ek{stroke:#ECE9E2}svg:not([data-theme="light"]) .er{stroke:#FF7B72}svg:not([data-theme="light"]) .eb{stroke:#8EA6FF}svg:not([data-theme="light"]) .ep{stroke:#8EA6FF}svg:not([data-theme="light"]) .hk{fill:#ECE9E2}svg:not([data-theme="light"]) .hr{fill:#FF7B72}svg:not([data-theme="light"]) .hb{fill:#8EA6FF}svg:not([data-theme="light"]) .hp{stroke:#8EA6FF}svg:not([data-theme="light"]) .dot{fill:#8EA6FF}svg:not([data-theme="light"]) .tick{fill:#ECE9E2}svg:not([data-theme="light"]) .life{stroke:#B9BFC7}svg:not([data-theme="light"]) .plate{fill:#2A2F36}svg:not([data-theme="light"]) .plateb{fill:#2F343C}svg:not([data-theme="light"]) .ink{fill:#ECE9E2}svg:not([data-theme="light"]) .soft{fill:#B9BFC7}svg:not([data-theme="light"]) .hink{fill:#000000}}svg[data-theme="dark"] .bg{fill:#2A2F36}svg[data-theme="dark"] .sh{fill:#000000}svg[data-theme="dark"] .box{fill:#343A42;stroke:#ECE9E2}svg[data-theme="dark"] .hot{fill:#F2D13A;stroke:#ECE9E2}svg[data-theme="dark"] .mut{fill:#1D2126;stroke:#ECE9E2}svg[data-theme="dark"] .band{fill:#2F343C;stroke:#ECE9E2}svg[data-theme="dark"] .note{fill:#343A42;stroke:#ECE9E2}svg[data-theme="dark"] .deco{stroke:#ECE9E2}svg[data-theme="dark"] .ek{stroke:#ECE9E2}svg[data-theme="dark"] .er{stroke:#FF7B72}svg[data-theme="dark"] .eb{stroke:#8EA6FF}svg[data-theme="dark"] .ep{stroke:#8EA6FF}svg[data-theme="dark"] .hk{fill:#ECE9E2}svg[data-theme="dark"] .hr{fill:#FF7B72}svg[data-theme="dark"] .hb{fill:#8EA6FF}svg[data-theme="dark"] .hp{stroke:#8EA6FF}svg[data-theme="dark"] .dot{fill:#8EA6FF}svg[data-theme="dark"] .tick{fill:#ECE9E2}svg[data-theme="dark"] .life{stroke:#B9BFC7}svg[data-theme="dark"] .plate{fill:#2A2F36}svg[data-theme="dark"] .plateb{fill:#2F343C}svg[data-theme="dark"] .ink{fill:#ECE9E2}svg[data-theme="dark"] .soft{fill:#B9BFC7}svg[data-theme="dark"] .hink{fill:#000000}</style>
+<rect class="bg" data-role="bg" x="0" y="0" width="416" height="624"/>
+<rect class="sh" data-role="shadow" data-for="m5" x="44" y="484" width="336" height="116"/>
+<rect class="band" data-role="band" data-id="m5" x="40" y="480" width="336" height="116"/>
+<rect class="sh" data-role="shadow" data-for="m4" x="44" y="340" width="336" height="116"/>
+<rect class="band" data-role="band" data-id="m4" x="40" y="336" width="336" height="116"/>
+<rect class="sh" data-role="shadow" data-for="m2" x="44" y="196" width="336" height="116"/>
+<rect class="band" data-role="band" data-id="m2" x="40" y="192" width="336" height="116"/>
+<rect class="sh" data-role="shadow" data-for="m1" x="44" y="68" width="336" height="100"/>
+<rect class="band" data-role="band" data-id="m1" x="40" y="64" width="336" height="100"/>
+<rect class="sh" data-role="shadow" data-for="s1[0]" x="172" y="100" width="64" height="48"/>
+<rect class="box" data-role="cell" data-id="s1[0]" x="168" y="96" width="64" height="48"/>
+<rect class="sh" data-role="shadow" data-for="s1[1]" x="236" y="100" width="64" height="48"/>
+<rect class="hot" data-role="cell" data-id="s1[1]" x="232" y="96" width="64" height="48"/>
+<rect class="sh" data-role="shadow" data-for="s2[0]" x="140" y="244" width="64" height="48"/>
+<rect class="box" data-role="cell" data-id="s2[0]" x="136" y="240" width="64" height="48"/>
+<rect class="sh" data-role="shadow" data-for="s2[1]" x="204" y="244" width="64" height="48"/>
+<rect class="box" data-role="cell" data-id="s2[1]" x="200" y="240" width="64" height="48"/>
+<rect class="sh" data-role="shadow" data-for="s2[2]" x="268" y="244" width="64" height="48"/>
+<rect class="hot" data-role="cell" data-id="s2[2]" x="264" y="240" width="64" height="48"/>
+<rect class="sh" data-role="shadow" data-for="s4[0]" x="108" y="388" width="64" height="48"/>
+<rect class="box" data-role="cell" data-id="s4[0]" x="104" y="384" width="64" height="48"/>
+<rect class="sh" data-role="shadow" data-for="s4[1]" x="172" y="388" width="64" height="48"/>
+<rect class="box" data-role="cell" data-id="s4[1]" x="168" y="384" width="64" height="48"/>
+<rect class="sh" data-role="shadow" data-for="s4[2]" x="236" y="388" width="64" height="48"/>
+<rect class="box" data-role="cell" data-id="s4[2]" x="232" y="384" width="64" height="48"/>
+<rect class="sh" data-role="shadow" data-for="s4[3]" x="300" y="388" width="64" height="48"/>
+<rect class="hot" data-role="cell" data-id="s4[3]" x="296" y="384" width="64" height="48"/>
+<rect class="sh" data-role="shadow" data-for="s5[0]" x="140" y="532" width="64" height="48"/>
+<rect class="box" data-role="cell" data-id="s5[0]" x="136" y="528" width="64" height="48"/>
+<rect class="sh" data-role="shadow" data-for="s5[1]" x="204" y="532" width="64" height="48"/>
+<rect class="box" data-role="cell" data-id="s5[1]" x="200" y="528" width="64" height="48"/>
+<rect class="sh" data-role="shadow" data-for="s5[2]" x="268" y="532" width="64" height="48"/>
+<rect class="hot" data-role="cell" data-id="s5[2]" x="264" y="528" width="64" height="48"/>
+<text class="tt ink" data-role="title" data-id="title"><tspan x="24" y="41">pp's stack for i+i*i, bottom on the left</tspan></text>
+<text class="t ink" data-role="label" data-id="s1[0]" data-in="s1[0]" text-anchor="middle"><tspan x="200" y="125.2"><tspan class="m">$</tspan></tspan></text>
+<text class="t hink" data-role="label" data-id="s1[1]" data-in="s1[1]" text-anchor="middle"><tspan x="264" y="125.2"><tspan class="m">E</tspan></tspan></text>
+<text class="t ink" data-role="label" data-id="s1:row" text-anchor="end"><tspan x="156" y="125.2"><tspan class="m">s1</tspan></tspan></text>
+<text class="s ink" data-role="label" data-id="m1:label"><tspan x="52" y="85">before move 1: start, E on $</tspan></text>
+<text class="t ink" data-role="label" data-id="s2[0]" data-in="s2[0]" text-anchor="middle"><tspan x="168" y="269.2"><tspan class="m">$</tspan></tspan></text>
+<text class="t ink" data-role="label" data-id="s2[1]" data-in="s2[1]" text-anchor="middle"><tspan x="232" y="269.2"><tspan class="m">R</tspan></tspan></text>
+<text class="t hink" data-role="label" data-id="s2[2]" data-in="s2[2]" text-anchor="middle"><tspan x="296" y="269.2"><tspan class="m">T</tspan></tspan></text>
+<text class="t ink" data-role="label" data-id="s2:row" text-anchor="end"><tspan x="124" y="269.2"><tspan class="m">s2</tspan></tspan></text>
+<text class="s ink" data-role="label" data-id="m2:label"><tspan x="52" y="213">before move 2: E replaced by T R,</tspan><tspan x="52" y="229.9">pushed R first</tspan></text>
+<text class="t ink" data-role="label" data-id="s4[0]" data-in="s4[0]" text-anchor="middle"><tspan x="136" y="413.2"><tspan class="m">$</tspan></tspan></text>
+<text class="t ink" data-role="label" data-id="s4[1]" data-in="s4[1]" text-anchor="middle"><tspan x="200" y="413.2"><tspan class="m">R</tspan></tspan></text>
+<text class="t ink" data-role="label" data-id="s4[2]" data-in="s4[2]" text-anchor="middle"><tspan x="264" y="413.2"><tspan class="m">Y</tspan></tspan></text>
+<text class="t hink" data-role="label" data-id="s4[3]" data-in="s4[3]" text-anchor="middle"><tspan x="328" y="413.2"><tspan class="m">i</tspan></tspan></text>
+<text class="t ink" data-role="label" data-id="s4:row" text-anchor="end"><tspan x="92" y="413.2"><tspan class="m">s4</tspan></tspan></text>
+<text class="s ink" data-role="label" data-id="m4:label"><tspan x="52" y="357">before move 4: the terminal i on top, i</tspan><tspan x="52" y="373.9">in hand</tspan></text>
+<text class="t ink" data-role="label" data-id="s5[0]" data-in="s5[0]" text-anchor="middle"><tspan x="168" y="557.2"><tspan class="m">$</tspan></tspan></text>
+<text class="t ink" data-role="label" data-id="s5[1]" data-in="s5[1]" text-anchor="middle"><tspan x="232" y="557.2"><tspan class="m">R</tspan></tspan></text>
+<text class="t hink" data-role="label" data-id="s5[2]" data-in="s5[2]" text-anchor="middle"><tspan x="296" y="557.2"><tspan class="m">Y</tspan></tspan></text>
+<text class="t ink" data-role="label" data-id="s5:row" text-anchor="end"><tspan x="124" y="557.2"><tspan class="m">s5</tspan></tspan></text>
+<text class="s ink" data-role="label" data-id="m5:label"><tspan x="52" y="501">before move 5: i matched and</tspan><tspan x="52" y="517.9">popped</tspan></text>
+</svg>

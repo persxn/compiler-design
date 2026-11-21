@@ -78,3 +78,7 @@
 ## Chapter 6: Top-down parsers
 
 - **recursive-descent parser** ([§6.1](chapters/06-top-down-parsers.md#61-a-recursive-descent-parser-in-c)): A *recursive-descent parser* is a set of functions, one for each nonterminal, each of which reads the part of the input that its nonterminal derives.
+- **LL(1) parsing table** ([§6.2](chapters/06-top-down-parsers.md#62-building-the-ll1-parsing-table)): The table is called the *LL(1) parsing table*, or the *predictive parsing table*, and it is written M.
+- **LL(1) grammar** ([§6.3](chapters/06-top-down-parsers.md#63-is-a-grammar-ll1-finding-the-conflict)): (no definition found)
+- **table-driven predictive parser** ([§6.4](chapters/06-top-down-parsers.md#64-a-table-driven-predictive-parser-in-c-with-its-stack-trace)): A *table-driven predictive parser* has three parts: the input, with `$` added at its end; a *parsing stack* of grammar symbols, which starts as `$` ...
+- **panic-mode recovery** ([§6.5](chapters/06-top-down-parsers.md#65-error-recovery-panic-mode-and-synch-entries)): (no definition found)

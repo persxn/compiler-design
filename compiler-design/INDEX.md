@@ -60,6 +60,8 @@
 - lexeme: [1.3](chapters/01-one-statement.md#13-tokens-lexemes-and-patterns)
 - lexical error: [2.7](chapters/02-lexical-analyzer.md#27-lexical-errors-and-line-numbers)
 - linker: [1.1](chapters/01-one-statement.md#11-what-happens-between-progc-and-aout-watching-gcc-stop-after-each-stage)
+- LL(1) grammar: [6.3](chapters/06-top-down-parsers.md#63-is-a-grammar-ll1-finding-the-conflict)
+- LL(1) parsing table: [6.2](chapters/06-top-down-parsers.md#62-building-the-ll1-parsing-table)
 - longest match: [2.3](chapters/02-lexical-analyzer.md#23-numbers-operators-and-the-longest-match-rule)
 - lookahead: [2.1](chapters/02-lexical-analyzer.md#21-reading-source-one-character-at-a-time-with-one-character-of-lookahead)
 
@@ -71,6 +73,7 @@
 
 ## P
 
+- panic-mode recovery: [6.5](chapters/06-top-down-parsers.md#65-error-recovery-panic-mode-and-synch-entries)
 - parse tree: [5.1](chapters/05-grammars.md#51-context-free-grammars-derivations-and-parse-trees)
 - pass: [1.5](chapters/01-one-statement.md#15-passes-interpreters-cross-compilers-and-compiler-construction-tools)
 - pattern: [1.3](chapters/01-one-statement.md#13-tokens-lexemes-and-patterns)
@@ -94,6 +97,7 @@
 
 ## T
 
+- table-driven predictive parser: [6.4](chapters/06-top-down-parsers.md#64-a-table-driven-predictive-parser-in-c-with-its-stack-trace)
 - Thompson's construction: [3.2](chapters/03-regex-automata.md#32-from-a-regular-expression-to-an-nfa-thompsons-construction)
 - token: [1.3](chapters/01-one-statement.md#13-tokens-lexemes-and-patterns)
 - token scanner in Lex: [4.4](chapters/04-lex-flex.md#44-a-lex-scanner-for-keywords-identifiers-numbers-and-operators)
