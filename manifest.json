@@ -12,17 +12,17 @@
       {
        "n": 1,
        "title": "Follow one statement through a compiler",
-       "file": null,
-       "state": "planned",
-       "words": 0,
+       "file": "compiler-design/chapters/01-one-statement.md",
+       "state": "written",
+       "words": 10616,
        "sections": [
         {
          "id": "1.1",
          "title": "What happens between prog.c and a.out: watching gcc stop after each stage",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2645,
          "teaches": [
           "compile-pipeline",
           "preprocessor",
@@ -36,8 +36,8 @@
          "title": "The phases of a compiler, traced on pos = init + rate * 60",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2584,
          "teaches": [
           "compiler-phase",
           "front-end",
@@ -50,11 +50,11 @@
          "title": "Tokens, lexemes and patterns",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 1763,
          "teaches": [
-          "token",
           "lexeme",
+          "token",
           "pattern"
          ],
          "anchor": "13-tokens-lexemes-and-patterns"
@@ -64,8 +64,8 @@
          "title": "The symbol table: the notebook every phase shares",
          "kind": "short",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 688,
          "teaches": [
           "symbol-table-idea"
          ],
@@ -76,8 +76,8 @@
          "title": "Passes, interpreters, cross compilers and compiler-construction tools",
          "kind": "short",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 748,
          "teaches": [
           "compiler-pass",
           "interpreter",
@@ -90,8 +90,8 @@
          "title": "How a lab exam program is written, built, run and marked",
          "kind": "short",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 671,
          "teaches": [
           "lab-exam-cycle"
          ],
@@ -102,8 +102,8 @@
          "title": "Practice: trace a new statement through every phase by hand",
          "kind": "practice",
          "level": 2,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 1517,
          "teaches": [],
          "anchor": "17-practice-trace-a-new-statement-through-every-phase-by-hand"
         }
