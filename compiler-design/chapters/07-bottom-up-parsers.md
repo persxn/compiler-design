@@ -1119,13 +1119,13 @@ That is the method's real weakness, along with one more: a token that is both un
 
 ### When it goes wrong
 
-**Rows and columns swapped.** The row is the terminal on the stack, the column the input token. Swap them and `+` and `*` change places in precedence: `i+i*i` reduces `E+E` first.<!-- risk: not run: no copy of opp.c with the table transposed was built; reasoning from the algorithm --> If a trace multiplies last, check the orientation before the entries.
+**Rows and columns swapped.** The row is the terminal on the stack, the column the input token. Swap them and the whole table breaks: the `$` row becomes the `$` column, so `$ ·> i`, and `opp` rejects `i+i*i` at its first move. Swap only the `+` and `*` entries and the two operators change places in precedence: `i+i*i` reduces `E+E` first.<!-- checked: how=run date=2026-11-21 ref="scratch copies of opp.c: full transpose rejects i+i*i at move 1; +/* entries swapped reduce E->E+E at move 6" --> If a trace fails at once or multiplies last, check the orientation before the entries.
 
 **Comparing with the top of the stack instead of the topmost terminal.** At move 3 the top is `E`; the comparison uses `$`, the terminal under it. An `E` has no row in the table, and `opp.c` would report "no relation" at every operand.
 
 **A handle that stops one terminal too early.** In `(E)`, walking down from `)` you meet `(`, with `( ≐ )`. ≐ means "same handle, keep going"; only <· stops the walk. Stopping at the ≐ gives the handle `)`, and the parser reports no production.
 
-**Associativity the wrong way round.** Left-associative means θ ·> θ (the one on the stack is done first). Writing `+ <· +` makes `i+i+i` group as `i+(i+i)`: with `E+E` on the stack and the second `+` next, the trace shifts instead of reducing, and both additions are reduced only at the end.<!-- risk: not run: no copy of opp.c with + <. + was built; reasoning from the algorithm -->
+**Associativity the wrong way round.** Left-associative means θ ·> θ (the one on the stack is done first). Writing `+ <· +` makes `i+i+i` group as `i+(i+i)`: with `E+E` on the stack and the second `+` next, the trace shifts instead of reducing, and both additions are reduced only at the end.<!-- checked: how=run date=2026-11-21 ref="scratch opp.c with + <. +: i+i+i shifts at move 6, reduces E->E+E at moves 9 and 10" -->
 
 **Functions from a table with a cycle.** If the graph has a cycle, no functions exist, and a "solution" found by guessing will break at least one relation. Check each of your numbers against every non-blank entry, or let `optable` say so.
 
@@ -1201,7 +1201,7 @@ $ echo 'i*(i+i)' | ./opp
 <details>
 <summary>Answer</summary>
 
-f(+) = 1 < g(+) = 2 says `+ <· +`, but the table has `+ ·> +` (left-associative). `* ·> *` is broken the same way (3 < 4). With these functions the parser shifts the second `+` instead of reducing `E+E`, so `i+i+i` is grouped `i+(i+i)`: the parse is accepted but with the wrong tree.<!-- risk: not run: no program in this book parses with precedence functions; reasoning from the algorithm --> The hand values, f(+) = 2 > g(+) = 1 and f(*) = 4 > g(*) = 3, keep both operators left-associative.
+f(+) = 1 < g(+) = 2 says `+ <· +`, but the table has `+ ·> +` (left-associative). `* ·> *` is broken the same way (3 < 4). With these functions the parser shifts the second `+` instead of reducing `E+E`, so `i+i+i` is grouped `i+(i+i)`: the parse is accepted but with the wrong tree.<!-- checked: how=run date=2026-11-21 ref="these functions differ from the table only in + <. + and * <. *; scratch opp.c with + <. + accepts i+i+i as i+(i+i)" --> The hand values, f(+) = 2 > g(+) = 1 and f(*) = 4 > g(*) = 3, keep both operators left-associative.
 
 </details>
 
@@ -2183,7 +2183,7 @@ Rows 2 and 9: ACTION[2, *] = s7/r2 and ACTION[9, *] = s7/r1. (Rows 3, 5, 10, 11 
 
 `assign.g` broke the SLR table in state 2 because FOLLOW(R) is one set for the whole grammar. It holds `=`, because *somewhere* an R can be followed by `=`, and so the SLR rule put a reduction by R -> L under `=` in a state where no R is ever followed by `=`. What the table needed was the set of tokens that can follow the R *that this state is working on*.
 
-That set can be computed. When the parser starts on a production, it knows what it was hoping to see after it, because the item that brought the production in says so. This section carries that knowledge in every item. The result is the *canonical LR(1)* table, called CLR(1) in Indian syllabi and exam papers, the most powerful table of the chapter. Then it shrinks that table to the *LALR(1)* table, which is what Yacc and Bison build, and which chapter 8 relies on.<!-- risk: Bison builds LALR(1) tables by default (other kinds only with %define lr.type); check the Bison manual -->
+That set can be computed. When the parser starts on a production, it knows what it was hoping to see after it, because the item that brought the production in says so. This section carries that knowledge in every item. The result is the *canonical LR(1)* table, called CLR(1) in Indian syllabi and exam papers, the most powerful table of the chapter. Then it shrinks that table to the *LALR(1)* table, which is what Yacc and Bison build, and which chapter 8 relies on.<!-- checked: how=source date=2026-11-21 ref="Bison manual, %define lr.type, default lalr; Bison 3.8.2 run: dangling-else grammar 9 states by default, 14 with lr.type=canonical-lr" -->
 
 ### An item with a note attached
 
@@ -2279,7 +2279,7 @@ Row 4 reduces `C -> d` under `c` and `d` only, and row 7 under `$` only. The SLR
 
 ### LALR(1): merge what looks the same
 
-The CLR table is right, but it is big. Every LR(0) state can split into several LR(1) states, one per pattern of lookaheads, and for the grammar of a whole programming language the canonical LR table has several thousand states where the LR(0) collection has a few hundred.<!-- risk: state counts for a Pascal-like grammar (hundreds for SLR/LALR, thousands for CLR) are from the Dragon book's discussion; check the wording and figures --> The splitting was needed in a few states (state 2 of `assign.g`) and wasted in most (I4 and I7 above do the same thing with different notes).
+The CLR table is right, but it is big. Every LR(0) state can split into several LR(1) states, one per pattern of lookaheads, and for the grammar of a whole programming language the canonical LR table typically has several thousand states where the LR(0) collection has a few hundred.<!-- checked: how=known date=2026-11-21 ref="Dragon 2nd ed. 4.7.4: SLR and LALR several hundred states for a language like C, canonical LR typically several thousand" --> The splitting was needed in a few states (state 2 of `assign.g`) and wasted in most (I4 and I7 above do the same thing with different notes).
 
 <!-- teaches: lalr-table = LALR(1) table, merging states with the same core, LALR(1) grammar -->
 The *LALR(1)* ("lookahead LR") table keeps the notes and drops the splitting: merge every group of LR(1) states that have the same cores into one state, whose items are the cores with the *union* of the lookaheads. Then build the table with the CLR rules from the merged states. A grammar whose LALR table has no entry with two actions is an *LALR(1) grammar*.
@@ -2850,7 +2850,7 @@ There are two cures. One is to rewrite the grammar so that it has one tree per s
 | ACTION[8, +] | s4 / r2 | r2 | `*` binds tighter: finish the `E * E` before the `+` |
 | ACTION[8, *] | s5 / r2 | r2 | `*` is left-associative |
 
-The resolved table parses every expression with the usual meaning,<!-- risk: not run: no program here builds the hand-resolved amb.g table; claim from the choices above --> and it is smaller than `expr.g`'s: ten states instead of twelve, and no reductions by E -> T and T -> F, since those productions do not exist. That is why parser generators let you write the ambiguous grammar plus a precedence list: Yacc's `%left '+'` and `%left '*'` lines (section 8.3) make exactly these choices, entry by entry, and section 8.5 reads the report Bison writes when there is no such line.
+The resolved table parses every expression with the usual meaning,<!-- checked: how=run date=2026-11-21 ref="scratch Bison 3.8.2 amb.y with %left '+' %left '*': i+i*i, i*i+i, i+i+i, i*i*i, i*(i+i) give the usual trees" --> and it is smaller than `expr.g`'s: ten states instead of twelve, and no reductions by E -> T and T -> F, since those productions do not exist. That is why parser generators let you write the ambiguous grammar plus a precedence list: Yacc's `%left '+'` and `%left '*'` lines (section 8.3) make exactly these choices, entry by entry, and section 8.5 reads the report Bison writes when there is no such line.
 
 ### Cause 2: the dangling else
 
@@ -2870,7 +2870,7 @@ I7:
 
 I7 holds `S -> i E t S .`, complete, and `S -> i E t S . e S`, which shifts `e`. FOLLOW(S) contains `e` (an S can stand before `e` in `i E t S e S`), so the reduction is entered under `e` too. Reach it with `i b t i b t a` on the stack, which is `i E t i E t S` after reductions, and `e` next. Reduce: the inner `if` is finished without an `else`, and the `e` goes to the outer one. Shift: the `e` goes to the inner one. Two trees, two actions. The CLR table has the same conflict, since the grammar is ambiguous.
 
-The cure everyone uses is to choose shift. Shifting gives the `else` to the nearest `if` without an `else`, which is the rule of C, Pascal and almost every language with this construct, and it is also what Yacc and Bison do on their own when a shift-reduce conflict has no precedence to settle it, with a warning in the report.<!-- risk: Bison's default resolution: shift-reduce conflicts resolved as shift, reduce-reduce as the production that appears first in the grammar; check against the Bison manual section on conflicts --> Rewriting the grammar so that it has one tree is possible (separate "matched" and "unmatched" statements) but makes the grammar much longer, and nobody does it in practice.
+The cure everyone uses is to choose shift. Shifting gives the `else` to the nearest `if` without an `else`, which is the rule of C, Pascal and almost every language with this construct, and it is also what Yacc and Bison do on their own when a shift-reduce conflict has no precedence to settle it, with a warning in the report.<!-- checked: how=run date=2026-11-21 ref="Bison 3.8.2 on S: i S | i S e S | a: 1 shift/reduce warning, e shift in State 4; reduce/reduce goes to the earlier rule" --> Rewriting the grammar so that it has one tree is possible (separate "matched" and "unmatched" statements) but makes the grammar much longer, and nobody does it in practice.
 
 ### Cause 3: the method's lookahead is too rough
 
@@ -3213,7 +3213,7 @@ Walk the moves where the states earn their keep.
 - **Move 13**: ACTION[9, $] = r1, reduce by E -> E + T. Pop three plates; state 0 is uncovered; GOTO[0, E] = 1.
 - **Move 14**: ACTION[1, $] = acc.
 
-The paper's layout differs from this one in a small way. The Dragon book's second edition keeps the states in a STACK column and the symbols in a separate SYMBOLS column; many answer keys interleave them as here, often without blanks (`0E1+6T9`).<!-- risk: Dragon 2nd ed. LR trace layout (separate STACK and SYMBOLS columns); check the figure for the moves of an LR parser on id * id + id --> Both are right; say which you are using, and keep the states, since they are what the parser reads.
+The paper's layout differs from this one in a small way. The Dragon book's second edition keeps the states in a STACK column and the symbols in a separate SYMBOLS column; many answer keys interleave them as here, often without blanks (`0E1+6T9`).<!-- checked: how=known date=2026-11-21 ref="Dragon 2nd ed. Fig. 4.38, moves of an LR parser on id * id + id: STACK and SYMBOLS columns" --> Both are right; say which you are using, and keep the states, since they are what the parser reads.
 
 ### When the input is wrong
 
