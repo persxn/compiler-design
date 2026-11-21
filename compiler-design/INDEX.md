@@ -7,6 +7,7 @@
 
 ## A
 
+- activation record: [10.7](chapters/10-optimisation-codegen.md#107-activation-records-and-storage-allocation)
 - ambiguous grammar: [5.2](chapters/05-grammars.md#52-ambiguity-and-how-precedence-and-associativity-remove-it)
 - assembler: [1.1](chapters/01-one-statement.md#11-what-happens-between-progc-and-aout-watching-gcc-stop-after-each-stage)
 - associativity: [5.2](chapters/05-grammars.md#52-ambiguity-and-how-precedence-and-associativity-remove-it)
@@ -15,6 +16,7 @@
 
 - back end: [1.2](chapters/01-one-statement.md#12-the-phases-of-a-compiler-traced-on-pos--init--rate--60)
 - backpatching: [9.5](chapters/09-sdt-intermediate-code.md#95-boolean-expressions-if-and-while-labels-and-backpatching)
+- basic block: [10.1](chapters/10-optimisation-codegen.md#101-basic-blocks-leaders-and-flow-graphs-in-c)
 - buffer pair: [2.6](chapters/02-lexical-analyzer.md#26-input-buffering-buffer-pairs-and-sentinels)
 
 ## C
@@ -24,13 +26,17 @@
 - closure of a set of items: [7.3](chapters/07-bottom-up-parsers.md#73-lr0-items-closure-and-goto-the-canonical-collection)
 - code layout for if and while: [9.5](chapters/09-sdt-intermediate-code.md#95-boolean-expressions-if-and-while-labels-and-backpatching)
 - comment skipping: [2.4](chapters/02-lexical-analyzer.md#24-skipping-white-space-and-both-kinds-of-c-comment)
+- common subexpression elimination: [10.2](chapters/10-optimisation-codegen.md#102-local-optimisation-constant-folding-propagation-common-subexpressions-dead-code)
 - compile pipeline: [1.1](chapters/01-one-statement.md#11-what-happens-between-progc-and-aout-watching-gcc-stop-after-each-stage)
+- constant folding: [10.2](chapters/10-optimisation-codegen.md#102-local-optimisation-constant-folding-propagation-common-subexpressions-dead-code)
 - context-free grammar: [5.1](chapters/05-grammars.md#51-context-free-grammars-derivations-and-parse-trees)
 - counting program: [4.3](chapters/04-lex-flex.md#43-counting-programs-lines-words-characters-vowels-and-consonants)
 - cross compiler: [1.5](chapters/01-one-statement.md#15-passes-interpreters-cross-compilers-and-compiler-construction-tools)
 
 ## D
 
+- DAG of a basic block: [10.3](chapters/10-optimisation-codegen.md#103-the-dag-of-a-basic-block)
+- dead code: [10.2](chapters/10-optimisation-codegen.md#102-local-optimisation-constant-folding-propagation-common-subexpressions-dead-code)
 - derivation: [5.1](chapters/05-grammars.md#51-context-free-grammars-derivations-and-parse-trees)
 
 ## E
@@ -43,11 +49,13 @@
 
 - FIRST set: [5.5](chapters/05-grammars.md#55-first-sets-by-hand-and-in-c)
 - Flex error: [4.7](chapters/04-lex-flex.md#47-when-flex-or-gcc-complains-the-usual-errors-and-their-cures)
+- flow graph: [10.1](chapters/10-optimisation-codegen.md#101-basic-blocks-leaders-and-flow-graphs-in-c)
 - FOLLOW set: [5.6](chapters/05-grammars.md#56-follow-sets-by-hand-and-in-c)
 - front end: [1.2](chapters/01-one-statement.md#12-the-phases-of-a-compiler-traced-on-pos--init--rate--60)
 
 ## G
 
+- getreg: [10.6](chapters/10-optimisation-codegen.md#106-a-simple-code-generator-register-and-address-descriptors-getreg)
 - goto function: [7.3](chapters/07-bottom-up-parsers.md#73-lr0-items-closure-and-goto-the-canonical-collection)
 
 ## H
@@ -59,6 +67,7 @@
 
 - identifier scanning: [2.2](chapters/02-lexical-analyzer.md#22-recognising-identifiers-and-telling-keywords-apart)
 - indirect triple: [9.3](chapters/09-sdt-intermediate-code.md#93-quadruples-triples-and-indirect-triples-in-c)
+- induction variable: [10.4](chapters/10-optimisation-codegen.md#104-loop-optimisation-code-motion-induction-variables-strength-reduction)
 - inherited attribute: [9.1](chapters/09-sdt-intermediate-code.md#91-syntax-directed-definitions-synthesised-and-inherited-attributes-annotated-parse-trees)
 - interpreter: [1.5](chapters/01-one-statement.md#15-passes-interpreters-cross-compilers-and-compiler-construction-tools)
 
@@ -71,6 +80,7 @@
 - lab exam cycle: [1.6](chapters/01-one-statement.md#16-how-a-lab-exam-program-is-written-built-run-and-marked)
 - LALR(1) table: [7.5](chapters/07-bottom-up-parsers.md#75-clr1-and-lalr1-tables-by-hand)
 - language recogniser: [8.4](chapters/08-yacc-bison.md#84-recognising-languages-identifiers-an-bn-and-other-classics)
+- leader: [10.1](chapters/10-optimisation-codegen.md#101-basic-blocks-leaders-and-flow-graphs-in-c)
 - left factoring: [5.4](chapters/05-grammars.md#54-left-factoring-by-hand-and-in-c)
 - left recursion: [5.3](chapters/05-grammars.md#53-eliminating-left-recursion-by-hand-and-in-c)
 - Lex pattern: [4.2](chapters/04-lex-flex.md#42-patterns-and-actions-longest-match-first-then-the-earlier-rule)
@@ -82,6 +92,7 @@
 - LL(1) parsing table: [6.2](chapters/06-top-down-parsers.md#62-building-the-ll1-parsing-table)
 - longest match: [2.3](chapters/02-lexical-analyzer.md#23-numbers-operators-and-the-longest-match-rule)
 - lookahead: [2.1](chapters/02-lexical-analyzer.md#21-reading-source-one-character-at-a-time-with-one-character-of-lookahead)
+- loop-invariant computation: [10.4](chapters/10-optimisation-codegen.md#104-loop-optimisation-code-motion-induction-variables-strength-reduction)
 - LR parsing algorithm: [7.7](chapters/07-bottom-up-parsers.md#77-the-lr-driver-in-c-one-table-one-stack)
 - LR parsing table: [7.4](chapters/07-bottom-up-parsers.md#74-the-slr1-parsing-table)
 - LR(0) item: [7.3](chapters/07-bottom-up-parsers.md#73-lr0-items-closure-and-goto-the-canonical-collection)
@@ -103,6 +114,7 @@
 - parse tree: [5.1](chapters/05-grammars.md#51-context-free-grammars-derivations-and-parse-trees)
 - pass: [1.5](chapters/01-one-statement.md#15-passes-interpreters-cross-compilers-and-compiler-construction-tools)
 - pattern: [1.3](chapters/01-one-statement.md#13-tokens-lexemes-and-patterns)
+- peephole optimisation: [10.5](chapters/10-optimisation-codegen.md#105-peephole-optimisation)
 - phase: [1.2](chapters/01-one-statement.md#12-the-phases-of-a-compiler-traced-on-pos--init--rate--60)
 - position: [3.4](chapters/03-regex-automata.md#34-a-dfa-straight-from-a-regular-expression-nullable-firstpos-lastpos-followpos)
 - preprocessor: [1.1](chapters/01-one-statement.md#11-what-happens-between-progc-and-aout-watching-gcc-stop-after-each-stage)
@@ -125,6 +137,7 @@
 - sentinel: [2.6](chapters/02-lexical-analyzer.md#26-input-buffering-buffer-pairs-and-sentinels)
 - shift-reduce conflict: [7.6](chapters/07-bottom-up-parsers.md#76-shift-reduce-and-reduce-reduce-conflicts)
 - shift-reduce parser: [7.1](chapters/07-bottom-up-parsers.md#71-shift-reduce-parsing-and-handles-with-a-c-program)
+- simple code generator: [10.6](chapters/10-optimisation-codegen.md#106-a-simple-code-generator-register-and-address-descriptors-getreg)
 - start condition: [4.6](chapters/04-lex-flex.md#46-start-conditions-removing-comments-and-scanning-strings)
 - subset construction: [3.3](chapters/03-regex-automata.md#33-epsilon-closure-and-the-subset-construction-by-hand-and-in-c)
 - symbol table: [1.4](chapters/01-one-statement.md#14-the-symbol-table-the-notebook-every-phase-shares)

@@ -94,3 +94,7 @@ What this book states that was checked, and how; and the programs and sessions s
 ## Chapter 9: Syntax-directed translation and intermediate code
 
 - §9.1: **`$0` without `<member>` under `%union`.** Bison stops with `error: $0 of 'list' has no declared type`: it cannot tell the member, since th — how it was checked: run, scratch decl.y with $0: Bison 3.8.2 error: $0 of 'list' has no declared type, 2026-11-21
+
+## Chapter 10: Optimisation, code generation and the run-time picture
+
+- §10.7: Every call's `n` is 32 bytes *below* its caller's: each activation record of `fact` takes 32 bytes here, and on x86-64 the stack grows towar — how it was checked: run, frames.c, GCC 13 -O0 x86-64: each n 32 bytes below its caller's, 2026-11-21

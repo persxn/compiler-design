@@ -23,6 +23,6 @@ For a B.Tech computer science student who can write C programs and has met compi
 ## Part IV · Translating, optimising and generating code
 
 - [9 Syntax-directed translation and intermediate code](chapters/09-sdt-intermediate-code.md) · written · 7 of 7 sections
-- 10 Optimisation, code generation and the run-time picture · planned · 0 of 8 sections
+- [10 Optimisation, code generation and the run-time picture](chapters/10-optimisation-codegen.md) · written · 8 of 8 sections
 
 [Key terms](KEYTERMS.md) · [Index](INDEX.md) · [Checked facts](FACTS.md)
