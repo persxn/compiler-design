@@ -108,9 +108,9 @@ $ grep -n -E 'main:|mulsd|addsd|call' pos.s
 44:     addsd   %xmm1, %xmm0
 51:     call    printf@PLT
 ```
-<!-- risk: the instruction names (mulsd, addsd) and the call line are x86-64 assembly at gcc's default -O0; on an ARM machine (a Raspberry Pi, an Apple Silicon Mac under Linux) the grep finds main: but different instructions -->
+<!-- checked: how=reworded date=2026-11-21 ref="run as stage-compile on x86-64 GCC 13.3; ARM case now named in the text" h=bed77797 -->
 
-This is assembly language: one line per machine instruction, still written as text. The `grep` picks out the lines that matter. `main:` is a label, the place where `main` starts. `mulsd` multiplies two `double` values and `addsd` adds them: that is your `rate * 60` and your `init + ...`, now as instructions for an x86-64 processor. The `call` line jumps to `printf`.
+This is assembly language: one line per machine instruction, still written as text. The `grep` picks out the lines that matter. `main:` is a label, the place where `main` starts. `mulsd` multiplies two `double` values and `addsd` adds them: that is your `rate * 60` and your `init + ...`, now as instructions for an x86-64 processor. The `call` line jumps to `printf`. (On an ARM machine, such as a Raspberry Pi, the grep finds only `main:`: there the same work is done by `fmul`, `fadd` and `bl printf`.)
 
 This is the station the rest of the book is about. It is the only one that understands C: it found the names, worked out that `*` must happen before `+`, checked that the types fit, and chose instructions. Section 1.2 opens it up.
 
@@ -168,9 +168,9 @@ $ gcc -### pos.c -o pos 2>&1 | grep -o '^ [^ ]*'
  as
  /usr/libexec/gcc/x86_64-linux-gnu/13/collect2
 ```
-<!-- risk: the folder of cc1 and collect2 (here /usr/libexec/gcc/x86_64-linux-gnu/13/) differs between distributions and GCC versions -->
+<!-- checked: how=reworded date=2026-11-21 ref="run as driver on GCC 13.3; folder variation now said in the text" h=ad1412ea -->
 
-Three programs. `cc1` is the compiler proper (the preprocessor is built into it in modern GCC, which is why there is no separate preprocessor program here). `as` is the assembler. `collect2` is a small helper that runs the linker, `ld`. Each reads a file that the one before wrote. The assembly line is real.
+Three programs. (The folder in front of `cc1` and `collect2` differs between distributions and GCC versions; the three names do not.) `cc1` is the compiler proper (the preprocessor is built into it in modern GCC, which is why there is no separate preprocessor program here). `as` is the assembler. `collect2` is a small helper that runs the linker, `ld`. Each reads a file that the one before wrote. The assembly line is real.
 
 ### Which station complained?
 
@@ -309,8 +309,8 @@ $ ./noinc
 pos = 160
 ```
 
-The compiler proper complains, but only with a warning: without the pasted header it has no declaration of `printf`, so it falls back on a built-in idea of what `printf` is. The build does not stop, and the linker still finds `printf` in the C library, so the program runs. If you predicted a preprocessor error: the preprocessor has nothing to complain about, since there is no `#include` line left to fail. GCC 14 and later turn some missing declarations into errors, so do not rely on this; put the `#include` back.
-<!-- risk: whether GCC 14 makes the implicit declaration of a built-in such as printf an error (not only of user functions) was not run here -->
+The compiler proper complains, but only with a warning: without the pasted header it has no declaration of `printf`, so it falls back on a built-in idea of what `printf` is. The build does not stop, and the linker still finds `printf` in the C library, so the program runs. If you predicted a preprocessor error: the preprocessor has nothing to complain about, since there is no `#include` line left to fail. From GCC 14 an implicit declaration is an error by default, so there the compiler proper stops the build and no program is made; do not rely on the warning, put the `#include` back.
+<!-- checked: how=practices date=2026-11-21 ref="PRACTICES.md Facts that change: GCC 14 implicit declarations are errors" h=e6516c9b -->
 
 </details>
 
@@ -464,9 +464,9 @@ int main ()
 }
 
 ```
-<!-- risk: the number in the dump file names (pos.c.005t.original, pos.c.006t.gimple or similar) and the exact text of the dumps change between GCC versions -->
+<!-- checked: how=reworded date=2026-11-21 ref="run as dump-phases on GCC 13.3; version variation now said in the text" h=1bfb46b1 -->
 
-Look at the `original` line first. The 60 has already become `6.0e+1`: a floating-point constant, 60.0. GCC's semantic analysis saw an integer meeting a `double`, and since the integer was a constant, it converted it on the spot instead of inserting an `inttofloat` that runs later. You can find the same constant in the assembly from section 1.1, stored as the two 32-bit halves of a `double`, low half first. `grep -A 2` prints each matching line and the 2 lines after it:
+The number in each file name (`005t`, `006t`) and the exact text of the dumps change between GCC versions, which is why the commands say `pos.c.*`. Look at the `original` line first. The 60 has already become `6.0e+1`: a floating-point constant, 60.0. GCC's semantic analysis saw an integer meeting a `double`, and since the integer was a constant, it converted it on the spot instead of inserting an `inttofloat` that runs later. You can find the same constant in the assembly from section 1.1, stored as the two 32-bit halves of a `double`, low half first (this is GCC on x86-64; other processors label and lay it out differently). `grep -A 2` prints each matching line and the 2 lines after it:
 
 <!-- code: id=const-in-asm -->
 ```console
@@ -475,7 +475,7 @@ $ grep -A 2 '^\.LC0:' pos.s
         .long   0
         .long   1078853632
 ```
-<!-- risk: the label .LC0 and the two .long halves are how GCC on x86-64 stores a double constant; other targets name and lay it out differently -->
+<!-- checked: how=reworded date=2026-11-21 ref="run as const-in-asm on x86-64; 1078853632 = 0x404E0000 checked by hand; other targets now named in the text" h=55d5bb12 -->
 
 The number 1078853632 is 404E0000 in hexadecimal, the high half of 60.0 in the 64-bit `double` format, and the low half is 0. No `int` 60 is left anywhere in the program; the conversion was done once, at compile time, by the compiler.
 
@@ -600,7 +600,7 @@ Here is the running statement in one table. Make a table like this whenever the 
 
 Eight lexemes, eight tokens. In full, the 60 is the token `<num,60>`; the trace in section 1.2 wrote just `<60>`, which is how the Dragon book draws it to save space. Use whichever form your lecturer used, and be consistent.
 
-Notice what is missing from the table: the four spaces. Spaces, tabs and newlines separate lexemes but are not lexemes; the scanner reads past them and produces no token. Comments are treated the same way. In C, the preprocessor has already removed the comments before the compiler proper ever sees the code, as you saw in `pos.i`; in a language without a preprocessor, the scanner skips them itself (you write that in section 2.4).
+Notice what is missing from the table: the four spaces. Spaces, tabs and newlines separate lexemes but are not lexemes; the scanner reads past them and produces no token. Comments are treated the same way. In C, the preprocessor has already removed the comments before the compiler proper ever sees the code (`pos.c` has none, but a comment you add to it is gone from `pos.i`); in a language without a preprocessor, the scanner skips them itself (you write that in section 2.4).
 
 ### Why bother with token names?
 
@@ -675,7 +675,7 @@ semantic-error.c:5:18: error: 'rat' undeclared (first use in this function); did
 semantic-error.c:5:18: note: each undeclared identifier is reported only once for each function it appears in
 ```
 
-`rat` is a perfectly good identifier, and `id = id + id * num ;` is perfectly good grammar. Only when the semantic analyzer looks the name up in the symbol table and finds nothing does the program fail. That is a *semantic error*: the program is well formed, but it does not make sense.
+`rat` is a perfectly good identifier, and `id = id + id * num ;` is perfectly good grammar. Only when the semantic analyzer looks the name up in the symbol table and finds no declaration for it does the program fail. That is a *semantic error*: the program is well formed, but it does not make sense.
 
 ### When you count tokens in the paper
 
@@ -703,7 +703,7 @@ The paper loves "how many tokens are there in this statement?". Three slips acco
 <details>
 <summary>Answer</summary>
 
-Ten: `printf`, `(`, `"i = %d, &i = %x"`, `,`, `i`, `,`, `&`, `i`, `)`, `;`. The whole string, quotes included, is one string-literal token; the `=`, `&` and `%` inside it are characters of that lexeme, not operators. If you got more than ten, you split the string. `printf` itself is an identifier, not a keyword: it is the name of a library function, which is exactly why `prnitf` in section 1.1 reached the linker before anything objected.
+Ten: `printf`, `(`, `"i = %d, &i = %x"`, `,`, `i`, `,`, `&`, `i`, `)`, `;`. The whole string, quotes included, is one string-literal token; the `=`, `&` and `%` inside it are characters of that lexeme, not operators. If you got more than ten, you split the string. `printf` itself is an identifier, not a keyword: it is the name of a library function, which is exactly why `prnitf` in section 1.1 got only a warning from the compiler and failed at the linker.
 
 </details>
 
@@ -757,7 +757,7 @@ $ nm -S pos.o
 The second column is each name's size in bytes, in hexadecimal: 8 for each `double`, because the compiler wrote down the type of each name and the type fixed its size. The first column is where the name sits within its section of the object file (`init` at 0 and `rate` at 8, right after `init`'s 8 bytes): the memory place the back end gave it, still relative to the start of that section until the linker fixes the final address. The assembler's list of names from section 1.1 is the last page of the compiler's notebook, kept so that the linker can find these names later.
 
 The picture breaks in one important way. A real program has many scopes: a variable declared inside `main` is a different variable from a global of the same name, and it disappears when `main`'s block ends. So a real symbol table has one page per scope, opened when a block starts and closed when it ends, and a name is looked up on the innermost page first. That is also why this chapter's `pos.c` declares its variables outside `main`: a variable local to `main` lives in `main`'s part of the stack, has no name in the object file, and would not have shown up in `nm` at all.
-<!-- risk: claims that a local variable of main would not appear in nm's output at all; this case was not run -->
+<!-- checked: how=run date=2026-11-21 ref="nm on a local double in main, GCC 13.3, with and without -g: only main and printf listed" h=7614ff0d -->
 
 **The usual mistake.** Drawing the symbol table as one of the phases, or saying "the lexical analyzer creates the symbol table" and stopping there. The scanner usually makes the entry, but every phase reads or writes it; the notebook belongs to the whole line.
 
@@ -798,10 +798,10 @@ flex 2.6.4
 $ bison --version | head -n 1
 bison (GNU Bison) 3.8.2
 ```
-<!-- risk: assumes python3, flex and bison are installed on the reader's machine -->
+<!-- checked: how=reworded date=2026-11-21 ref="the next line says what to do when flex or bison is missing; Windows python3 name already noted" h=bd0fa100 -->
 
 If `flex` or `bison` answers `command not found`, install both now; on Ubuntu that is `sudo apt install flex bison`.
-<!-- risk: package names flex and bison on Ubuntu 24.04 apt; not run here -->
+<!-- checked: how=run date=2026-11-21 ref="apt-cache policy flex bison on Mint 22.3 (Ubuntu 24.04 base): flex 2.6.4, bison 3.8.2" h=be9a413e -->
 
 <!-- teaches: compiler-pass = pass, one-pass, multi-pass -->
 **A pass** is one reading of the whole program, in some form, from start to end, writing it out in another form. Phases are the logical steps of section 1.2; passes are how they are grouped when the compiler actually runs. Since the parser calls the scanner for one token at a time, the first four phases can share a single pass. A *one-pass* compiler does everything in one reading; it needs little memory, but it must handle a `goto` to a label it has not reached yet (section 9.5 shows the trick). A *multi-pass* compiler writes an intermediate form and reads it again: slower and hungrier, but with room for better optimization. GCC is plainly multi-pass: section 1.1 showed `cc1`, `as` and `collect2` each reading the whole of a file the previous one wrote, and inside `cc1` the program is walked many more times.
@@ -904,8 +904,8 @@ operators: 0
 
 No warnings, three operators in the running statement, and zero for empty input instead of a crash or a hang. The empty case is the one examiners try first, because it is the one students forget.
 
-**4. Be ready to explain every line.** The viva is usually where the marks are decided: why `c` is an `int` and not a `char` (`getchar` returns `EOF`, a value no `char` can hold), why the loop also stops at `'\n'`, why `=` is tested in an `if` of its own (it could join the others; ask yourself which reads better to an examiner). If you cannot say why a line is there, take it out or learn it before the exam.
-<!-- risk: how marks are split between write-up, program, output and viva differs between universities and labs; check your own lab's scheme -->
+**4. Be ready to explain every line.** In many labs the viva carries a large share of the marks (the split between write-up, program, output and viva differs; ask for your own lab's scheme): why `c` is an `int` and not a `char` (`getchar` returns `EOF`, a value no `char` can hold), why the loop also stops at `'\n'`, why `=` is tested in an `if` of its own (it could join the others; ask yourself which reads better to an examiner). If you cannot say why a line is there, take it out or learn it before the exam.
+<!-- checked: how=reworded date=2026-11-21 ref="marking split now said to vary by lab" h=3d0e840f -->
 
 **The usual mistake.** Editing `ops.c` and running `./ops` again without rebuilding. The symptom: your change "does nothing", and the old output appears. `./ops` is the program `gcc` made last time; only `gcc` turns the new source into a new program. Rebuild after every edit, and you will never debug a program you are not running.
 

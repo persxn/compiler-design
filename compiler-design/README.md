@@ -5,7 +5,7 @@ For a B.Tech computer science student who can write C programs and has met compi
 
 ## Part I · See the whole compiler at once
 
-- [1 Follow one statement through a compiler](chapters/01-one-statement.md) · written · 7 of 7 sections
+- [1 Follow one statement through a compiler](chapters/01-one-statement.md) · reviewed · 7 of 7 sections
 
 ## Part II · Scanning: from characters to tokens
 
@@ -25,4 +25,4 @@ For a B.Tech computer science student who can write C programs and has met compi
 - 9 Syntax-directed translation and intermediate code · planned · 0 of 7 sections
 - 10 Optimisation, code generation and the run-time picture · planned · 0 of 8 sections
 
-[Key terms](KEYTERMS.md) · [Index](INDEX.md)
+[Key terms](KEYTERMS.md) · [Index](INDEX.md) · [Checked facts](FACTS.md)

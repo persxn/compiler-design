@@ -13,8 +13,8 @@
        "n": 1,
        "title": "Follow one statement through a compiler",
        "file": "compiler-design/chapters/01-one-statement.md",
-       "state": "written",
-       "words": 10616,
+       "state": "reviewed",
+       "words": 10750,
        "sections": [
         {
          "id": "1.1",
@@ -22,7 +22,7 @@
          "kind": "lesson",
          "level": 1,
          "state": "written",
-         "words": 2645,
+         "words": 2704,
          "teaches": [
           "compile-pipeline",
           "preprocessor",
@@ -37,7 +37,7 @@
          "kind": "lesson",
          "level": 1,
          "state": "written",
-         "words": 2584,
+         "words": 2623,
          "teaches": [
           "compiler-phase",
           "front-end",
@@ -51,7 +51,7 @@
          "kind": "lesson",
          "level": 1,
          "state": "written",
-         "words": 1763,
+         "words": 1781,
          "teaches": [
           "lexeme",
           "token",
@@ -91,7 +91,7 @@
          "kind": "short",
          "level": 1,
          "state": "written",
-         "words": 671,
+         "words": 689,
          "teaches": [
           "lab-exam-cycle"
          ],
