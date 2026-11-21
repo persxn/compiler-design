@@ -7,3 +7,13 @@
 - Open: two FLAGs for "symbol table" in 1.2 (figure alt text) and 1.3 (token table) left: the term is given in plain words with (§1.4) at its first use in 1.2 and again in 1.3.
 - Score 9: accuracy 9, depth 9, clarity 8, sequencing 8, practical 9, exercises 9, completeness 9, efficiency 8. Lowest: 1.2 symbol table used before 1.4, with a plain-words line and (§1.4).
 - 2026-11-21 chapter 1 reviewed; open: two symbol-table look-ahead FLAGs in 1.2/1.3, plain words given
+
+## Chapter 2: Write a lexical analyzer in C
+
+- Risks: 7 items (7 marked, 0 destructive, 0 unrun, 0 dangling). Settled: 0 by PRACTICES.md, 3 run, 0 one look (source), 3 known for certain, 1 reworded as uncertain; each now a `checked` mark.
+- One read: 0 case, 0 order, 1 page, 0 words, 0 repeats fixed.
+- Fixed: 2.1 `char c` pitfall said it compiles without a warning everywhere; a scratch build with -funsigned-char shows -Wextra (-Wtype-limits) warns, so it now says "on a PC" and quotes the unsigned-char warning; 2.1 walk-through said a space is "neither a letter nor printable" (the code tests isspace) and now says "white space"; 2.8 "real compilers" use h*31+c narrowed to "better hash functions", citing K&R 6.6.
+- Not run: none (EOF value, two ungetc calls on glibc and char signedness were run in a scratch folder, outside the chapter's programs).
+- Open: 2.5 id-num-diagram alt text says "top to bottom" while the figure spec says dir: right (generated text, for us-draw); 2.3 scan-ops, 2.5 relop, 2.8 symtab, 2.9 cscan are long programs with no build-up (check NOTE), too big for this pass.
+- Score 9: accuracy 9, depth 9, clarity 8, sequencing 9, practical 9, exercises 9, completeness 9, efficiency 8. Lowest: 2.7 and 2.8 long (2938, 2776 words) with long programs shown whole.
+- 2026-11-21 chapter 2 reviewed; open: 2.5 figure alt text direction; four long programs without build-up

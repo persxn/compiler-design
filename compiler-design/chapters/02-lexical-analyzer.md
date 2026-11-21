@@ -31,7 +31,7 @@ That putting back is exactly what C lets you do, and it is the whole trick. The 
 ### What getchar and ungetc really do
 
 `getchar()` returns the next character of standard input. Its return type is `int`, not `char`, and the reason matters for a scanner: it must be able to return every possible byte value and also one extra value, `EOF`, which means "there are no more characters". `EOF` is a negative `int` (on Linux with glibc it is -1), so it can never be confused with a real character, which `getchar` returns as a value from 0 to 255.
-<!-- risk: EOF is -1 in glibc; the C standard only says it is a negative int -->
+<!-- checked: how=run date=2026-11-21 ref="scratch gcc 13.3 glibc build printed EOF=-1; C11 7.21.1p3: EOF is a negative int" h=e58478ba -->
 
 `ungetc(c, stdin)` pushes the character `c` back onto standard input. The next `getchar()` returns `c`, and the one after that carries on where reading had got to. Nothing happens to the file; the character is only kept in the input stream's memory until it is read again.
 
@@ -40,7 +40,7 @@ The character a scanner reads past the end of a lexeme, to find out that the lex
 
 <!-- teaches: ungetc = ungetc, pushback -->
 Giving it back with `ungetc` is called *pushback*. The C standard guarantees one character of pushback on a stream; a second `ungetc` before the next read may fail. A scanner that needs to "unread" two characters therefore has to keep the extra one itself, which is one reason Tiny's numbers (section 2.3) are designed so that one character is always enough.
-<!-- risk: C11 7.21.7.10 guarantees one character of pushback; more is implementation-defined -->
+<!-- checked: how=known date=2026-11-21 ref="C11 7.21.7.10p3: one character of pushback is guaranteed" h=9bdcdef9 -->
 
 Here is the cut of `rate*60` traced one call at a time, as the program below does it. The column on the right says what is waiting on the belt after each step.
 
@@ -125,7 +125,7 @@ Follow the variable `c` from the top. `c = getchar()` before the loop reads `p`.
 
 `p` is a letter, so the inner loop starts. It copies `p` into `word`, reads `o`, copies it, reads `s`, copies it, and reads the space. The space is not a letter or digit, so the inner loop stops, holding the space in `c`. That space is the lookahead. `word[n] = '\0'` ends the string, `ungetc(c, stdin)` gives the space back, and the program prints `word   pos`.
 
-Now the last line of the outer loop, `c = getchar()`, reads again, and gets the space it just gave back. The next round of the outer loop sees a space, which is neither a letter nor printable, so it does nothing, and the next `getchar` reads `=`. That is printed as `other  =`. And so on to the end.
+Now the last line of the outer loop, `c = getchar()`, reads again, and gets the space it just gave back. The next round of the outer loop sees a space, which is white space, so it does nothing, and the next `getchar` reads `=`. That is printed as `other  =`. And so on to the end.
 
 Look at the last four lines of output. `60` came out as two separate characters, `6` and `0`, because this program has no idea what a number is. Section 2.3 teaches it. The `if (n < 63)` line is there so that a name of a hundred letters cannot run past the end of `word`, which has room for 63 characters and the `'\0'`; the extra letters are read and dropped. Section 2.7 comes back to what a scanner should say about such a name.
 
@@ -182,13 +182,13 @@ There is a second way to fix it, without `ungetc`: keep the lookahead in `c` and
 
 ### When it goes wrong
 
-**`char c` instead of `int c`.** It compiles without a warning, even with `-Wall -Wextra`. On a PC, where `char` is signed, the byte 255 in a file turns into -1 and stops the loop early as if the file had ended; on machines where `char` is unsigned, such as many ARM boards, `c` can never equal -1 and the loop at the end of the file never stops. Always `int c` for anything `getchar` returns.
-<!-- risk: char is signed on x86-64 Linux and unsigned on ARM Linux by default; behaviour described, not run -->
+**`char c` instead of `int c`.** On a PC it compiles without a warning, even with `-Wall -Wextra`. There `char` is signed, so the byte 255 in a file turns into -1 and stops the loop early as if the file had ended; on machines where `char` is unsigned, such as many ARM boards, `c` can never equal -1 and the loop at the end of the file never stops (there `-Wextra` does warn: "comparison is always true due to limited range of data type"). Always `int c` for anything `getchar` returns.
+<!-- checked: how=run date=2026-11-21 ref="scratch gcc 13.3 -Wall -Wextra: no warning by default; with -funsigned-char, -Wtype-limits warns; CHAR_MIN=-128 on x86-64" h=85ca4e30 -->
 
 **Characters vanish after names.** You forgot the `ungetc`, as in `nolook`. Test on input with no spaces.
 
 **Two characters pushed back.** You read past the end of a lexeme by two characters and call `ungetc` twice. On glibc it may happen to work, but the standard promises only one, so an examiner's machine owes you nothing. Redesign so that one is enough, or keep the second character in a variable of your own.
-<!-- risk: glibc behaviour with two consecutive ungetc calls not run; standard guarantees only one -->
+<!-- checked: how=run date=2026-11-21 ref="scratch glibc build: two ungetc calls both succeeded; C11 7.21.7.10p3 guarantees one" h=ebf7d427 -->
 
 **The array overflows.** A long name written into `word` without the `n < 63` guard writes past the end of the array. It may run fine in your test and crash at the examiner's desk. Keep the guard.
 
@@ -748,7 +748,7 @@ Section 1.3 said that in C the preprocessor removes comments before the compiler
 On the assembly line, picture the scanner station sweeping its bench clear before each cut: blanks, tabs and newlines go in the bin, and so do notes someone scribbled in the margin. What is left on the bench is the first character of the next lexeme.
 
 The picture is right that nothing of a comment reaches the parser. It breaks in one place: a comment is not nothing. It still separates the lexemes on either side of it. In C, `a/**/b` is two identifiers, `a` and `b`, never the one name `ab`; the C standard says each comment is replaced by one space. So the sweeping must leave a gap where the note was, and in a scanner it does, automatically, because the scanner ends the lexeme `a` when it meets the `/`, before it ever finds out a comment starts there.
-<!-- risk: C11 5.1.1.2 translation phase 3: each comment is replaced by one space character -->
+<!-- checked: how=known date=2026-11-21 ref="C11 5.1.1.2p1 phase 3: each comment is replaced by one space character" h=062ea806 -->
 
 ### How the scanner tells a comment from a division
 
@@ -1238,7 +1238,7 @@ Your scanner calls `getchar` once per character, and section 2.1 admitted that t
 
 <!-- teaches: buffer-pair = buffer pair, lexemeBegin, forward -->
 A *buffer pair* is one array of 2N characters used as two halves of N each, where N is a disk block (4096 is common). Each half is filled with one read from the file. Two pointers move through it: `lexemeBegin` marks the first character of the current lexeme, and `forward` runs ahead until a lexeme is found. When `forward` reaches the end of one half, the other half is refilled with the next block and `forward` carries on there. Two halves, not one, so that a lexeme crossing the end of a block is still whole in memory: the old half is not overwritten until the scanner has finished with it.
-<!-- risk: N = 4096 as a typical block size is a common value, not a rule -->
+<!-- checked: how=known date=2026-11-21 ref="text says common, not fixed; 4096 is the usual ext4 block and x86-64 page size" h=d77f0e20 -->
 
 Trace it with N = 8 on the running statement. The first half holds `pos = in`, the second `it + rat`. The scanner is at `init`: `lexemeBegin` points at the `i` in position 6, and `forward` moves to 7 (`n`), then to 8, the end of the first half. The second half is already loaded, so `forward` goes on to `i`, `t`, and then the space, which ends the lexeme `init`, spread over both halves. Next, at `rate`, `forward` runs off the end of the second half; the first half is reloaded with `e * 60;` and `forward` wraps round to the start of the array. This only works while a lexeme is shorter than N: a name longer than one half would need the half that `lexemeBegin` still points into.
 
@@ -1788,8 +1788,8 @@ The picture breaks in two places. Behind each tab the names are in no useful ord
 <!-- teaches: hash-chaining = chaining, collision, load factor -->
 *Chaining* is the answer used here: each bucket holds a linked list, a chain, of every record whose name hashes to it. A collision just makes a chain one record longer. Search hashes the name, then walks only that bucket's chain. With n names spread over m buckets, an average chain has n/m records; that ratio is the *load factor*. Keep it small (around 1) and a lookup costs one hash and a comparison or two, however many names there are. The table size is a prime so that sums which share a factor with the size do not all crowd into the same few buckets.
 
-The sum of codes is a weak hash function, and it is worth knowing why. Any two names with the same letters in a different order, such as `pos` and `sop`, always collide, and short names all have small sums. Real compilers mix the letters, for example `h = h * 31 + c` for each character, so that order matters. For the lab and the paper, use the function the question gives; if it gives none, the sum is acceptable, and saying why it is weak earns a mark in the viva.
-<!-- risk: claims about typical real-compiler hash functions; h*31+c is a common choice, not a specific compiler's -->
+The sum of codes is a weak hash function, and it is worth knowing why. Any two names with the same letters in a different order, such as `pos` and `sop`, always collide, and short names all have small sums. Better hash functions mix the letters, for example `h = h * 31 + c` for each character (the one in K&R section 6.6), so that order matters. For the lab and the paper, use the function the question gives; if it gives none, the sum is acceptable, and saying why it is weak earns a mark in the viva.
+<!-- checked: how=reworded date=2026-11-21 ref="claim narrowed to better hash functions; K&R 2nd ed. 6.6 hash uses *s + 31 * hashval" h=8dca07f9 -->
 
 ### The program
 

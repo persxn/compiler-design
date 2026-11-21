@@ -9,7 +9,7 @@ For a B.Tech computer science student who can write C programs and has met compi
 
 ## Part II · Scanning: from characters to tokens
 
-- [2 Write a lexical analyzer in C](chapters/02-lexical-analyzer.md) · written · 9 of 9 sections
+- [2 Write a lexical analyzer in C](chapters/02-lexical-analyzer.md) · reviewed · 9 of 9 sections
 - 3 Regular expressions and finite automata · planned · 0 of 7 sections
 - 4 Lex and Flex programs · planned · 0 of 8 sections
 

@@ -118,8 +118,8 @@
        "n": 2,
        "title": "Write a lexical analyzer in C",
        "file": "compiler-design/chapters/02-lexical-analyzer.md",
-       "state": "written",
-       "words": 19417,
+       "state": "reviewed",
+       "words": 19437,
        "sections": [
         {
          "id": "2.1",
@@ -127,7 +127,7 @@
          "kind": "lesson",
          "level": 1,
          "state": "written",
-         "words": 2151,
+         "words": 2164,
          "teaches": [
           "lookahead",
           "ungetc"
@@ -215,7 +215,7 @@
          "kind": "lesson",
          "level": 3,
          "state": "written",
-         "words": 2776,
+         "words": 2783,
          "teaches": [
           "symbol-table",
           "hash-chaining"
