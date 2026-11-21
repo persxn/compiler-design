@@ -47,7 +47,7 @@ F -> ( E ) | id | num
 
 Terminals: `id = ; + * ( ) num`. Nonterminals: `S E T F`. Start symbol: `S`. Productions: eight, one per alternative. The Dragon book's habits, which the exam paper uses too, tell you which is which without a list: capital letters near the start of the alphabet and words in italics are nonterminals; lower-case names, operators and punctuation are terminals; Greek letters such as α, β, γ stand for strings of either kind; `X`, `Y`, `Z` for one symbol of either kind.
 
-Why "context-free"? Because the left side of every production is a single nonterminal standing alone. Whatever surrounds `E` in a string, `E -> T` may be applied to it. Grammars whose rules look at the surroundings exist (rules like `a B c -> a x c`), but no programming language is parsed with them; checks that need the surroundings, such as "this name was declared", are left to the semantic analyzer.
+In grammar terms, "context-free" means the left side of every production is a single nonterminal standing alone. Grammars whose rules look at the surroundings exist (rules like `a B c -> a x c`), but no programming language is parsed with them; checks that need the surroundings, such as "this name was declared", are left to the semantic analyzer.
 
 Here is the balanced-parentheses language that section 3.1 could not describe, in one line:
 
@@ -137,6 +137,8 @@ f2 -> num
 hot: id star num
 -->
 ![Tree, top to bottom. E leads to T. T leads to T. T leads to *. T leads to F. T leads to F. F leads to num 60. F leads to id rate. *, num 60 and id rate are highlighted.](fig/05-grammars/rate-tree.svg)
+
+*Figure 5.1a: The parse tree of `rate * 60` (tokens `id * num`) from `E`. The three leaves, the sentence, are highlighted.*
 
 The node `E` has one child `T` because `E -> T` was used there. That `T` has three children because `T -> T * F` was used. The leaves `id`, `*`, `num`, read across, are the sentence. Compare it with the tree in section 1.2: that was a *syntax tree*, with operators as interior nodes and nothing else. A parse tree keeps every nonterminal and every terminal, which makes it bigger, and makes it exactly a record of the grammar's rules. Chapter 9 attaches meaning to the nodes of parse trees; the paper asks for both kinds of tree and marks you down for mixing them.
 
@@ -567,7 +569,7 @@ S
   ;
 ```
 
-Different steps, the same tree, node for node. That is the one-to-one link between trees and derivations, demonstrated: the tree remembers which production went where, and nothing about the order.
+Different steps, the same tree, node for node: the one-to-one link between trees and derivations, demonstrated.
 
 ### When it goes wrong
 
@@ -868,7 +870,7 @@ $ printf '1+1+1+1+1+1\n' | ./alltrees | tail -2
 42 trees
 ```
 
-Six numbers, 42 trees. The counts for 1, 2, 3, 4, 5, 6 numbers are 1, 1, 2, 5, 14, 42: each count is the number of ways to choose the root times the trees on each side. A parser for the short grammar would have to pick one of these 42 by some rule the grammar does not contain.
+Six numbers, 42 trees. The counts for 1, 2, 3, 4, 5, 6 numbers are 1, 1, 2, 5, 14, 42: each count is, added up over every choice of root, the trees on the left times the trees on the right. A parser for the short grammar would have to pick one of these 42 by some rule the grammar does not contain.
 
 ### Removing ambiguity: one nonterminal per level
 
@@ -930,7 +932,7 @@ Try to build the other grouping. To put `*` at the root you would need the first
 Notice what the cure cost. The grammar went from one nonterminal to three (four with `^`), and the trees got taller: `id` alone is now `E => T => F => id`, three steps where the short grammar took one. Every one of those chain steps is work for a parser. That is one reason chapter 8 shows a second cure: keep the short, ambiguous grammar and tell the parser generator the precedence and associativity separately (`%left '+' '-'`, `%left '*' '/'`), so that it chooses the right tree whenever the grammar offers two. Both cures appear in the paper; the grammar rewrite is the one you do by hand.
 
 One more fact worth knowing: there is no general algorithm that decides, for every grammar, whether it is ambiguous. For a given grammar you prove ambiguity with one example; you argue unambiguity with reasoning like the one above. Testing a thousand sentences proves nothing.
-<!-- risk: undecidability of CFG ambiguity stated as a fact (known result, Cantor 1962 / Floyd; check wording) -->
+<!-- checked: how=known date=2026-11-21 ref="ambiguity of CFGs is undecidable: Cantor 1962, Floyd 1962, Chomsky-Schutzenberger 1963; Hopcroft-Ullman" h=b2e75b8c -->
 
 ### The dangling else
 
@@ -1006,7 +1008,7 @@ S
 ```
 
 In the first tree the outer `S` used production 1, with no `else`, and the inner `if` took the `else` (production 2): the `else` matches the nearest `then`. In the second the outer `S` took the `else` and the inner `if` has none. C, Java, Pascal and every language you will meet in the paper choose the first reading: *an `else` matches the nearest unmatched `then`*.
-<!-- risk: claim that C, Java, Pascal all bind else to the nearest then: standard, but a language rule -->
+<!-- checked: how=known date=2026-11-21 ref="C11 6.8.4.1p3 (else to lexically nearest if); JLS 14.5 StatementNoShortIf; ISO 7185 Pascal; Dragon 2nd ed. 4.3.2" h=40373e6e -->
 
 Removing this ambiguity uses the same idea as precedence: split one nonterminal into two kinds that cannot be confused. A *matched* statement has an `else` for every `then` inside it; an *open* statement has at least one `then` without an `else`. Between a `then` and its `else` only a matched statement may stand:
 
@@ -1231,7 +1233,7 @@ for i = 1 to n:
 ```
 
 The substitution step replaces "starts with an earlier nonterminal" by what that earlier nonterminal can start with. Because Aj has already been processed, its productions start with terminals or with later nonterminals, so after the substitution Ai starts with terminals, with later nonterminals, or with Ai itself; and the last case is immediate left recursion, which the rule then removes.
-<!-- risk: Dragon 2nd ed. numbering "Algorithm 4.19" and "Example 4.20" for left-recursion elimination; check numbering -->
+<!-- checked: how=known date=2026-11-21 ref="Dragon 2nd ed. 4.3.3: Algorithm 4.19 Eliminating left recursion (Fig. 4.11); text cites only 4.19" h=48185b39 -->
 
 Work the example with the order S, A.
 
@@ -1768,7 +1770,7 @@ By hand you worked from the bottom up, so every FIRST set you needed was already
 
 The way out is to compute all the sets together, starting with every nonterminal's FIRST empty, and to apply the rules to every production again and again, each time adding whatever the rules say from the sets as they are now. A set only ever grows, and it can only hold the grammar's terminals and ε, so the growing must stop; when one whole pass over the productions adds nothing to any set, the sets are complete. A loop that repeats until nothing changes is called a *fixed-point iteration*, and it is how every program computes FIRST and FOLLOW.
 
-For `expr.g` it goes like this. Pass 1: `E -> E + T` adds FIRST(E) to FIRST(E), which is empty, so nothing; `T -> T * F` likewise; `F` gets `(` and `id`; then the chain productions `E -> T` and `T -> F` copy whatever is there at that moment. The order of the productions in the pass decides how much gets done in one pass, but not the final answer: FIRST(E) = FIRST(T) = FIRST(F) = { (, id }. Left recursion does not stop FIRST from being computed; it only stops a top-down parser.
+For `expr.g` it goes like this. Pass 1: `E -> E + T` adds FIRST(E) to FIRST(E), which is empty, so nothing; `T -> T * F` likewise; `F` gets `(` and `id`; the chain productions `E -> T` and `T -> F` copy whatever is there at that moment, which in this file's order, where they come before `F`'s lines, is still nothing. The order of the productions in the pass decides how much gets done in one pass, but not the final answer: FIRST(E) = FIRST(T) = FIRST(F) = { (, id }. Left recursion does not stop FIRST from being computed; it only stops a top-down parser.
 
 ### FIRST in C
 
@@ -2194,7 +2196,7 @@ int main(void)
 
 `computefollow` is the three rules, almost word for word. The outer loops visit every occurrence of a symbol on a right side; `continue` skips terminals, which have no FOLLOW. For an occurrence of B at position `i`, β is everything after it, `rhs[p] + i + 1`, `len[p] - i - 1` symbols long, and `firstof` from `first.h` gives FIRST(β), including the case where β is empty (length 0, FIRST { ε }). Rule 2 is that set without ε. Rule 3 is the `if`: when FIRST(β) holds ε, β can vanish, and FOLLOW of the left side is added too. One `if` covers both forms of rule 3, `A -> α B` (β empty) and `A -> α B β` with β nullable. ε never gets into a FOLLOW set: rule 2 removes it, and the FOLLOW sets it copies from never had it. `printset` puts `$` after the terminals, as the paper does.
 
-Why must FOLLOW iterate, when step 2 by hand did not seem to? Because the inclusions can form a loop. In `exprll.g`, FOLLOW(E) flows into FOLLOW(E'), and with `E' -> + T E'` nothing flows back, but a grammar like `A -> B a | b`, `B -> A c | d` has FOLLOW sets that feed each other, just as FIRST sets can. Repeating until nothing changes handles every case without thinking about which.
+Why must FOLLOW iterate, when step 2 by hand did not seem to? Because the inclusions can form a loop. In `exprll.g`, FOLLOW(E) flows into FOLLOW(E'), and with `E' -> + T E'` nothing flows back, but in a grammar like `A -> a B | b`, `B -> c A | d` each nonterminal ends the other's production, so FOLLOW(A) flows into FOLLOW(B) and FOLLOW(B) back into FOLLOW(A), just as FIRST sets can feed each other. Repeating until nothing changes handles every case without thinking about which.
 
 Build it and run it on the grammar you just worked by hand, then on the left-recursive original:
 

@@ -446,8 +446,8 @@
        "n": 5,
        "title": "Grammars ready for parsing",
        "file": "compiler-design/chapters/05-grammars.md",
-       "state": "written",
-       "words": 20251,
+       "state": "reviewed",
+       "words": 20276,
        "sections": [
         {
          "id": "5.1",
@@ -455,7 +455,7 @@
          "kind": "lesson",
          "level": 1,
          "state": "written",
-         "words": 4416,
+         "words": 4411,
          "teaches": [
           "cfg",
           "derivation",
@@ -469,7 +469,7 @@
          "kind": "lesson",
          "level": 2,
          "state": "written",
-         "words": 3343,
+         "words": 3347,
          "teaches": [
           "ambiguity",
           "precedence-grammar"
@@ -506,7 +506,7 @@
          "kind": "lesson",
          "level": 3,
          "state": "written",
-         "words": 2906,
+         "words": 2919,
          "teaches": [
           "first-set"
          ],
@@ -518,7 +518,7 @@
          "kind": "lesson",
          "level": 3,
          "state": "written",
-         "words": 2239,
+         "words": 2252,
          "teaches": [
           "follow-set"
          ],

@@ -37,3 +37,13 @@
 - Open: none. 4.1 (2724 words) and 4.4 (2749) are the longest sections, within the range previous chapters kept.
 - Score 9: accuracy 9, depth 9, clarity 9, sequencing 9, practical 9, exercises 9, completeness 9, efficiency 8. Lowest: 4.1 and 4.4 are long (about 2700 words each).
 - 2026-11-21 chapter 4 reviewed; open: none
+
+## Chapter 5: Grammars ready for parsing
+
+- Risks: 3 items (3 marked, 0 destructive, 0 unrun, 0 dangling). Settled: 0 by PRACTICES.md, 0 run, 0 one look (source), 3 known for certain, 0 reworded as uncertain; each now a `checked` mark.
+- One read: 0 case, 0 order, 4 page, 0 words, 0 repeats fixed.
+- Fixed: 5.1 "the shape Figure 5.1a draws" named a figure that had no caption, caption added in the book's form; 5.2 the tree counts 1, 1, 2, 5, 14, 42 said to be "the ways to choose the root times the trees on each side", now the sum over roots of left trees times right trees; 5.5 the FIRST pass 1 of `expr.g` said `F` gets its set "then" the chain productions copy it, but in the file's order they come first and copy nothing (agrees now with the 4 passes shown); 5.6 `A -> B a | b`, `B -> A c | d` was the example of FOLLOW sets that feed each other, but neither ends the other's production (no rule 3 at all), now `A -> a B | b`, `B -> c A | d`; repair for efficiency in 5.1: the second "why context-free" explanation and the second statement of the tree-derivation link after derive-rm cut to one line each.
+- Not run: none needed (no program or pasted output changed; leftloop's crash count is marked varies).
+- Open: 5.1 (4411 words), 5.2 (3347), 5.3 (3028) above the lesson range, mostly the programs: grammar.h (187 lines), derive, alltrees, leftrec, leftfac, first.h and ff1 are shown whole with no build-up (check NOTE), too big for this pass.
+- Score 9: accuracy 9, depth 9, clarity 9, sequencing 9, practical 9, exercises 9, completeness 9, efficiency 7. Lowest: 5.1 4411 words with a 187-line header shown whole; repeats cut, size remains.
+- 2026-11-21 chapter 5 reviewed; open: 5.1/5.2/5.3 over length; grammar.h, derive, alltrees, leftrec, leftfac, first.h, ff1 without build-up

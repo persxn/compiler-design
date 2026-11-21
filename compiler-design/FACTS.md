@@ -55,3 +55,9 @@ What this book states that was checked, and how; and the programs and sessions s
 - §4.6: With `%s`: `a "x*/ b " c`. Right after `/*`, the scanner is on the comment board, but with `%s` the unmarked rules are active there too. At  — how it was checked: run, scratch decomment.l %x and %s: outputs as printed, 2026-11-21
 - §4.7: **A library function with no header.** `lex.yy.c` includes `stdio.h`, `string.h`, `stdlib.h` and `errno.h` for its own use, so `printf`, `st — how it was checked: run, generated lex.yy.c lines 19-22: stdio, string, errno, stdlib, 2026-11-21
 - §4.8: **The keyword rules are below the identifier rule.** Flex warns `rule cannot be matched` twice, for line 7 (the `else` that the blank left a — how it was checked: run, scratch three.l: warnings :7 and :8, three.l:7:14 expected ( before printf; then undefined yywrap, 2026-11-21
+
+## Chapter 5: Grammars ready for parsing
+
+- §5.2: One more fact worth knowing: there is no general algorithm that decides, for every grammar, whether it is ambiguous. For a given grammar you — how it was checked: known, ambiguity of CFGs is undecidable: Cantor 1962, Floyd 1962, Chomsky-Schutzenberger 1963; Hopcroft-Ullman, 2026-11-21
+- §5.2: In the first tree the outer `S` used production 1, with no `else`, and the inner `if` took the `else` (production 2): the `else` matches the — how it was checked: known, C11 6.8.4.1p3 (else to lexically nearest if); JLS 14.5 StatementNoShortIf; ISO 7185 Pascal; Dragon 2nd ed. 4.3.2, 2026-11-21
+- §5.3: The substitution step replaces "starts with an earlier nonterminal" by what that earlier nonterminal can start with. Because Aj has already  — how it was checked: known, Dragon 2nd ed. 4.3.3: Algorithm 4.19 Eliminating left recursion (Fig. 4.11); text cites only 4.19, 2026-11-21

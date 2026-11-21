@@ -84,6 +84,9 @@
       "words": 19545
     },
     "5": {
+      "facts": {
+        "known": 3
+      },
       "planned": 7,
       "sections": [
         "5.1",
@@ -94,8 +97,9 @@
         "5.6",
         "5.7"
       ],
-      "state": "written",
-      "words": 20251
+      "state": "reviewed",
+      "unrun": 0,
+      "words": 20276
     }
   }
 }
