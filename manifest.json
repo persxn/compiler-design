@@ -618,17 +618,17 @@
       {
        "n": 7,
        "title": "Bottom-up parsers",
-       "file": null,
-       "state": "planned",
-       "words": 0,
+       "file": "compiler-design/chapters/07-bottom-up-parsers.md",
+       "state": "written",
+       "words": 29878,
        "sections": [
         {
          "id": "7.1",
          "title": "Shift-reduce parsing and handles, with a C program",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 4040,
          "teaches": [
           "shift-reduce",
           "handle"
@@ -640,8 +640,8 @@
          "title": "Operator-precedence parsing: relations, table and a C parser",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 4788,
          "teaches": [
           "operator-precedence"
          ],
@@ -652,8 +652,8 @@
          "title": "LR(0) items, closure and goto: the canonical collection",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 4189,
          "teaches": [
           "lr0-item",
           "closure",
@@ -666,8 +666,8 @@
          "title": "The SLR(1) parsing table",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 3094,
          "teaches": [
           "slr-table"
          ],
@@ -678,8 +678,8 @@
          "title": "CLR(1) and LALR(1) tables by hand",
          "kind": "lesson",
          "level": 2,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 3890,
          "teaches": [
           "lr1-item",
           "clr-table",
@@ -692,8 +692,8 @@
          "title": "Shift-reduce and reduce-reduce conflicts",
          "kind": "lesson",
          "level": 2,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2524,
          "teaches": [
           "lr-conflict"
          ],
@@ -704,8 +704,8 @@
          "title": "The LR driver in C: one table, one stack",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 4292,
          "teaches": [
           "lr-driver"
          ],
@@ -716,8 +716,8 @@
          "title": "Practice: the full bottom-up question set",
          "kind": "practice",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 3061,
          "teaches": [],
          "anchor": "78-practice-the-full-bottom-up-question-set"
         }
