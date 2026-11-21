@@ -237,17 +237,17 @@
       {
        "n": 3,
        "title": "Regular expressions and finite automata",
-       "file": null,
-       "state": "planned",
-       "words": 0,
+       "file": "compiler-design/chapters/03-regex-automata.md",
+       "state": "written",
+       "words": 20853,
        "sections": [
         {
          "id": "3.1",
          "title": "Regular expressions as patterns: union, concatenation, star and the shorthands",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2988,
          "teaches": [
           "regex",
           "regular-definition"
@@ -259,8 +259,8 @@
          "title": "From a regular expression to an NFA: Thompson's construction",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 3858,
          "teaches": [
           "nfa",
           "thompson-construction"
@@ -272,8 +272,8 @@
          "title": "Epsilon-closure and the subset construction, by hand and in C",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 3558,
          "teaches": [
           "epsilon-closure",
           "subset-construction"
@@ -285,11 +285,11 @@
          "title": "A DFA straight from a regular expression: nullable, firstpos, lastpos, followpos",
          "kind": "lesson",
          "level": 2,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2380,
          "teaches": [
-          "followpos",
-          "direct-dfa"
+          "direct-dfa",
+          "followpos"
          ],
          "anchor": "34-a-dfa-straight-from-a-regular-expression-nullable-firstpos-lastpos-followpos"
         },
@@ -298,8 +298,8 @@
          "title": "Minimising a DFA by splitting groups",
          "kind": "lesson",
          "level": 2,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 3042,
          "teaches": [
           "dfa-minimisation"
          ],
@@ -310,8 +310,8 @@
          "title": "A table-driven DFA recogniser in C",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2626,
          "teaches": [
           "dfa-simulation"
          ],
@@ -322,8 +322,8 @@
          "title": "Practice: one regular expression carried to a minimal DFA and a C recogniser",
          "kind": "practice",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2401,
          "teaches": [],
          "anchor": "37-practice-one-regular-expression-carried-to-a-minimal-dfa-and-a-c-recogniser"
         }

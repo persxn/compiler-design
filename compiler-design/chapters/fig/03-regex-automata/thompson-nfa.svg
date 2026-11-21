@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 1072" width="352" height="1072" role="img" aria-labelledby="thompson-nfa-t thompson-nfa-d" data-kind="flow" data-count="11">
+<title id="thompson-nfa-t">Thompson's NFA for (a|b)*abb</title>
+<desc id="thompson-nfa-d">Flow chart, top to bottom. 0 start leads to 1. 0 start leads to 7. 1 leads to 2. 1 leads to 4. 2 leads to 3 (a). 4 leads to 5 (b). 3 leads to 6. 5 leads to 6. 6 leads back to 1 by a dashed arrow. 6 leads to 7. 7 leads to 8 (a). 8 leads to 9 (b). 9 leads to 10 accept (b). 10 accept is highlighted.</desc>
+<style>.bg{fill:#E6ECF0}.sh{fill:#000000}.box{fill:#FFFFFF;stroke:#000000;stroke-width:2.5}.hot{fill:#FFE600;stroke:#000000;stroke-width:4.5}.mut{fill:#CDD5DC;stroke:#000000;stroke-width:2.5;stroke-dasharray:6 4}.band{fill:#F6F8FA;stroke:#000000;stroke-width:2.5}.note{fill:#FFFFFF;stroke:#000000;stroke-width:1.5}.deco{stroke:#000000;fill:none;stroke-width:2}.ek{stroke:#000000;fill:none;stroke-width:2}.er{stroke:#D92B2B;fill:none;stroke-width:3}.eb{stroke:#1F4BFF;fill:none;stroke-dasharray:7 5;stroke-width:2}.ep{stroke:#1F4BFF;fill:none;stroke-dasharray:7 5;stroke-width:2}.hk{fill:#000000}.hr{fill:#D92B2B}.hb{fill:#1F4BFF}.hp{stroke:#1F4BFF;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5}.dot{fill:#1F4BFF}.tick{fill:#000000}.life{stroke:#3B4651;fill:none;stroke-dasharray:4 5;stroke-width:1.5}.plate{fill:#E6ECF0}.plateb{fill:#F6F8FA}.ink{fill:#000000}.soft{fill:#3B4651}.hink{fill:#000000}.t{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:15px;font-weight:600}.s{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:13px;font-weight:600}.tt{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:17px;font-weight:700}.m{font-family:ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace}@media (prefers-color-scheme:dark){svg:not([data-theme="light"]) .bg{fill:#2A2F36}svg:not([data-theme="light"]) .sh{fill:#000000}svg:not([data-theme="light"]) .box{fill:#343A42;stroke:#ECE9E2}svg:not([data-theme="light"]) .hot{fill:#F2D13A;stroke:#ECE9E2}svg:not([data-theme="light"]) .mut{fill:#1D2126;stroke:#ECE9E2}svg:not([data-theme="light"]) .band{fill:#2F343C;stroke:#ECE9E2}svg:not([data-theme="light"]) .note{fill:#343A42;stroke:#ECE9E2}svg:not([data-theme="light"]) .deco{stroke:#ECE9E2}svg:not([data-theme="light"]) .ek{stroke:#ECE9E2}svg:not([data-theme="light"]) .er{stroke:#FF7B72}svg:not([data-theme="light"]) .eb{stroke:#8EA6FF}svg:not([data-theme="light"]) .ep{stroke:#8EA6FF}svg:not([data-theme="light"]) .hk{fill:#ECE9E2}svg:not([data-theme="light"]) .hr{fill:#FF7B72}svg:not([data-theme="light"]) .hb{fill:#8EA6FF}svg:not([data-theme="light"]) .hp{stroke:#8EA6FF}svg:not([data-theme="light"]) .dot{fill:#8EA6FF}svg:not([data-theme="light"]) .tick{fill:#ECE9E2}svg:not([data-theme="light"]) .life{stroke:#B9BFC7}svg:not([data-theme="light"]) .plate{fill:#2A2F36}svg:not([data-theme="light"]) .plateb{fill:#2F343C}svg:not([data-theme="light"]) .ink{fill:#ECE9E2}svg:not([data-theme="light"]) .soft{fill:#B9BFC7}svg:not([data-theme="light"]) .hink{fill:#000000}}svg[data-theme="dark"] .bg{fill:#2A2F36}svg[data-theme="dark"] .sh{fill:#000000}svg[data-theme="dark"] .box{fill:#343A42;stroke:#ECE9E2}svg[data-theme="dark"] .hot{fill:#F2D13A;stroke:#ECE9E2}svg[data-theme="dark"] .mut{fill:#1D2126;stroke:#ECE9E2}svg[data-theme="dark"] .band{fill:#2F343C;stroke:#ECE9E2}svg[data-theme="dark"] .note{fill:#343A42;stroke:#ECE9E2}svg[data-theme="dark"] .deco{stroke:#ECE9E2}svg[data-theme="dark"] .ek{stroke:#ECE9E2}svg[data-theme="dark"] .er{stroke:#FF7B72}svg[data-theme="dark"] .eb{stroke:#8EA6FF}svg[data-theme="dark"] .ep{stroke:#8EA6FF}svg[data-theme="dark"] .hk{fill:#ECE9E2}svg[data-theme="dark"] .hr{fill:#FF7B72}svg[data-theme="dark"] .hb{fill:#8EA6FF}svg[data-theme="dark"] .hp{stroke:#8EA6FF}svg[data-theme="dark"] .dot{fill:#8EA6FF}svg[data-theme="dark"] .tick{fill:#ECE9E2}svg[data-theme="dark"] .life{stroke:#B9BFC7}svg[data-theme="dark"] .plate{fill:#2A2F36}svg[data-theme="dark"] .plateb{fill:#2F343C}svg[data-theme="dark"] .ink{fill:#ECE9E2}svg[data-theme="dark"] .soft{fill:#B9BFC7}svg[data-theme="dark"] .hink{fill:#000000}</style>
+<rect class="bg" data-role="bg" x="0" y="0" width="352" height="1072"/>
+<rect class="sh" data-role="shadow" data-for="n0" x="124" y="68" width="112" height="64" rx="32"/>
+<rect class="box" data-role="node" data-id="n0" data-shape="pill" x="120" y="64" width="112" height="64" rx="32"/>
+<rect class="sh" data-role="shadow" data-for="n1" x="132" y="180" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="n1" data-shape="box" x="128" y="176" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="n2" x="68" y="276" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="n2" data-shape="box" x="64" y="272" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="n3" x="68" y="404" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="n3" data-shape="box" x="64" y="400" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="n4" x="196" y="276" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="n4" data-shape="box" x="192" y="272" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="n5" x="196" y="404" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="n5" data-shape="box" x="192" y="400" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="n6" x="132" y="500" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="n6" data-shape="box" x="128" y="496" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="n7" x="132" y="596" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="n7" data-shape="box" x="128" y="592" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="n8" x="132" y="724" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="n8" data-shape="box" x="128" y="720" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="n9" x="132" y="852" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="n9" data-shape="box" x="128" y="848" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="n10" x="132" y="980" width="96" height="64"/>
+<rect class="hot" data-role="node" data-id="n10" data-shape="box" x="128" y="976" width="96" height="64"/>
+<path class="ek" data-role="edge" data-id="e1" data-from="n0" data-to="n1" d="M176 132L176 167"/>
+<path class="hk" data-role="head" data-for="e1" d="M176 176L171 166L181 166Z"/>
+<path class="ek" data-role="edge" data-id="e2" data-from="n0" data-to="n7" d="M176 132L176 152L40 152L40 568L176 568L176 583"/>
+<path class="hk" data-role="head" data-for="e2" d="M176 592L171 582L181 582Z"/>
+<path class="ek" data-role="edge" data-id="e3" data-from="n1" data-to="n2" d="M176 228L176 248L112 248L112 263"/>
+<path class="hk" data-role="head" data-for="e3" d="M112 272L107 262L117 262Z"/>
+<path class="ek" data-role="edge" data-id="e4" data-from="n1" data-to="n4" d="M176 228L176 248L240 248L240 263"/>
+<path class="hk" data-role="head" data-for="e4" d="M240 272L235 262L245 262Z"/>
+<path class="ek" data-role="edge" data-id="e5" data-from="n2" data-to="n3" d="M112 324L112 391"/>
+<path class="hk" data-role="head" data-for="e5" d="M112 400L107 390L117 390Z"/>
+<path class="ek" data-role="edge" data-id="e6" data-from="n4" data-to="n5" d="M240 324L240 391"/>
+<path class="hk" data-role="head" data-for="e6" d="M240 400L235 390L245 390Z"/>
+<path class="ek" data-role="edge" data-id="e7" data-from="n3" data-to="n6" d="M112 452L112 472L176 472L176 487"/>
+<path class="hk" data-role="head" data-for="e7" d="M176 496L171 486L181 486Z"/>
+<path class="ek" data-role="edge" data-id="e8" data-from="n5" data-to="n6" d="M240 452L240 472L176 472L176 487"/>
+<path class="hk" data-role="head" data-for="e8" d="M176 496L171 486L181 486Z"/>
+<path class="eb" data-role="edge" data-id="e9" data-from="n6" data-to="n1" d="M228 520L320 520L320 200L237 200"/>
+<path class="hb" data-role="head" data-for="e9" d="M228 200L238 195L238 205Z"/>
+<path class="ek" data-role="edge" data-id="e10" data-from="n6" data-to="n7" d="M176 548L176 583"/>
+<path class="hk" data-role="head" data-for="e10" d="M176 592L171 582L181 582Z"/>
+<path class="ek" data-role="edge" data-id="e11" data-from="n7" data-to="n8" d="M176 644L176 711"/>
+<path class="hk" data-role="head" data-for="e11" d="M176 720L171 710L181 710Z"/>
+<path class="ek" data-role="edge" data-id="e12" data-from="n8" data-to="n9" d="M176 772L176 839"/>
+<path class="hk" data-role="head" data-for="e12" d="M176 848L171 838L181 838Z"/>
+<path class="ek" data-role="edge" data-id="e13" data-from="n9" data-to="n10" d="M176 900L176 967"/>
+<path class="hk" data-role="head" data-for="e13" d="M176 976L171 966L181 966Z"/>
+<text class="tt ink" data-role="title" data-id="title"><tspan x="24" y="41">Thompson's NFA for (a|b)*abb</tspan></text>
+<text class="t ink" data-role="label" data-id="n0" data-in="n0" text-anchor="middle"><tspan x="176" y="91.5">0</tspan><tspan x="176" y="111">start</tspan></text>
+<text class="t ink" data-role="label" data-id="n1" data-in="n1" text-anchor="middle"><tspan x="176" y="205.2">1</tspan></text>
+<text class="t ink" data-role="label" data-id="n2" data-in="n2" text-anchor="middle"><tspan x="112" y="301.2">2</tspan></text>
+<text class="t ink" data-role="label" data-id="n3" data-in="n3" text-anchor="middle"><tspan x="112" y="429.2">3</tspan></text>
+<text class="t ink" data-role="label" data-id="n4" data-in="n4" text-anchor="middle"><tspan x="240" y="301.2">4</tspan></text>
+<text class="t ink" data-role="label" data-id="n5" data-in="n5" text-anchor="middle"><tspan x="240" y="429.2">5</tspan></text>
+<text class="t ink" data-role="label" data-id="n6" data-in="n6" text-anchor="middle"><tspan x="176" y="525.2">6</tspan></text>
+<text class="t ink" data-role="label" data-id="n7" data-in="n7" text-anchor="middle"><tspan x="176" y="621.2">7</tspan></text>
+<text class="t ink" data-role="label" data-id="n8" data-in="n8" text-anchor="middle"><tspan x="176" y="749.2">8</tspan></text>
+<text class="t ink" data-role="label" data-id="n9" data-in="n9" text-anchor="middle"><tspan x="176" y="877.2">9</tspan></text>
+<text class="t hink" data-role="label" data-id="n10" data-in="n10" text-anchor="middle"><tspan x="176" y="1003.5">10</tspan><tspan x="176" y="1023">accept</tspan></text>
+<rect class="plate" data-role="plate" data-for="e5" x="103.7" y="349.6" width="16.7" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e5" text-anchor="middle"><tspan x="112" y="364.6">a</tspan></text>
+<rect class="plate" data-role="plate" data-for="e6" x="231.3" y="349.6" width="17.4" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e6" text-anchor="middle"><tspan x="240" y="364.6">b</tspan></text>
+<rect class="plate" data-role="plate" data-for="e11" x="167.7" y="669.5" width="16.7" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e11" text-anchor="middle"><tspan x="176" y="684.5">a</tspan></text>
+<rect class="plate" data-role="plate" data-for="e12" x="167.3" y="797.5" width="17.4" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e12" text-anchor="middle"><tspan x="176" y="812.5">b</tspan></text>
+<rect class="plate" data-role="plate" data-for="e13" x="167.3" y="925.5" width="17.4" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e13" text-anchor="middle"><tspan x="176" y="940.5">b</tspan></text>
+</svg>

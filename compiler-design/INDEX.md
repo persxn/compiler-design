@@ -17,6 +17,11 @@
 - compile pipeline: [1.1](chapters/01-one-statement.md#11-what-happens-between-progc-and-aout-watching-gcc-stop-after-each-stage)
 - cross compiler: [1.5](chapters/01-one-statement.md#15-passes-interpreters-cross-compilers-and-compiler-construction-tools)
 
+## E
+
+- epsilon-closure: [3.3](chapters/03-regex-automata.md#33-epsilon-closure-and-the-subset-construction-by-hand-and-in-c)
+- equivalent states: [3.5](chapters/03-regex-automata.md#35-minimising-a-dfa-by-splitting-groups)
+
 ## F
 
 - front end: [1.2](chapters/01-one-statement.md#12-the-phases-of-a-compiler-traced-on-pos--init--rate--60)
@@ -45,6 +50,8 @@
 
 ## N
 
+- NFA: [3.2](chapters/03-regex-automata.md#32-from-a-regular-expression-to-an-nfa-thompsons-construction)
+- nullable: [3.4](chapters/03-regex-automata.md#34-a-dfa-straight-from-a-regular-expression-nullable-firstpos-lastpos-followpos)
 - number scanning: [2.3](chapters/02-lexical-analyzer.md#23-numbers-operators-and-the-longest-match-rule)
 
 ## P
@@ -52,17 +59,26 @@
 - pass: [1.5](chapters/01-one-statement.md#15-passes-interpreters-cross-compilers-and-compiler-construction-tools)
 - pattern: [1.3](chapters/01-one-statement.md#13-tokens-lexemes-and-patterns)
 - phase: [1.2](chapters/01-one-statement.md#12-the-phases-of-a-compiler-traced-on-pos--init--rate--60)
+- position: [3.4](chapters/03-regex-automata.md#34-a-dfa-straight-from-a-regular-expression-nullable-firstpos-lastpos-followpos)
 - preprocessor: [1.1](chapters/01-one-statement.md#11-what-happens-between-progc-and-aout-watching-gcc-stop-after-each-stage)
+
+## R
+
+- regular definition: [3.1](chapters/03-regex-automata.md#31-regular-expressions-as-patterns-union-concatenation-star-and-the-shorthands)
+- regular expression: [3.1](chapters/03-regex-automata.md#31-regular-expressions-as-patterns-union-concatenation-star-and-the-shorthands)
 
 ## S
 
 - sentinel: [2.6](chapters/02-lexical-analyzer.md#26-input-buffering-buffer-pairs-and-sentinels)
+- subset construction: [3.3](chapters/03-regex-automata.md#33-epsilon-closure-and-the-subset-construction-by-hand-and-in-c)
 - symbol table: [1.4](chapters/01-one-statement.md#14-the-symbol-table-the-notebook-every-phase-shares)
 
 ## T
 
+- Thompson's construction: [3.2](chapters/03-regex-automata.md#32-from-a-regular-expression-to-an-nfa-thompsons-construction)
 - token: [1.3](chapters/01-one-statement.md#13-tokens-lexemes-and-patterns)
 - transition diagram: [2.5](chapters/02-lexical-analyzer.md#25-transition-diagrams-drawing-the-scanner-before-writing-it)
+- transition table: [3.6](chapters/03-regex-automata.md#36-a-table-driven-dfa-recogniser-in-c)
 
 ## U
 

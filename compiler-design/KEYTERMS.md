@@ -34,3 +34,16 @@
 - **lexical error** ([§2.7](chapters/02-lexical-analyzer.md#27-lexical-errors-and-line-numbers)): A *lexical error* is a place where the remaining input does not begin with any lexeme: no pattern matches.
 - **hash table** ([§2.8](chapters/02-lexical-analyzer.md#28-a-symbol-table-in-c-insert-search-display-delete-with-a-hash-table)): In C, the notebook is a *hash table*: an array of *buckets*, here eleven, each holding the start of a list.
 - **chaining** ([§2.8](chapters/02-lexical-analyzer.md#28-a-symbol-table-in-c-insert-search-display-delete-with-a-hash-table)): *Chaining* is the answer used here: each bucket holds a linked list, a chain, of every record whose name hashes to it.
+
+## Chapter 3: Regular expressions and finite automata
+
+- **regular expression** ([§3.1](chapters/03-regex-automata.md#31-regular-expressions-as-patterns-union-concatenation-star-and-the-shorthands)): A *regular expression* over an alphabet is built from two kinds of brick and three ways of joining them: Nothing else is a regular expression.
+- **regular definition** ([§3.1](chapters/03-regex-automata.md#31-regular-expressions-as-patterns-union-concatenation-star-and-the-shorthands)): A *regular definition* is a list of lines `name -> expression`, where each expression may use the names defined above it, and never its own ...
+- **NFA** ([§3.2](chapters/03-regex-automata.md#32-from-a-regular-expression-to-an-nfa-thompsons-construction)): A *nondeterministic finite automaton*, an *NFA*, has: - a finite set of states, numbered here 0, 1, 2, ...; - an input alphabet; - edges, ...
+- **Thompson's construction** ([§3.2](chapters/03-regex-automata.md#32-from-a-regular-expression-to-an-nfa-thompsons-construction)): State 0 is the start and state 10 the only accepting state: eleven states and thirteen edges. title: Thompson's NFA for (a|b)*abb kind: flow dir: ...
+- **epsilon-closure** ([§3.3](chapters/03-regex-automata.md#33-epsilon-closure-and-the-subset-construction-by-hand-and-in-c)): The counters need two operations, and both work on a *set* of NFA states. - ε-closure(T) is the set of states reachable from some state ...
+- **subset construction** ([§3.3](chapters/03-regex-automata.md#33-epsilon-closure-and-the-subset-construction-by-hand-and-in-c)): That is the *subset construction*: every DFA state stands for a subset of the NFA's states.
+- **nullable** ([§3.4](chapters/03-regex-automata.md#34-a-dfa-straight-from-a-regular-expression-nullable-firstpos-lastpos-followpos)): For every node *n* of the tree, three facts about the strings that the subexpression at *n* can produce: - nullable(n) is true if the ...
+- **position** ([§3.4](chapters/03-regex-automata.md#34-a-dfa-straight-from-a-regular-expression-nullable-firstpos-lastpos-followpos)): The *augmented regular expression* is `(a|b)*abb#`, and `#` is position 6.
+- **equivalent states** ([§3.5](chapters/03-regex-automata.md#35-minimising-a-dfa-by-splitting-groups)): (no definition found)
+- **transition table** ([§3.6](chapters/03-regex-automata.md#36-a-table-driven-dfa-recogniser-in-c)): (no definition found)
