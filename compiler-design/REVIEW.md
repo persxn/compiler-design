@@ -47,3 +47,13 @@
 - Open: 5.1 (4411 words), 5.2 (3347), 5.3 (3028) above the lesson range, mostly the programs: grammar.h (187 lines), derive, alltrees, leftrec, leftfac, first.h and ff1 are shown whole with no build-up (check NOTE), too big for this pass.
 - Score 9: accuracy 9, depth 9, clarity 9, sequencing 9, practical 9, exercises 9, completeness 9, efficiency 7. Lowest: 5.1 4411 words with a 187-line header shown whole; repeats cut, size remains.
 - 2026-11-21 chapter 5 reviewed; open: 5.1/5.2/5.3 over length; grammar.h, derive, alltrees, leftrec, leftfac, first.h, ff1 without build-up
+
+## Chapter 6: Top-down parsers
+
+- Risks: 4 items (4 marked, 0 destructive, 0 unrun, 0 dangling). Settled: 0 by PRACTICES.md, 2 run, 0 one look (source), 2 known for certain, 0 reworded as uncertain; each now a `checked` mark.
+- One read: 1 case, 2 order, 0 page, 0 words, 0 repeats fixed.
+- Fixed: 6.5 the cure for synch on the start symbol ("treat synch as blank when E is alone above `$`") would have tried to skip `$` itself on input `)`; now says `$` is the exception and E is popped there (a scratch copy of pprec with the cure, run: `)` gives skip ), synch pop E, end; `)i*+i` gives 2 errors); 6.6 task 5 answer now says the cured run ends with two errors; 6.3 the no-LL(k) claim for abc.g's language now says it is a known theorem whose proof is outside the book; 6.1 `cp` and the path `../ch5/derive` used with no word of explanation, each now has one; 6.2 question 3 asked which rejected input "reaches exactly" M[F, +] although none did (its answer said so), the question now asks whether one did and which would; repair for efficiency in 6.1: the explanation of `pos = init rate;` after tiny-rd-errors repeated question 2's answer (now "the third is question 2 below"), and the `i)` bullet repeated the leftover-input check said twice elsewhere, cut.
+- Not run: none needed (no program or pasted output changed; the cure was run as a scratch copy outside the book, since the book shows only the uncured pprec).
+- Open: 6.1 (4627 words) and 6.4 (3881) above the lesson range, mostly whole programs: rd, tiny-rd, ll1, pp, llparse are shown with no build-up (check NOTE), too big for this pass; BOOK.md sheet over its word limit (395/350) and its chapter-6 line 61 words, left for the writer.
+- Score 9: accuracy 9, depth 9, clarity 9, sequencing 9, practical 9, exercises 9, completeness 9, efficiency 7. Lowest: 6.1 4627 words with two programs over 120 lines shown whole; repeats cut, size remains.
+- 2026-11-21 chapter 6 reviewed; open: 6.1/6.4 over length; rd, tiny-rd, ll1, pp, llparse without build-up; BOOK.md over word limit

@@ -260,7 +260,7 @@ Two things to notice. In step 4 the `T'` that ends the first term is empty, and 
 
 ### The output is a leftmost derivation and a parse tree
 
-Read the productions in the order they were printed: `E -> T E'`, `T -> F T'`, `F -> i`, `T' -> eps`, `E' -> + T E'`, and so on. Each one rewrites the leftmost nonterminal still waiting, because the functions run left to right and finish everything to the left before they start anything to the right. So the trace is the leftmost derivation of the input. Section 5.1's `derive` can confirm it: number the productions of `exprll.g` as `derive` lists them (1 `E -> T E'`, 2 `E' -> + T E'`, 3 `E' -> eps`, 4 `T -> F T'`, 5 `T' -> * F T'`, 6 `T' -> eps`, 7 `F -> ( E )`, 8 `F -> id`) and give it the trace of the first run as numbers:
+Read the productions in the order they were printed: `E -> T E'`, `T -> F T'`, `F -> i`, `T' -> eps`, `E' -> + T E'`, and so on. Each one rewrites the leftmost nonterminal still waiting, because the functions run left to right and finish everything to the left before they start anything to the right. So the trace is the leftmost derivation of the input. Section 5.1's `derive`, which stays in `~/cdlab/ch5` and so is run from here as `../ch5/derive`, can confirm it: number the productions of `exprll.g` as `derive` lists them (1 `E -> T E'`, 2 `E' -> + T E'`, 3 `E' -> eps`, 4 `T -> F T'`, 5 `T' -> * F T'`, 6 `T' -> eps`, 7 `F -> ( E )`, 8 `F -> id`) and give it the trace of the first run as numbers:
 
 <!-- code: id=rd-derive -->
 ```console
@@ -338,7 +338,7 @@ Each error is found at the first token that cannot continue a correct expression
 - `i+*i`: after `+`, `E'` called `T`, `T` called `F`, and `F` holds `*`, which starts neither `( E )` nor `i`.
 - `i i`: after the first `i`, `Tp` holds `i`. It is not `*`, and it is not in FOLLOW(T'), so rule 4 refuses ε at once. The message lists both: what would continue the term (`*`) and what may come after it (`+`, `)`, the end).
 - `(i+i`: the inner expression is complete, both ε-choices are allowed at `$` (which is in FOLLOW(E') and FOLLOW(T')), and the error comes from `match(')')` in `F`, the one place that was waiting for the parenthesis.
-- `i)`: `)` can follow an `E'`, so the parser takes ε twice and returns all the way to `main`. Only `main`'s final check finds that nothing was waiting for this `)`. Without that check, `rd` would have printed `accepted`, because `E` did find an expression, `i`, at the start of the input.
+- `i)`: `)` can follow an `E'`, so the parser takes ε twice and returns all the way to `main`. Only `main`'s final check finds that nothing was waiting for this `)`.
 - The empty line: the very first decision, in `F`, finds the end of the input.
 
 And the input with no line at all, which `fgets` reports as end of file:
@@ -549,7 +549,7 @@ stmt
 
 This is the tree of section 1.2, found by a program. Under `expr` there are two terms joined by `+`, and the `*` sits inside the second term, so `rate * 60` is one unit before the addition happens: the precedence that the grammar of section 5.2 built in. The tree is flatter than Figure 5.1a because the loops put all the terms of one expression side by side under one `expr`, instead of in a chain of `E` and `E'` nodes.
 
-Now a real file. `prog.tiny` from chapter 2 starts with three assignments and then has a `while` loop, which Tiny's grammar will only get in chapter 9. The first five lines of the file hold the three assignments:
+Now a real file. `prog.tiny` from chapter 2 (`cp` copies it into this folder, `.`) starts with three assignments and then has a `while` loop, which Tiny's grammar will only get in chapter 9. The first five lines of the file hold the three assignments:
 
 <!-- code: id=tiny-rd-files exit=1 -->
 ```console
@@ -577,7 +577,7 @@ line 1: error: letters after a number: 9lives
 line 1: syntax error: expected (, id or num, found ';'
 ```
 
-The first is the line that opened this section: after `+`, `expr`'s loop called `term`, `term` called `factor`, and `factor` found `;`. The second is a parenthesis never closed: the inner `expr` stopped at `;`, and `factor`'s `expect(RPAREN)` found it. The third shows the loop form at work: after `init`, the loops in `term` and `expr` stopped at `rate` (neither an operator), and `stmt`, which wanted the `;`, reported it. The last line shows both stations: the scanner reported `9lives` and dropped it, so the parser saw `x = ;` and reported the missing operand. Notice that the first error stops the parser: one syntax error, one message, exit. Section 6.5 shows how a parser can carry on after an error.
+The first is the line that opened this section: after `+`, `expr`'s loop called `term`, `term` called `factor`, and `factor` found `;`. The second is a parenthesis never closed: the inner `expr` stopped at `;`, and `factor`'s `expect(RPAREN)` found it. The third is question 2 below. The last line shows both stations: the scanner reported `9lives` and dropped it, so the parser saw `x = ;` and reported the missing operand. Notice that the first error stops the parser: one syntax error, one message, exit. Section 6.5 shows how a parser can carry on after an error.
 
 ### When it goes wrong
 
@@ -1026,7 +1026,7 @@ LL(1): yes, no entry has two productions
 </details>
 
 <!-- q: idea=ll1-table type=predict wrong="a blank entry means the parser does nothing" -->
-3. Predict. In the expression grammar's table, the parser is about to read an `F` and the lookahead is `+`. What does the table say, and which input that `rd` rejected in section 6.1 reaches exactly this entry?
+3. Predict. In the expression grammar's table, the parser is about to read an `F` and the lookahead is `+`. What does the table say? Did any input that `rd` rejected in section 6.1 reach exactly this entry, and if not, which input would?
 
 <details>
 <summary>Answer</summary>
@@ -1151,7 +1151,7 @@ conflict: M[S, a] = S->A S->B
 LL(1): no, 1 entry with two or more productions
 ```
 
-The grammar is not ambiguous (a sentence ends in `b` or in `c`, never both, and each has one tree), it has no left recursion, and `leftfac` factored A and B as far as they go. But it could not touch S, because `A` and `B` are different nonterminals: their common prefix `a` is not written in any one production. At S, the parser must choose A or B while holding the first `a`, and what decides it is the first `b` or `c`, after any number of `a`s. No rewriting helps with one token of lookahead, or with any fixed number: for this language, no LL grammar exists at all.<!-- risk: the claim that this language has no LL(k) grammar for any k is a theorem stated without proof here --> The bottom-up parsers of chapter 7 handle it, because they choose between A and B only after the `a`s have been read and the `b` or `c` is in hand.
+The grammar is not ambiguous (a sentence ends in `b` or in `c`, never both, and each has one tree), it has no left recursion, and `leftfac` factored A and B as far as they go. But it could not touch S, because `A` and `B` are different nonterminals: their common prefix `a` is not written in any one production. At S, the parser must choose A or B while holding the first `a`, and what decides it is the first `b` or `c`, after any number of `a`s. No rewriting helps with one token of lookahead, or with any fixed number: for this language, no LL grammar exists at all. (That is a known theorem; its proof is in the theory books, not needed for the exam.)<!-- checked: how=known date=2026-11-21 ref="Aho and Ullman, The Theory of Parsing, Translation and Compiling, vol. 1: {a^n b^n} U {a^n c^n} is the standard deterministic language with no LL(k) grammar" h=370a38ab --> The bottom-up parsers of chapter 7 handle it, because they choose between A and B only after the `a`s have been read and the `b` or `c` is in hand.
 
 ### Settling the dangling else by hand
 
@@ -1426,7 +1426,7 @@ row s5: $ R Y | hot=2
 
 Now the fact from the driver section, on one line. Take move 12, `$RYF*  *i$  match *`. The tokens matched before it are `i + i`. The stack from the top down is `* F Y R`, which in the grammar's names is `* F T' E'`. Together: `i + i * F T' E'`, which is the line `=>lm id + id * F T' E'` of the leftmost derivation `derive` printed in section 6.1, with `id` for `i`. Every line of the trace is like that. And read only the actions that are productions, skipping the matches: `E->TR`, `T->FY`, `F->i`, `Y->#`, `R->+TR`, ... These are `rd`'s productions for the same input, in the same order. The two parsers are one algorithm, with the stack in two different places.
 
-A note for the exam paper. This book's traces put the bottom of the stack on the left, `$E`, because that is how the array is stored. The second edition of the Dragon book writes the stack the other way round, top on the left, `E$`, and adds a column of the input matched so far; the first edition has the `$` on the left, as here.<!-- risk: the claim about how the two editions of the Dragon book lay out the stack column is from memory of the books, not checked --> Either is correct if you say which end is the top.
+A note for the exam paper. This book's traces put the bottom of the stack on the left, `$E`, because that is how the array is stored. The second edition of the Dragon book writes the stack the other way round, top on the left, `E$`, and adds a column of the input matched so far; the first edition has the `$` on the left, as here.<!-- checked: how=known date=2026-11-21 ref="Dragon 2nd ed. Fig. 4.21 (MATCHED, STACK E$, INPUT); 1st ed. Fig. 4.16 (STACK $E)" h=afc82080 --> Either is correct if you say which end is the top.
 
 ### When the input is wrong
 
@@ -1813,7 +1813,7 @@ The idea is the same for a recursive-descent parser: on an error, a function ski
 
 ### The usual mistake: synch on the start symbol
 
-With only the three moves, an input that begins with `)` meets M[E, )] = synch before anything else. The parser pops E, and the stack is `$`. Every remaining token is now "input left over" and is skipped with an error of its own, so one stray `)` produces an error for every token in the input. Task 5 of section 6.6 shows it happen. The cure is to treat synch as blank when the nonterminal is the only thing on the stack above `$`: skip the token instead, and keep E.<!-- risk: the effect of the cure was reasoned, not run -->
+With only the three moves, an input that begins with `)` meets M[E, )] = synch before anything else. The parser pops E, and the stack is `$`. Every remaining token is now "input left over" and is skipped with an error of its own, so one stray `)` produces an error for every token in the input. Task 5 of section 6.6 shows it happen. The cure is to treat synch as blank when the nonterminal is the only thing on the stack above `$`: skip the token instead, and keep E. The one exception is `$` itself, which cannot be skipped: with `$` in hand, popping E is right, and the parse ends.<!-- checked: how=run date=2026-11-21 ref="pprec with the cure, scratch copy: ')' gives skip ), synch pop E, end; ')i*+i' gives 2 errors" h=35382b1f -->
 
 **Check yourself**
 
@@ -2154,7 +2154,7 @@ $ echo ')i*+i' | ./pprec
 6 error(s)
 ```
 
-The first run is section 6.5's hand trace, line for line. The second is that section's first question: synch pops F, Y and R vanish normally at `)`, and the stray `)` is finally skipped at the bottom. The third is the mistake at the end of section 6.5: M[E, )] is synch, so E is popped before anything was parsed, and the five good tokens that follow are each skipped as leftover input. One mistake, six errors. If you add the cure, the first line becomes `error: skip )` and E stays to parse `i*+i`.<!-- risk: the effect of the cure was reasoned, not run -->
+The first run is section 6.5's hand trace, line for line. The second is that section's first question: synch pops F, Y and R vanish normally at `)`, and the stray `)` is finally skipped at the bottom. The third is the mistake at the end of section 6.5: M[E, )] is synch, so E is popped before anything was parsed, and the five good tokens that follow are each skipped as leftover input. One mistake, six errors. If you add the cure, the first line becomes `error: skip )` and E stays to parse `i*+i`: two errors in all, the stray `)` and the same synch at `+` as in the first run.<!-- checked: how=run date=2026-11-21 ref="pprec with the cure, scratch copy: ')i*+i' gives skip ), then lines 2-17 of the first run, 2 error(s)" h=55cc457d -->
 
 </details>
 

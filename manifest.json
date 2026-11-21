@@ -540,8 +540,8 @@
        "n": 6,
        "title": "Top-down parsers",
        "file": "compiler-design/chapters/06-top-down-parsers.md",
-       "state": "written",
-       "words": 17507,
+       "state": "reviewed",
+       "words": 17540,
        "sections": [
         {
          "id": "6.1",
@@ -549,7 +549,7 @@
          "kind": "lesson",
          "level": 3,
          "state": "written",
-         "words": 4653,
+         "words": 4627,
          "teaches": [
           "recursive-descent"
          ],
@@ -561,7 +561,7 @@
          "kind": "lesson",
          "level": 1,
          "state": "written",
-         "words": 2922,
+         "words": 2928,
          "teaches": [
           "ll1-table"
          ],
@@ -573,7 +573,7 @@
          "kind": "lesson",
          "level": 2,
          "state": "written",
-         "words": 2416,
+         "words": 2433,
          "teaches": [
           "ll1-conflict"
          ],
@@ -597,7 +597,7 @@
          "kind": "short",
          "level": 1,
          "state": "written",
-         "words": 732,
+         "words": 752,
          "teaches": [
           "panic-mode"
          ],
@@ -609,7 +609,7 @@
          "kind": "practice",
          "level": 3,
          "state": "written",
-         "words": 2903,
+         "words": 2919,
          "teaches": [],
          "anchor": "66-practice-grammar-to-table-to-parser-for-a-new-language"
         }
