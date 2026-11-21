@@ -332,17 +332,17 @@
       {
        "n": 4,
        "title": "Lex and Flex programs",
-       "file": null,
-       "state": "planned",
-       "words": 0,
+       "file": "compiler-design/chapters/04-lex-flex.md",
+       "state": "written",
+       "words": 19449,
        "sections": [
         {
          "id": "4.1",
          "title": "The first Lex program: the three parts of a .l file, flex, gcc, run",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2678,
          "teaches": [
           "lex-structure",
           "yylex",
@@ -355,8 +355,8 @@
          "title": "Patterns and actions: longest match first, then the earlier rule",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2388,
          "teaches": [
           "lex-rule-order",
           "lex-pattern"
@@ -368,11 +368,11 @@
          "title": "Counting programs: lines, words, characters, vowels and consonants",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2075,
          "teaches": [
-          "lex-counting",
-          "yyleng"
+          "yyleng",
+          "lex-counting"
          ],
          "anchor": "43-counting-programs-lines-words-characters-vowels-and-consonants"
         },
@@ -381,8 +381,8 @@
          "title": "A Lex scanner for keywords, identifiers, numbers and operators",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2717,
          "teaches": [
           "lex-token-scanner"
          ],
@@ -393,8 +393,8 @@
          "title": "Reading files and ending input: yyin, yyout, yywrap and noyywrap",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2227,
          "teaches": [
           "yyin",
           "yywrap"
@@ -406,8 +406,8 @@
          "title": "Start conditions: removing comments and scanning strings",
          "kind": "lesson",
          "level": 2,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2628,
          "teaches": [
           "start-condition"
          ],
@@ -418,8 +418,8 @@
          "title": "When flex or gcc complains: the usual errors and their cures",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2282,
          "teaches": [
           "lex-errors"
          ],
@@ -430,8 +430,8 @@
          "title": "Practice: the lab set of Lex programs, written from the question alone",
          "kind": "practice",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2454,
          "teaches": [],
          "anchor": "48-practice-the-lab-set-of-lex-programs-written-from-the-question-alone"
         }

@@ -47,3 +47,18 @@
 - **position** ([§3.4](chapters/03-regex-automata.md#34-a-dfa-straight-from-a-regular-expression-nullable-firstpos-lastpos-followpos)): The *augmented regular expression* is `(a|b)*abb#`, and `#` is position 6.
 - **equivalent states** ([§3.5](chapters/03-regex-automata.md#35-minimising-a-dfa-by-splitting-groups)): (no definition found)
 - **transition table** ([§3.6](chapters/03-regex-automata.md#36-a-table-driven-dfa-recogniser-in-c)): (no definition found)
+
+## Chapter 4: Lex and Flex programs
+
+- **Lex specification** ([§4.1](chapters/04-lex-flex.md#41-the-first-lex-program-the-three-parts-of-a-l-file-flex-gcc-run)): A Lex program is a text file whose name ends in `.l`, called a *Lex specification*.
+- **yylex** ([§4.1](chapters/04-lex-flex.md#41-the-first-lex-program-the-three-parts-of-a-l-file-flex-gcc-run)): The function `yylex` is the scanner Flex wrote.
+- **yytext** ([§4.1](chapters/04-lex-flex.md#41-the-first-lex-program-the-three-parts-of-a-l-file-flex-gcc-run)): `yylex` loops: walk the DFA as far as it goes, back up to the last accepting point, set `yytext` and `yyleng`, run the action; it ...
+- **rule order** ([§4.2](chapters/04-lex-flex.md#42-patterns-and-actions-longest-match-first-then-the-earlier-rule)): Longest match. Of all the patterns, the one that matches the longest piece of input, starting at the current position, wins. 2.
+- **Lex pattern** ([§4.2](chapters/04-lex-flex.md#42-patterns-and-actions-longest-match-first-then-the-earlier-rule)): (no definition found)
+- **counting program** ([§4.3](chapters/04-lex-flex.md#43-counting-programs-lines-words-characters-vowels-and-consonants)): (no definition found)
+- **yyleng** ([§4.3](chapters/04-lex-flex.md#43-counting-programs-lines-words-characters-vowels-and-consonants)): So `yytext` is the start of the match, and `yyleng` is the distance between the two pointers: the number of characters matched, worked out by ...
+- **token scanner in Lex** ([§4.4](chapters/04-lex-flex.md#44-a-lex-scanner-for-keywords-identifiers-numbers-and-operators)): (no definition found)
+- **yyin** ([§4.5](chapters/04-lex-flex.md#45-reading-files-and-ending-input-yyin-yyout-yywrap-and-noyywrap)): So to read a file, you open it and store the pointer in `yyin` before the first call of `yylex`; to write to a file, ...
+- **yywrap** ([§4.5](chapters/04-lex-flex.md#45-reading-files-and-ending-input-yyin-yyout-yywrap-and-noyywrap)): `yywrap` is a function that `yylex` calls each time `yyin` reaches its end.
+- **start condition** ([§4.6](chapters/04-lex-flex.md#46-start-conditions-removing-comments-and-scanning-strings)): A *start condition* is a name, declared in the definitions section, for a set of rules that are active only while the scanner is in ...
+- **Flex error** ([§4.7](chapters/04-lex-flex.md#47-when-flex-or-gcc-complains-the-usual-errors-and-their-cures)): The first word of a message tells you which program wrote it. - `file.l:7: ...` with no column number: Flex.

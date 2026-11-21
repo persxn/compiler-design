@@ -15,6 +15,7 @@
 - chaining: [2.8](chapters/02-lexical-analyzer.md#28-a-symbol-table-in-c-insert-search-display-delete-with-a-hash-table)
 - comment skipping: [2.4](chapters/02-lexical-analyzer.md#24-skipping-white-space-and-both-kinds-of-c-comment)
 - compile pipeline: [1.1](chapters/01-one-statement.md#11-what-happens-between-progc-and-aout-watching-gcc-stop-after-each-stage)
+- counting program: [4.3](chapters/04-lex-flex.md#43-counting-programs-lines-words-characters-vowels-and-consonants)
 - cross compiler: [1.5](chapters/01-one-statement.md#15-passes-interpreters-cross-compilers-and-compiler-construction-tools)
 
 ## E
@@ -24,6 +25,7 @@
 
 ## F
 
+- Flex error: [4.7](chapters/04-lex-flex.md#47-when-flex-or-gcc-complains-the-usual-errors-and-their-cures)
 - front end: [1.2](chapters/01-one-statement.md#12-the-phases-of-a-compiler-traced-on-pos--init--rate--60)
 
 ## H
@@ -42,6 +44,8 @@
 ## L
 
 - lab exam cycle: [1.6](chapters/01-one-statement.md#16-how-a-lab-exam-program-is-written-built-run-and-marked)
+- Lex pattern: [4.2](chapters/04-lex-flex.md#42-patterns-and-actions-longest-match-first-then-the-earlier-rule)
+- Lex specification: [4.1](chapters/04-lex-flex.md#41-the-first-lex-program-the-three-parts-of-a-l-file-flex-gcc-run)
 - lexeme: [1.3](chapters/01-one-statement.md#13-tokens-lexemes-and-patterns)
 - lexical error: [2.7](chapters/02-lexical-analyzer.md#27-lexical-errors-and-line-numbers)
 - linker: [1.1](chapters/01-one-statement.md#11-what-happens-between-progc-and-aout-watching-gcc-stop-after-each-stage)
@@ -66,10 +70,12 @@
 
 - regular definition: [3.1](chapters/03-regex-automata.md#31-regular-expressions-as-patterns-union-concatenation-star-and-the-shorthands)
 - regular expression: [3.1](chapters/03-regex-automata.md#31-regular-expressions-as-patterns-union-concatenation-star-and-the-shorthands)
+- rule order: [4.2](chapters/04-lex-flex.md#42-patterns-and-actions-longest-match-first-then-the-earlier-rule)
 
 ## S
 
 - sentinel: [2.6](chapters/02-lexical-analyzer.md#26-input-buffering-buffer-pairs-and-sentinels)
+- start condition: [4.6](chapters/04-lex-flex.md#46-start-conditions-removing-comments-and-scanning-strings)
 - subset construction: [3.3](chapters/03-regex-automata.md#33-epsilon-closure-and-the-subset-construction-by-hand-and-in-c)
 - symbol table: [1.4](chapters/01-one-statement.md#14-the-symbol-table-the-notebook-every-phase-shares)
 
@@ -77,9 +83,18 @@
 
 - Thompson's construction: [3.2](chapters/03-regex-automata.md#32-from-a-regular-expression-to-an-nfa-thompsons-construction)
 - token: [1.3](chapters/01-one-statement.md#13-tokens-lexemes-and-patterns)
+- token scanner in Lex: [4.4](chapters/04-lex-flex.md#44-a-lex-scanner-for-keywords-identifiers-numbers-and-operators)
 - transition diagram: [2.5](chapters/02-lexical-analyzer.md#25-transition-diagrams-drawing-the-scanner-before-writing-it)
 - transition table: [3.6](chapters/03-regex-automata.md#36-a-table-driven-dfa-recogniser-in-c)
 
 ## U
 
 - ungetc: [2.1](chapters/02-lexical-analyzer.md#21-reading-source-one-character-at-a-time-with-one-character-of-lookahead)
+
+## Y
+
+- yyin: [4.5](chapters/04-lex-flex.md#45-reading-files-and-ending-input-yyin-yyout-yywrap-and-noyywrap)
+- yyleng: [4.3](chapters/04-lex-flex.md#43-counting-programs-lines-words-characters-vowels-and-consonants)
+- yylex: [4.1](chapters/04-lex-flex.md#41-the-first-lex-program-the-three-parts-of-a-l-file-flex-gcc-run)
+- yytext: [4.1](chapters/04-lex-flex.md#41-the-first-lex-program-the-three-parts-of-a-l-file-flex-gcc-run)
+- yywrap: [4.5](chapters/04-lex-flex.md#45-reading-files-and-ending-input-yyin-yyout-yywrap-and-noyywrap)

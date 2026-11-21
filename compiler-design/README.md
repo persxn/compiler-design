@@ -11,7 +11,7 @@ For a B.Tech computer science student who can write C programs and has met compi
 
 - [2 Write a lexical analyzer in C](chapters/02-lexical-analyzer.md) · reviewed · 9 of 9 sections
 - [3 Regular expressions and finite automata](chapters/03-regex-automata.md) · reviewed · 7 of 7 sections
-- 4 Lex and Flex programs · planned · 0 of 8 sections
+- [4 Lex and Flex programs](chapters/04-lex-flex.md) · written · 8 of 8 sections
 
 ## Part III · Parsing: from tokens to structure
 
