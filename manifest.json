@@ -540,8 +540,8 @@
        "n": 6,
        "title": "Top-down parsers",
        "file": "compiler-design/chapters/06-top-down-parsers.md",
-       "state": "writing",
-       "words": 4652,
+       "state": "written",
+       "words": 17507,
        "sections": [
         {
          "id": "6.1",
@@ -549,7 +549,7 @@
          "kind": "lesson",
          "level": 3,
          "state": "written",
-         "words": 4652,
+         "words": 4653,
          "teaches": [
           "recursive-descent"
          ],
@@ -560,8 +560,8 @@
          "title": "Building the LL(1) parsing table",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2922,
          "teaches": [
           "ll1-table"
          ],
@@ -572,8 +572,8 @@
          "title": "Is a grammar LL(1)? Finding the conflict",
          "kind": "lesson",
          "level": 2,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2416,
          "teaches": [
           "ll1-conflict"
          ],
@@ -584,8 +584,8 @@
          "title": "A table-driven predictive parser in C, with its stack trace",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 3881,
          "teaches": [
           "predictive-parser"
          ],
@@ -596,8 +596,8 @@
          "title": "Error recovery: panic mode and synch entries",
          "kind": "short",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 732,
          "teaches": [
           "panic-mode"
          ],
@@ -608,8 +608,8 @@
          "title": "Practice: grammar to table to parser for a new language",
          "kind": "practice",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2903,
          "teaches": [],
          "anchor": "66-practice-grammar-to-table-to-parser-for-a-new-language"
         }
