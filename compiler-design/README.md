@@ -17,7 +17,7 @@ For a B.Tech computer science student who can write C programs and has met compi
 
 - [5 Grammars ready for parsing](chapters/05-grammars.md) · reviewed · 7 of 7 sections
 - [6 Top-down parsers](chapters/06-top-down-parsers.md) · reviewed · 6 of 6 sections
-- 7 Bottom-up parsers · planned · 0 of 8 sections
+- [7 Bottom-up parsers](chapters/07-bottom-up-parsers.md) · written · 8 of 8 sections
 - 8 Yacc and Bison programs · planned · 0 of 7 sections
 
 ## Part IV · Translating, optimising and generating code

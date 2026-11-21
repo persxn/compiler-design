@@ -14,7 +14,9 @@
 
 ## C
 
+- canonical LR(1) table: [7.5](chapters/07-bottom-up-parsers.md#75-clr1-and-lalr1-tables-by-hand)
 - chaining: [2.8](chapters/02-lexical-analyzer.md#28-a-symbol-table-in-c-insert-search-display-delete-with-a-hash-table)
+- closure of a set of items: [7.3](chapters/07-bottom-up-parsers.md#73-lr0-items-closure-and-goto-the-canonical-collection)
 - comment skipping: [2.4](chapters/02-lexical-analyzer.md#24-skipping-white-space-and-both-kinds-of-c-comment)
 - compile pipeline: [1.1](chapters/01-one-statement.md#11-what-happens-between-progc-and-aout-watching-gcc-stop-after-each-stage)
 - context-free grammar: [5.1](chapters/05-grammars.md#51-context-free-grammars-derivations-and-parse-trees)
@@ -37,8 +39,13 @@
 - FOLLOW set: [5.6](chapters/05-grammars.md#56-follow-sets-by-hand-and-in-c)
 - front end: [1.2](chapters/01-one-statement.md#12-the-phases-of-a-compiler-traced-on-pos--init--rate--60)
 
+## G
+
+- goto function: [7.3](chapters/07-bottom-up-parsers.md#73-lr0-items-closure-and-goto-the-canonical-collection)
+
 ## H
 
+- handle: [7.1](chapters/07-bottom-up-parsers.md#71-shift-reduce-parsing-and-handles-with-a-c-program)
 - hash table: [2.8](chapters/02-lexical-analyzer.md#28-a-symbol-table-in-c-insert-search-display-delete-with-a-hash-table)
 
 ## I
@@ -53,6 +60,7 @@
 ## L
 
 - lab exam cycle: [1.6](chapters/01-one-statement.md#16-how-a-lab-exam-program-is-written-built-run-and-marked)
+- LALR(1) table: [7.5](chapters/07-bottom-up-parsers.md#75-clr1-and-lalr1-tables-by-hand)
 - left factoring: [5.4](chapters/05-grammars.md#54-left-factoring-by-hand-and-in-c)
 - left recursion: [5.3](chapters/05-grammars.md#53-eliminating-left-recursion-by-hand-and-in-c)
 - Lex pattern: [4.2](chapters/04-lex-flex.md#42-patterns-and-actions-longest-match-first-then-the-earlier-rule)
@@ -64,12 +72,20 @@
 - LL(1) parsing table: [6.2](chapters/06-top-down-parsers.md#62-building-the-ll1-parsing-table)
 - longest match: [2.3](chapters/02-lexical-analyzer.md#23-numbers-operators-and-the-longest-match-rule)
 - lookahead: [2.1](chapters/02-lexical-analyzer.md#21-reading-source-one-character-at-a-time-with-one-character-of-lookahead)
+- LR parsing algorithm: [7.7](chapters/07-bottom-up-parsers.md#77-the-lr-driver-in-c-one-table-one-stack)
+- LR parsing table: [7.4](chapters/07-bottom-up-parsers.md#74-the-slr1-parsing-table)
+- LR(0) item: [7.3](chapters/07-bottom-up-parsers.md#73-lr0-items-closure-and-goto-the-canonical-collection)
+- LR(1) item: [7.5](chapters/07-bottom-up-parsers.md#75-clr1-and-lalr1-tables-by-hand)
 
 ## N
 
 - NFA: [3.2](chapters/03-regex-automata.md#32-from-a-regular-expression-to-an-nfa-thompsons-construction)
 - nullable: [3.4](chapters/03-regex-automata.md#34-a-dfa-straight-from-a-regular-expression-nullable-firstpos-lastpos-followpos)
 - number scanning: [2.3](chapters/02-lexical-analyzer.md#23-numbers-operators-and-the-longest-match-rule)
+
+## O
+
+- operator grammar: [7.2](chapters/07-bottom-up-parsers.md#72-operator-precedence-parsing-relations-table-and-a-c-parser)
 
 ## P
 
@@ -91,6 +107,8 @@
 ## S
 
 - sentinel: [2.6](chapters/02-lexical-analyzer.md#26-input-buffering-buffer-pairs-and-sentinels)
+- shift-reduce conflict: [7.6](chapters/07-bottom-up-parsers.md#76-shift-reduce-and-reduce-reduce-conflicts)
+- shift-reduce parser: [7.1](chapters/07-bottom-up-parsers.md#71-shift-reduce-parsing-and-handles-with-a-c-program)
 - start condition: [4.6](chapters/04-lex-flex.md#46-start-conditions-removing-comments-and-scanning-strings)
 - subset construction: [3.3](chapters/03-regex-automata.md#33-epsilon-closure-and-the-subset-construction-by-hand-and-in-c)
 - symbol table: [1.4](chapters/01-one-statement.md#14-the-symbol-table-the-notebook-every-phase-shares)
