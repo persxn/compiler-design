@@ -97,3 +97,15 @@
 - **LALR(1) table** ([§7.5](chapters/07-bottom-up-parsers.md#75-clr1-and-lalr1-tables-by-hand)): (no definition found)
 - **shift-reduce conflict** ([§7.6](chapters/07-bottom-up-parsers.md#76-shift-reduce-and-reduce-reduce-conflicts)): There are only two kinds of conflict, because an entry can only hold shifts and reduces (and two shifts on one token cannot happen: goto ...
 - **LR parsing algorithm** ([§7.7](chapters/07-bottom-up-parsers.md#77-the-lr-driver-in-c-one-table-one-stack)): The *LR parsing algorithm* keeps a stack that starts as state 0, and the input with `$` at its end.
+
+## Chapter 8: Yacc and Bison programs
+
+- **Yacc specification** ([§8.1](chapters/08-yacc-bison.md#81-the-first-yacc-program-the-parts-of-a-y-file-and-linking-it-with-lex)): A Yacc program is a text file whose name ends in `.y`, called a *Yacc specification*.
+- **yyparse** ([§8.1](chapters/08-yacc-bison.md#81-the-first-yacc-program-the-parts-of-a-y-file-and-linking-it-with-lex)): `yyparse`, the function Yacc wrote, does: it is the LR driver of section 7.7, with the table built from your grammar.
+- **yylval** ([§8.1](chapters/08-yacc-bison.md#81-the-first-yacc-program-the-parts-of-a-y-file-and-linking-it-with-lex)): `hand.y`'s scanner does exactly that: it builds the number's value in `yylval` digit by digit, then returns `NUM`.
+- **expression validator** ([§8.2](chapters/08-yacc-bison.md#82-validating-arithmetic-expressions)): (no definition found)
+- **%left** ([§8.3](chapters/08-yacc-bison.md#83-a-calculator-values-precedence-and-associativity)): `%left` says the group is left-associative, `%right` right-associative, and `%nonassoc` (not used here) that two in a row are an error, as in `a < ...
+- **semantic value** ([§8.3](chapters/08-yacc-bison.md#83-a-calculator-values-precedence-and-associativity)): (no definition found)
+- **language recogniser** ([§8.4](chapters/08-yacc-bison.md#84-recognising-languages-identifiers-an-bn-and-other-classics)): A language recogniser is a grammar with a line-list frame: the grammar decides, `yyerror` says no, the action says yes. 2. a^n b^n is `s ...
+- **y.output** ([§8.5](chapters/08-yacc-bison.md#85-reading-bisons-conflict-reports-with--v-and-the-output-file)): Counterexamples are a recent addition to Bison (older Bisons and Berkeley Yacc do not have them); `y.output` is everywhere.
+- **semantic action** ([§8.6](chapters/08-yacc-bison.md#86-infix-to-postfix-with-semantic-actions)): A *semantic action* is the C code attached to a production, run when the parser reduces by it.
