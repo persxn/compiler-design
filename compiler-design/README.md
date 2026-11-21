@@ -15,7 +15,7 @@ For a B.Tech computer science student who can write C programs and has met compi
 
 ## Part III · Parsing: from tokens to structure
 
-- 5 Grammars ready for parsing · planned · 0 of 7 sections
+- [5 Grammars ready for parsing](chapters/05-grammars.md) · written · 7 of 7 sections
 - 6 Top-down parsers · planned · 0 of 6 sections
 - 7 Bottom-up parsers · planned · 0 of 8 sections
 - 8 Yacc and Bison programs · planned · 0 of 7 sections

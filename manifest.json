@@ -445,17 +445,17 @@
       {
        "n": 5,
        "title": "Grammars ready for parsing",
-       "file": null,
-       "state": "planned",
-       "words": 0,
+       "file": "compiler-design/chapters/05-grammars.md",
+       "state": "written",
+       "words": 20251,
        "sections": [
         {
          "id": "5.1",
          "title": "Context-free grammars, derivations and parse trees",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 4416,
          "teaches": [
           "cfg",
           "derivation",
@@ -468,8 +468,8 @@
          "title": "Ambiguity, and how precedence and associativity remove it",
          "kind": "lesson",
          "level": 2,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 3343,
          "teaches": [
           "ambiguity",
           "precedence-grammar"
@@ -481,8 +481,8 @@
          "title": "Eliminating left recursion, by hand and in C",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 3028,
          "teaches": [
           "left-recursion"
          ],
@@ -493,8 +493,8 @@
          "title": "Left factoring, by hand and in C",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2008,
          "teaches": [
           "left-factoring"
          ],
@@ -505,8 +505,8 @@
          "title": "FIRST sets, by hand and in C",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2906,
          "teaches": [
           "first-set"
          ],
@@ -517,8 +517,8 @@
          "title": "FOLLOW sets, by hand and in C",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2239,
          "teaches": [
           "follow-set"
          ],
@@ -529,8 +529,8 @@
          "title": "Practice: transform and compute for exam grammars",
          "kind": "practice",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2311,
          "teaches": [],
          "anchor": "57-practice-transform-and-compute-for-exam-grammars"
         }

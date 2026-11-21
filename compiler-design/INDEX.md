@@ -3,7 +3,9 @@
 
 ## A
 
+- ambiguous grammar: [5.2](chapters/05-grammars.md#52-ambiguity-and-how-precedence-and-associativity-remove-it)
 - assembler: [1.1](chapters/01-one-statement.md#11-what-happens-between-progc-and-aout-watching-gcc-stop-after-each-stage)
+- associativity: [5.2](chapters/05-grammars.md#52-ambiguity-and-how-precedence-and-associativity-remove-it)
 
 ## B
 
@@ -15,8 +17,13 @@
 - chaining: [2.8](chapters/02-lexical-analyzer.md#28-a-symbol-table-in-c-insert-search-display-delete-with-a-hash-table)
 - comment skipping: [2.4](chapters/02-lexical-analyzer.md#24-skipping-white-space-and-both-kinds-of-c-comment)
 - compile pipeline: [1.1](chapters/01-one-statement.md#11-what-happens-between-progc-and-aout-watching-gcc-stop-after-each-stage)
+- context-free grammar: [5.1](chapters/05-grammars.md#51-context-free-grammars-derivations-and-parse-trees)
 - counting program: [4.3](chapters/04-lex-flex.md#43-counting-programs-lines-words-characters-vowels-and-consonants)
 - cross compiler: [1.5](chapters/01-one-statement.md#15-passes-interpreters-cross-compilers-and-compiler-construction-tools)
+
+## D
+
+- derivation: [5.1](chapters/05-grammars.md#51-context-free-grammars-derivations-and-parse-trees)
 
 ## E
 
@@ -25,7 +32,9 @@
 
 ## F
 
+- FIRST set: [5.5](chapters/05-grammars.md#55-first-sets-by-hand-and-in-c)
 - Flex error: [4.7](chapters/04-lex-flex.md#47-when-flex-or-gcc-complains-the-usual-errors-and-their-cures)
+- FOLLOW set: [5.6](chapters/05-grammars.md#56-follow-sets-by-hand-and-in-c)
 - front end: [1.2](chapters/01-one-statement.md#12-the-phases-of-a-compiler-traced-on-pos--init--rate--60)
 
 ## H
@@ -44,6 +53,8 @@
 ## L
 
 - lab exam cycle: [1.6](chapters/01-one-statement.md#16-how-a-lab-exam-program-is-written-built-run-and-marked)
+- left factoring: [5.4](chapters/05-grammars.md#54-left-factoring-by-hand-and-in-c)
+- left recursion: [5.3](chapters/05-grammars.md#53-eliminating-left-recursion-by-hand-and-in-c)
 - Lex pattern: [4.2](chapters/04-lex-flex.md#42-patterns-and-actions-longest-match-first-then-the-earlier-rule)
 - Lex specification: [4.1](chapters/04-lex-flex.md#41-the-first-lex-program-the-three-parts-of-a-l-file-flex-gcc-run)
 - lexeme: [1.3](chapters/01-one-statement.md#13-tokens-lexemes-and-patterns)
@@ -60,6 +71,7 @@
 
 ## P
 
+- parse tree: [5.1](chapters/05-grammars.md#51-context-free-grammars-derivations-and-parse-trees)
 - pass: [1.5](chapters/01-one-statement.md#15-passes-interpreters-cross-compilers-and-compiler-construction-tools)
 - pattern: [1.3](chapters/01-one-statement.md#13-tokens-lexemes-and-patterns)
 - phase: [1.2](chapters/01-one-statement.md#12-the-phases-of-a-compiler-traced-on-pos--init--rate--60)

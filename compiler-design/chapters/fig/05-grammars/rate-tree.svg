@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 560" width="512" height="560" role="img" aria-labelledby="rate-tree-t rate-tree-d" data-kind="tree" data-count="8">
+<title id="rate-tree-t">Parse tree of rate * 60 (tokens id * num) from E</title>
+<desc id="rate-tree-d">Tree, top to bottom. E leads to T. T leads to T. T leads to *. T leads to F. T leads to F. F leads to num 60. F leads to id rate. *, num 60 and id rate are highlighted.</desc>
+<style>.bg{fill:#E6ECF0}.sh{fill:#000000}.box{fill:#FFFFFF;stroke:#000000;stroke-width:2.5}.hot{fill:#FFE600;stroke:#000000;stroke-width:4.5}.mut{fill:#CDD5DC;stroke:#000000;stroke-width:2.5;stroke-dasharray:6 4}.band{fill:#F6F8FA;stroke:#000000;stroke-width:2.5}.note{fill:#FFFFFF;stroke:#000000;stroke-width:1.5}.deco{stroke:#000000;fill:none;stroke-width:2}.ek{stroke:#000000;fill:none;stroke-width:2}.er{stroke:#D92B2B;fill:none;stroke-width:3}.eb{stroke:#1F4BFF;fill:none;stroke-dasharray:7 5;stroke-width:2}.ep{stroke:#1F4BFF;fill:none;stroke-dasharray:7 5;stroke-width:2}.hk{fill:#000000}.hr{fill:#D92B2B}.hb{fill:#1F4BFF}.hp{stroke:#1F4BFF;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5}.dot{fill:#1F4BFF}.tick{fill:#000000}.life{stroke:#3B4651;fill:none;stroke-dasharray:4 5;stroke-width:1.5}.plate{fill:#E6ECF0}.plateb{fill:#F6F8FA}.ink{fill:#000000}.soft{fill:#3B4651}.hink{fill:#000000}.t{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:15px;font-weight:600}.s{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:13px;font-weight:600}.tt{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:17px;font-weight:700}.m{font-family:ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace}@media (prefers-color-scheme:dark){svg:not([data-theme="light"]) .bg{fill:#2A2F36}svg:not([data-theme="light"]) .sh{fill:#000000}svg:not([data-theme="light"]) .box{fill:#343A42;stroke:#ECE9E2}svg:not([data-theme="light"]) .hot{fill:#F2D13A;stroke:#ECE9E2}svg:not([data-theme="light"]) .mut{fill:#1D2126;stroke:#ECE9E2}svg:not([data-theme="light"]) .band{fill:#2F343C;stroke:#ECE9E2}svg:not([data-theme="light"]) .note{fill:#343A42;stroke:#ECE9E2}svg:not([data-theme="light"]) .deco{stroke:#ECE9E2}svg:not([data-theme="light"]) .ek{stroke:#ECE9E2}svg:not([data-theme="light"]) .er{stroke:#FF7B72}svg:not([data-theme="light"]) .eb{stroke:#8EA6FF}svg:not([data-theme="light"]) .ep{stroke:#8EA6FF}svg:not([data-theme="light"]) .hk{fill:#ECE9E2}svg:not([data-theme="light"]) .hr{fill:#FF7B72}svg:not([data-theme="light"]) .hb{fill:#8EA6FF}svg:not([data-theme="light"]) .hp{stroke:#8EA6FF}svg:not([data-theme="light"]) .dot{fill:#8EA6FF}svg:not([data-theme="light"]) .tick{fill:#ECE9E2}svg:not([data-theme="light"]) .life{stroke:#B9BFC7}svg:not([data-theme="light"]) .plate{fill:#2A2F36}svg:not([data-theme="light"]) .plateb{fill:#2F343C}svg:not([data-theme="light"]) .ink{fill:#ECE9E2}svg:not([data-theme="light"]) .soft{fill:#B9BFC7}svg:not([data-theme="light"]) .hink{fill:#000000}}svg[data-theme="dark"] .bg{fill:#2A2F36}svg[data-theme="dark"] .sh{fill:#000000}svg[data-theme="dark"] .box{fill:#343A42;stroke:#ECE9E2}svg[data-theme="dark"] .hot{fill:#F2D13A;stroke:#ECE9E2}svg[data-theme="dark"] .mut{fill:#1D2126;stroke:#ECE9E2}svg[data-theme="dark"] .band{fill:#2F343C;stroke:#ECE9E2}svg[data-theme="dark"] .note{fill:#343A42;stroke:#ECE9E2}svg[data-theme="dark"] .deco{stroke:#ECE9E2}svg[data-theme="dark"] .ek{stroke:#ECE9E2}svg[data-theme="dark"] .er{stroke:#FF7B72}svg[data-theme="dark"] .eb{stroke:#8EA6FF}svg[data-theme="dark"] .ep{stroke:#8EA6FF}svg[data-theme="dark"] .hk{fill:#ECE9E2}svg[data-theme="dark"] .hr{fill:#FF7B72}svg[data-theme="dark"] .hb{fill:#8EA6FF}svg[data-theme="dark"] .hp{stroke:#8EA6FF}svg[data-theme="dark"] .dot{fill:#8EA6FF}svg[data-theme="dark"] .tick{fill:#ECE9E2}svg[data-theme="dark"] .life{stroke:#B9BFC7}svg[data-theme="dark"] .plate{fill:#2A2F36}svg[data-theme="dark"] .plateb{fill:#2F343C}svg[data-theme="dark"] .ink{fill:#ECE9E2}svg[data-theme="dark"] .soft{fill:#B9BFC7}svg[data-theme="dark"] .hink{fill:#000000}</style>
+<rect class="bg" data-role="bg" x="0" y="0" width="512" height="560"/>
+<rect class="sh" data-role="shadow" data-for="e" x="212" y="68" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="e" data-shape="box" x="208" y="64" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="t1" x="212" y="164" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="t1" data-shape="box" x="208" y="160" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="t2" x="84" y="260" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="t2" data-shape="box" x="80" y="256" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="star" x="212" y="260" width="96" height="48"/>
+<rect class="hot" data-role="node" data-id="star" data-shape="box" x="208" y="256" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="f1" x="84" y="356" width="96" height="64"/>
+<rect class="box" data-role="node" data-id="f1" data-shape="box" x="80" y="352" width="96" height="64"/>
+<rect class="sh" data-role="shadow" data-for="f2" x="340" y="260" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="f2" data-shape="box" x="336" y="256" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="id" x="84" y="468" width="96" height="64"/>
+<rect class="hot" data-role="node" data-id="id" data-shape="box" x="80" y="464" width="96" height="64"/>
+<rect class="sh" data-role="shadow" data-for="num" x="340" y="356" width="96" height="64"/>
+<rect class="hot" data-role="node" data-id="num" data-shape="box" x="336" y="352" width="96" height="64"/>
+<path class="ek" data-role="edge" data-id="e1" data-from="e" data-to="t1" d="M256 116L256 151"/>
+<path class="hk" data-role="head" data-for="e1" d="M256 160L251 150L261 150Z"/>
+<path class="ek" data-role="edge" data-id="e2" data-from="t1" data-to="t2" d="M256 212L256 232L128 232L128 247"/>
+<path class="hk" data-role="head" data-for="e2" d="M128 256L123 246L133 246Z"/>
+<path class="ek" data-role="edge" data-id="e3" data-from="t1" data-to="star" d="M256 212L256 247"/>
+<path class="hk" data-role="head" data-for="e3" d="M256 256L251 246L261 246Z"/>
+<path class="ek" data-role="edge" data-id="e4" data-from="t1" data-to="f2" d="M256 212L256 232L384 232L384 247"/>
+<path class="hk" data-role="head" data-for="e4" d="M384 256L379 246L389 246Z"/>
+<path class="ek" data-role="edge" data-id="e5" data-from="t2" data-to="f1" d="M128 308L128 343"/>
+<path class="hk" data-role="head" data-for="e5" d="M128 352L123 342L133 342Z"/>
+<path class="ek" data-role="edge" data-id="e6" data-from="f1" data-to="id" d="M128 420L128 455"/>
+<path class="hk" data-role="head" data-for="e6" d="M128 464L123 454L133 454Z"/>
+<path class="ek" data-role="edge" data-id="e7" data-from="f2" data-to="num" d="M384 308L384 343"/>
+<path class="hk" data-role="head" data-for="e7" d="M384 352L379 342L389 342Z"/>
+<text class="tt ink" data-role="title" data-id="title"><tspan x="24" y="41">Parse tree of rate * 60 (tokens id * num) from E</tspan></text>
+<text class="t ink" data-role="label" data-id="e" data-in="e" text-anchor="middle"><tspan x="256" y="93.2">E</tspan></text>
+<text class="t ink" data-role="label" data-id="t1" data-in="t1" text-anchor="middle"><tspan x="256" y="189.2">T</tspan></text>
+<text class="t ink" data-role="label" data-id="t2" data-in="t2" text-anchor="middle"><tspan x="128" y="285.2">T</tspan></text>
+<text class="t hink" data-role="label" data-id="star" data-in="star" text-anchor="middle"><tspan x="256" y="285.2"><tspan class="m">*</tspan></tspan></text>
+<text class="t ink" data-role="label" data-id="f1" data-in="f1" text-anchor="middle"><tspan x="128" y="389.2">F</tspan></text>
+<text class="t ink" data-role="label" data-id="f2" data-in="f2" text-anchor="middle"><tspan x="384" y="285.2">F</tspan></text>
+<text class="t hink" data-role="label" data-id="id" data-in="id" text-anchor="middle"><tspan x="128" y="491.5"><tspan class="m">id</tspan></tspan><tspan x="128" y="511">rate</tspan></text>
+<text class="t hink" data-role="label" data-id="num" data-in="num" text-anchor="middle"><tspan x="384" y="379.5"><tspan class="m">num</tspan></tspan><tspan x="384" y="399">60</tspan></text>
+</svg>
