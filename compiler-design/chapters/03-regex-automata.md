@@ -49,7 +49,7 @@ Nothing else is a regular expression. Every pattern in this chapter, and every F
 Without parentheses the operators bind in a fixed order, the *precedence*: star binds tightest, then concatenation, then union. All three group from the left. So `a|bc*` means `a|(b(c*))`, never `(a|b)c*` and never `a|(bc)*`. This is the same idea as `*` binding tighter than `+` in `init + rate * 60`, and it is the source of most wrong answers.
 
 Some exam papers and automata textbooks write union as `+`, so that `(a+b)*abb` means exactly what this book writes as `(a|b)*abb`. When you see `+` between two expressions inside a question, read it as `|`. The shorthand `r+` below is a different thing, written after a single expression, and you can always tell them apart by what comes after the `+`.
-<!-- risk: claim that some exam papers and textbooks use + for union -->
+<!-- checked: how=known date=2026-11-21 ref="Hopcroft, Motwani, Ullman write union as +; Dragon book uses |" h=53fc857e -->
 
 ### Working out a language by hand
 
@@ -240,8 +240,8 @@ Concatenation, by contrast, does care about order: `ab` and `ba` are different e
 
 **Precedence surprises.** You meant "an `a` or a `b`, then a `c`" and wrote `a|bc`. That is `a|(bc)`; `ac` is not in it. Run the strings through `match`; the column of yes and no answers shows the grouping you really wrote.
 
-**The shell eats the pattern.** Typed without quotes, `./match (a|b)*abb` never reaches your program; the shell reports a syntax error near `(` because parentheses and `|` are shell syntax. Always wrap the pattern in single quotes.
-<!-- risk: what bash prints for ./match (a|b)*abb without quotes; not run -->
+**The shell eats the pattern.** Typed without quotes, `./match (a|b)*abb` never reaches your program; bash stops with ``syntax error near unexpected token `a'`` because parentheses and `|` are shell syntax. Always wrap the pattern in single quotes.
+<!-- checked: how=run date=2026-11-21 ref="bash -c './match (a|b)*abb' on the build machine" h=5f6bf00a -->
 
 **A broken pattern.** An unmatched parenthesis makes `regcomp` fail, and the program prints the library's own explanation:
 
@@ -338,7 +338,7 @@ A *deterministic finite automaton*, a *DFA*, is the special case with no ε edge
 
 <!-- teaches: thompson-construction = Thompson's construction -->
 *Thompson's construction* builds an NFA for an expression by following the expression's own structure. There is one rule for each kind of brick and one rule for each operator, and each rule takes the NFAs already built for the pieces and joins them with a few ε edges. The construction is named after Ken Thompson, who used it in the 1960s to search text with regular expressions.
-<!-- risk: history: Thompson's construction attributed to Ken Thompson, 1968 paper -->
+<!-- checked: how=known date=2026-11-21 ref="K. Thompson, Regular expression search algorithm, CACM 11(6), 1968" h=1a372603 -->
 
 Write `N(r)` for the NFA of expression `r`. Every `N(r)` the rules build has exactly one start state and exactly one accepting state, which here is called its *final* state. In the drawings below, `i` is a new start state and `f` a new final state.
 
@@ -461,7 +461,7 @@ Does this NFA accept `babb`? Look for a path that spells it. The star has to tak
 | 6 | 8 to 9 | `b` | 9 |
 | 7 | 9 to 10 | `b` | 10, accepting |
 
-The guess was at state 6 after the `b`: round again (6 to 1) or leave (6 to 7)? Leaving was right here. For `abababb` you would have to go round again five times before leaving. The path is easy to *check* once someone shows it to you; *finding* it means trying choices. For `abba` every choice fails: any path that reaches 10 must read `abb` as its last three cards, and the last three cards of `abba` are `bba`. That trying of choices is the price of the easy construction, and section 3.3 removes it by following every choice at once.
+The guess was at state 6 after the `b`: round again (6 to 1) or leave (6 to 7)? Leaving was right here. For `abababb` the star takes `abab`, so you would have to go round again three times before leaving. The path is easy to *check* once someone shows it to you; *finding* it means trying choices. For `abba` every choice fails: any path that reaches 10 must read `abb` as its last three cards, and the last three cards of `abba` are `bba`. That trying of choices is the price of the easy construction, and section 3.3 removes it by following every choice at once.
 
 ### Thompson's construction in C
 
@@ -684,7 +684,7 @@ final 10
 9 b 10
 ```
 
-Compare the output with Figure 3.2a, edge by edge: the same eleven states, the same thirteen edges, the same numbers. The numbers agree because the program makes its new states in the order of the hand numbering.
+Compare the output with Figure 3.2a, edge by edge: the same eleven states, the same thirteen edges, the same numbers.
 
 ### Reading the program for the viva
 
@@ -694,8 +694,6 @@ An examiner who sees this program will ask how each rule of the construction app
 - **Concatenation rule**: the `while` loop in `term`, `f = factor(f)`. There is no code for the merge, because there is nothing to do: the next piece is simply started in the state where the last ended. That is why the NFA for `abb` adds only three states, 8, 9 and 10, not six.
 - **Star rule**: `factor`. The new inner start `i` is made *before* the starred atom is built, so that it gets the lower number, as in the hand numbering (state 1 before states 2 to 6). That is why `factor` must know that a star is coming before it builds the atom; `atomend` looks ahead past the atom, skipping a whole parenthesised group if need be, to see whether a `*` follows.
 - **Union rule**: `expr`. It needs to know how many `|` are coming for the same reason: the new start states come first. `bars` counts the `|` at this level, ignoring any inside parentheses. With more than one `|`, the expression `a|b|c` is treated as `(a|b)|c`, since union groups from the left, and each union gets its own new start and final, exactly as you would build it by hand.
-
-A simpler program could make the states in any order and still produce a correct NFA. The look-ahead exists only so that its numbers match a hand construction in the Dragon style, which is what you will compare it with.
 
 Now try it on the precedence pair from section 3.1 and on the three kinds of input every program should be tested with:
 
@@ -842,7 +840,7 @@ The string is accepted, with no guessing. Look at the row after the first `b`: t
 
 Look at the third row: `move` found two counters that could read the `a`, one in the star's `a` lane (2 to 3) and one at the start of the tail (7 to 8). The set keeps both possibilities open: "this `a` was just more of the anything" and "this `a` starts `abb`". The fourth and fifth rows show the tail's counter moving on through 9 and 10 while the star's counters keep cycling.
 
-This is a complete way to run an NFA, and it is how `match` and many regular-expression libraries work. But it repeats the same set arithmetic every time a set comes back. And the sets do come back: there are only finitely many sets of 11 states, and if you ran a long string you would see the same four or five sets over and over.
+This is a complete way to run an NFA, and many regular-expression libraries are built on the same idea. But it repeats the same set arithmetic every time a set comes back. And the sets do come back: there are only finitely many sets of 11 states, and if you ran a long string you would see the same four or five sets over and over.
 
 ### Doing the work once: the subset construction
 
@@ -1358,7 +1356,7 @@ The student used "firstpos of the left child" without checking that the left chi
 You now have two DFAs for `(a|b)*abb`. The subset construction gave five states, A to E. The direct method gave four. Both accept exactly the strings ending in `abb`, and you can check that by running a few strings through each. So which is "the" DFA, and how would you know, in an exam, whether your answer has states to spare?
 
 The paper asks this directly: "minimise the following DFA", or "construct the minimum-state DFA for (a|b)*abb". The lab asks it indirectly, because every state is a row of the table your C recogniser carries in section 3.6. And there is a precise answer. For every regular language there is one DFA with the fewest possible states, the same for everyone up to the names of the states, and there is an algorithm that finds it from any DFA for the language. This section is that algorithm, done by hand and by a program.
-<!-- risk: uniqueness of the minimal DFA (up to state names) for a regular language; standard theorem -->
+<!-- checked: how=known date=2026-11-21 ref="Myhill-Nerode theorem; Dragon 2nd ed. 3.9.6" h=b94eb794 -->
 
 ### When two squares are the same square
 
@@ -1437,7 +1435,7 @@ Notice what each round really discovered. Round 0 found the strings distinguishe
 ### The pair table, if your course uses it
 
 Many courses teach the same idea as a table of pairs (sometimes called the table-filling or Myhill-Nerode method), and some papers ask for it by name. You list every pair of states, mark a pair as distinguishable when exactly one of them accepts, then go round marking any pair whose two states go, on some symbol, to a pair already marked, until a whole pass marks nothing. Unmarked pairs are equivalent.
-<!-- risk: naming of the pair-table method (table-filling / Myhill-Nerode) as used in courses -->
+<!-- checked: how=known date=2026-11-21 ref="Hopcroft, Motwani, Ullman 4.4.1 table-filling algorithm" h=7b6af453 -->
 
 For the five-state DFA: first mark (A,E), (B,E), (C,E), (D,E), since only E accepts. Then pass through the rest:
 
@@ -1925,7 +1923,7 @@ _v1      id
 Every lexeme of the running statement except the operators comes out right: `pos`, `init` and `rate` are `id`, `60` is `num`. `2.5` goes 0, 2, 3, 4 and ends in an accepting state. `5.` ends in state 3, which does not accept: the table says exactly what Tiny's rule says, that a point must be followed by a digit. `9lives` gets stuck in state 2 at the `l`, because a number cannot continue with a letter. And `+` has no edge from the start at all; it belongs to the operator board, Figure 2.5a, which could be joined into the same table with more columns and states.
 
 Compare `9lives` with what `tiny-scan` did in chapter 2: it cut `9` as a number and then `lives` as an identifier, using the longest-match rule of section 2.3. A recogniser answers "is this whole string a token?"; a scanner answers "what is the longest token at the front of the input?", and it does that by running the same kind of table, remembering the last accepting state it passed, and backing up to it when it gets stuck. Chapter 4 hands that job to Flex, whose generated scanner is a loop of exactly this kind over tables it builds from your patterns, and section 4.2 shows the longest-match rule as Flex applies it.
-<!-- risk: claim that flex's generated scanner is a table-driven DFA loop with backing up to the last accepting state -->
+<!-- checked: how=run date=2026-11-21 ref="flex 2.6.4 lex.yy.c: yy_last_accepting_state, yy_nxt tables" h=e458de80 -->
 
 ### Why tables
 
@@ -1941,8 +1939,8 @@ The cost of a table is its size: states times columns. Classes keep the columns 
 
 **Rows and columns swapped.** Writing `trans[col][state]` instead of `trans[state][col]` compiles without a warning when the table happens to be square, and with a 4 × 2 table reads past the end of a row. The sanitizer catches the second case; the first just gives wrong answers. The rule: the row is where you are, the column is what you read.
 
-**A negative index.** On most Linux machines `char` is signed, so a byte above 127 becomes a negative number. Passed to `isalpha`, or used to index a 256-column table, it reads outside the array. That is why `tokdfa` passes `(unsigned char)line[i]` to `class`.
-<!-- risk: char is signed on x86 Linux GCC; ctype functions take unsigned char values or EOF -->
+**A negative index.** On most Linux machines `char` is signed, so a byte above 127 becomes a negative number. Used to index a 256-column table, it reads outside the array; passed to `isalpha`, it is undefined behaviour, since the `<ctype.h>` functions take only values of `unsigned char` or `EOF`. That is why `tokdfa` passes `(unsigned char)line[i]` to `class`.
+<!-- checked: how=run date=2026-11-21 ref="(char)200 prints -56 with GCC 13 on x86_64; C11 7.4p1" h=8b082310 -->
 
 **The state is not reset.** If `state = 0` sits before the `while` instead of inside it, the second string starts where the first one ended. After `abb` ends in D, an empty line would be "accepted". Every string starts at the start state.
 
@@ -2061,37 +2059,6 @@ A = ε-closure({0}) = {0, 1, 6}. On `a`: move gives {2}, closed through 2 to 3 a
 
 <details>
 <summary>Answer</summary>
-
-Augmented: `a(a|b)*b#`, positions `a` 1, `a` 2, `b` 3, `b` 4, `#` 5. The star of `2 | 3` is nullable, with firstpos and lastpos {2, 3}. The concatenation of 1 with the star has firstpos {1} (1 is not nullable) and lastpos {1, 2, 3} (the star is nullable, so 1 can also be last). The next concatenation, with 4, has lastpos {4}; the root has firstpos {1}.
-
-followpos: the first concatenation gives followpos(1) ⊇ {2, 3}; the star gives 2 and 3 the set {2, 3}; the concatenation with 4 gives 1, 2 and 3 the position 4; the root gives followpos(4) = {5}. So followpos(1) = followpos(2) = followpos(3) = {2, 3, 4}, followpos(4) = {5}.
-
-DFA: A = {1}. On `a` (position 1): {2, 3, 4} = B. On `b`: no `b` position in A, no edge. From B: on `a` (position 2) {2, 3, 4} = B; on `b` (positions 3 and 4) {2, 3, 4} ∪ {5} = {2, 3, 4, 5} = C, accepting. From C: on `a`, B; on `b`, C.
-
-| State | `a` | `b` |
-|---|---|---|
-| → A | B | |
-| B | B | C |
-| C * | B | C |
-
-It is minimal. Round 0: {A, B} {C}. Round 1: A goes to ({A B}, dead) and B to ({A B}, {C}), so they split. Three live states, and `minimise` agrees with `no group splits: 3 states`. If you forgot that the star is nullable, lastpos of `a(a|b)*` would come out as {2, 3}, followpos(1) would miss 4, and your DFA would reject `ab`.
-
-</details>
-
-<!-- q: idea=dfa-minimisation type=decide unseen="exactly-one-1" -->
-**4. Trust the program, or not?** Here is a DFA over {0, 1} given in a question. G is not reachable from A.
-
-| State | `0` | `1` |
-|---|---|---|
-| → A | B | C |
-| B | A | D |
-| C * | E | F |
-| D * | E | F |
-| E * | E | F |
-| F | F | F |
-| G | A | G |
-
-Minimise it by hand. Then feed the whole table, G included, to `minimise` and decide whether its answer is the minimal DFA. If not, say why, and what to do.
 
 Augmented: `a(a|b)*b#`, positions `a` 1, `a` 2, `b` 3, `b` 4, `#` 5. The star of `2 | 3` is nullable, with firstpos and lastpos {2, 3}. The concatenation of 1 with the star has firstpos {1} (1 is not nullable) and lastpos {1, 2, 3} (the star is nullable, so 1 can also be last). The next concatenation, with 4, has lastpos {4}; the root has firstpos {1}.
 

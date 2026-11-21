@@ -24,3 +24,13 @@ What this book states that was checked, and how; and the programs and sessions s
 - §2.4: The picture is right that nothing of a comment reaches the parser. It breaks in one place: a comment is not nothing. It still separates the  — how it was checked: known, C11 5.1.1.2p1 phase 3: each comment is replaced by one space character, 2026-11-21
 - §2.6: A *buffer pair* is one array of 2N characters used as two halves of N each, where N is a disk block (4096 is common). Each half is filled wi — how it was checked: known, text says common, not fixed; 4096 is the usual ext4 block and x86-64 page size, 2026-11-21
 - §2.8: The sum of codes is a weak hash function, and it is worth knowing why. Any two names with the same letters in a different order, such as `po — how it was checked: reworded, claim narrowed to better hash functions; K&R 2nd ed. 6.6 hash uses *s + 31 * hashval, 2026-11-21
+
+## Chapter 3: Regular expressions and finite automata
+
+- §3.1: Some exam papers and automata textbooks write union as `+`, so that `(a+b)*abb` means exactly what this book writes as `(a|b)*abb`. When you — how it was checked: known, Hopcroft, Motwani, Ullman write union as +; Dragon book uses |, 2026-11-21
+- §3.1: **The shell eats the pattern.** Typed without quotes, `./match (a|b)*abb` never reaches your program; bash stops with ``syntax error near un — how it was checked: run, bash -c './match (a|b)*abb' on the build machine, 2026-11-21
+- §3.2: *Thompson's construction* builds an NFA for an expression by following the expression's own structure. There is one rule for each kind of br — how it was checked: known, K. Thompson, Regular expression search algorithm, CACM 11(6), 1968, 2026-11-21
+- §3.5: The paper asks this directly: "minimise the following DFA", or "construct the minimum-state DFA for (a|b)*abb". The lab asks it indirectly,  — how it was checked: known, Myhill-Nerode theorem; Dragon 2nd ed. 3.9.6, 2026-11-21
+- §3.5: Many courses teach the same idea as a table of pairs (sometimes called the table-filling or Myhill-Nerode method), and some papers ask for i — how it was checked: known, Hopcroft, Motwani, Ullman 4.4.1 table-filling algorithm, 2026-11-21
+- §3.6: Compare `9lives` with what `tiny-scan` did in chapter 2: it cut `9` as a number and then `lives` as an identifier, using the longest-match r — how it was checked: run, flex 2.6.4 lex.yy.c: yy_last_accepting_state, yy_nxt tables, 2026-11-21
+- §3.6: **A negative index.** On most Linux machines `char` is signed, so a byte above 127 becomes a negative number. Used to index a 256-column tab — how it was checked: run, (char)200 prints -56 with GCC 13 on x86_64; C11 7.4p1, 2026-11-21

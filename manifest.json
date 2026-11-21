@@ -238,8 +238,8 @@
        "n": 3,
        "title": "Regular expressions and finite automata",
        "file": "compiler-design/chapters/03-regex-automata.md",
-       "state": "written",
-       "words": 20853,
+       "state": "reviewed",
+       "words": 20501,
        "sections": [
         {
          "id": "3.1",
@@ -247,7 +247,7 @@
          "kind": "lesson",
          "level": 1,
          "state": "written",
-         "words": 2988,
+         "words": 2990,
          "teaches": [
           "regex",
           "regular-definition"
@@ -260,7 +260,7 @@
          "kind": "lesson",
          "level": 1,
          "state": "written",
-         "words": 3858,
+         "words": 3806,
          "teaches": [
           "nfa",
           "thompson-construction"
@@ -311,7 +311,7 @@
          "kind": "lesson",
          "level": 3,
          "state": "written",
-         "words": 2626,
+         "words": 2641,
          "teaches": [
           "dfa-simulation"
          ],
@@ -323,7 +323,7 @@
          "kind": "practice",
          "level": 3,
          "state": "written",
-         "words": 2401,
+         "words": 2084,
          "teaches": [],
          "anchor": "37-practice-one-regular-expression-carried-to-a-minimal-dfa-and-a-c-recogniser"
         }
