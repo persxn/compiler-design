@@ -5,7 +5,7 @@ For a B.Tech computer science student who can write C programs and has met compi
 
 ## Part I · See the whole compiler at once
 
-- 1 Follow one statement through a compiler · planned · 0 of 7 sections
+- [1 Follow one statement through a compiler](chapters/01-one-statement.md) · written · 7 of 7 sections
 
 ## Part II · Scanning: from characters to tokens
 
