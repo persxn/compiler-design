@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 624 736" width="624" height="736" role="img" aria-labelledby="relop-diagram-t relop-diagram-d" data-kind="flow" data-count="12">
+<title id="relop-diagram-t">Transition diagram for &lt; &lt;= &gt; &gt;= = == !=</title>
+<desc id="relop-diagram-d">Flow chart, left to right. 0 start leads to 1 (&lt;). 0 start leads to 4 (&gt;). 0 start leads to 7 (=). 0 start leads to 10 (!). 1 leads to 2 return LE (=). 1 leads to 3 * return LT (other). 4 leads to 5 return GE (=). 4 leads to 6 * return GT (other). 7 leads to 8 return EQ (=). 7 leads to 9 * return ASSIGN (other). 10 leads to 11 return NE (=). 2 return LE, 3 * return LT, 5 return GE, 6 * return GT, 8 return EQ, 9 * return ASSIGN and 11 return NE are highlighted.</desc>
+<style>.bg{fill:#E6ECF0}.sh{fill:#000000}.box{fill:#FFFFFF;stroke:#000000;stroke-width:2.5}.hot{fill:#FFE600;stroke:#000000;stroke-width:4.5}.mut{fill:#CDD5DC;stroke:#000000;stroke-width:2.5;stroke-dasharray:6 4}.band{fill:#F6F8FA;stroke:#000000;stroke-width:2.5}.note{fill:#FFFFFF;stroke:#000000;stroke-width:1.5}.deco{stroke:#000000;fill:none;stroke-width:2}.ek{stroke:#000000;fill:none;stroke-width:2}.er{stroke:#D92B2B;fill:none;stroke-width:3}.eb{stroke:#1F4BFF;fill:none;stroke-dasharray:7 5;stroke-width:2}.ep{stroke:#1F4BFF;fill:none;stroke-dasharray:7 5;stroke-width:2}.hk{fill:#000000}.hr{fill:#D92B2B}.hb{fill:#1F4BFF}.hp{stroke:#1F4BFF;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5}.dot{fill:#1F4BFF}.tick{fill:#000000}.life{stroke:#3B4651;fill:none;stroke-dasharray:4 5;stroke-width:1.5}.plate{fill:#E6ECF0}.plateb{fill:#F6F8FA}.ink{fill:#000000}.soft{fill:#3B4651}.hink{fill:#000000}.t{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:15px;font-weight:600}.s{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:13px;font-weight:600}.tt{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:17px;font-weight:700}.m{font-family:ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace}@media (prefers-color-scheme:dark){svg:not([data-theme="light"]) .bg{fill:#2A2F36}svg:not([data-theme="light"]) .sh{fill:#000000}svg:not([data-theme="light"]) .box{fill:#343A42;stroke:#ECE9E2}svg:not([data-theme="light"]) .hot{fill:#F2D13A;stroke:#ECE9E2}svg:not([data-theme="light"]) .mut{fill:#1D2126;stroke:#ECE9E2}svg:not([data-theme="light"]) .band{fill:#2F343C;stroke:#ECE9E2}svg:not([data-theme="light"]) .note{fill:#343A42;stroke:#ECE9E2}svg:not([data-theme="light"]) .deco{stroke:#ECE9E2}svg:not([data-theme="light"]) .ek{stroke:#ECE9E2}svg:not([data-theme="light"]) .er{stroke:#FF7B72}svg:not([data-theme="light"]) .eb{stroke:#8EA6FF}svg:not([data-theme="light"]) .ep{stroke:#8EA6FF}svg:not([data-theme="light"]) .hk{fill:#ECE9E2}svg:not([data-theme="light"]) .hr{fill:#FF7B72}svg:not([data-theme="light"]) .hb{fill:#8EA6FF}svg:not([data-theme="light"]) .hp{stroke:#8EA6FF}svg:not([data-theme="light"]) .dot{fill:#8EA6FF}svg:not([data-theme="light"]) .tick{fill:#ECE9E2}svg:not([data-theme="light"]) .life{stroke:#B9BFC7}svg:not([data-theme="light"]) .plate{fill:#2A2F36}svg:not([data-theme="light"]) .plateb{fill:#2F343C}svg:not([data-theme="light"]) .ink{fill:#ECE9E2}svg:not([data-theme="light"]) .soft{fill:#B9BFC7}svg:not([data-theme="light"]) .hink{fill:#000000}}svg[data-theme="dark"] .bg{fill:#2A2F36}svg[data-theme="dark"] .sh{fill:#000000}svg[data-theme="dark"] .box{fill:#343A42;stroke:#ECE9E2}svg[data-theme="dark"] .hot{fill:#F2D13A;stroke:#ECE9E2}svg[data-theme="dark"] .mut{fill:#1D2126;stroke:#ECE9E2}svg[data-theme="dark"] .band{fill:#2F343C;stroke:#ECE9E2}svg[data-theme="dark"] .note{fill:#343A42;stroke:#ECE9E2}svg[data-theme="dark"] .deco{stroke:#ECE9E2}svg[data-theme="dark"] .ek{stroke:#ECE9E2}svg[data-theme="dark"] .er{stroke:#FF7B72}svg[data-theme="dark"] .eb{stroke:#8EA6FF}svg[data-theme="dark"] .ep{stroke:#8EA6FF}svg[data-theme="dark"] .hk{fill:#ECE9E2}svg[data-theme="dark"] .hr{fill:#FF7B72}svg[data-theme="dark"] .hb{fill:#8EA6FF}svg[data-theme="dark"] .hp{stroke:#8EA6FF}svg[data-theme="dark"] .dot{fill:#8EA6FF}svg[data-theme="dark"] .tick{fill:#ECE9E2}svg[data-theme="dark"] .life{stroke:#B9BFC7}svg[data-theme="dark"] .plate{fill:#2A2F36}svg[data-theme="dark"] .plateb{fill:#2F343C}svg[data-theme="dark"] .ink{fill:#ECE9E2}svg[data-theme="dark"] .soft{fill:#B9BFC7}svg[data-theme="dark"] .hink{fill:#000000}</style>
+<rect class="bg" data-role="bg" x="0" y="0" width="624" height="736"/>
+<rect class="sh" data-role="shadow" data-for="s0" x="28" y="356" width="112" height="64" rx="32"/>
+<rect class="box" data-role="node" data-id="s0" data-shape="pill" x="24" y="352" width="112" height="64" rx="32"/>
+<rect class="sh" data-role="shadow" data-for="s1" x="220" y="244" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="s1" data-shape="box" x="216" y="240" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="s2" x="436" y="68" width="160" height="64"/>
+<rect class="hot" data-role="node" data-id="s2" data-shape="box" x="432" y="64" width="160" height="64"/>
+<rect class="sh" data-role="shadow" data-for="s3" x="436" y="164" width="160" height="64"/>
+<rect class="hot" data-role="node" data-id="s3" data-shape="box" x="432" y="160" width="160" height="64"/>
+<rect class="sh" data-role="shadow" data-for="s4" x="220" y="324" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="s4" data-shape="box" x="216" y="320" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="s5" x="436" y="260" width="160" height="64"/>
+<rect class="hot" data-role="node" data-id="s5" data-shape="box" x="432" y="256" width="160" height="64"/>
+<rect class="sh" data-role="shadow" data-for="s6" x="436" y="356" width="160" height="64"/>
+<rect class="hot" data-role="node" data-id="s6" data-shape="box" x="432" y="352" width="160" height="64"/>
+<rect class="sh" data-role="shadow" data-for="s7" x="220" y="404" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="s7" data-shape="box" x="216" y="400" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="s8" x="436" y="452" width="160" height="64"/>
+<rect class="hot" data-role="node" data-id="s8" data-shape="box" x="432" y="448" width="160" height="64"/>
+<rect class="sh" data-role="shadow" data-for="s9" x="436" y="548" width="160" height="64"/>
+<rect class="hot" data-role="node" data-id="s9" data-shape="box" x="432" y="544" width="160" height="64"/>
+<rect class="sh" data-role="shadow" data-for="s10" x="220" y="484" width="96" height="48"/>
+<rect class="box" data-role="node" data-id="s10" data-shape="box" x="216" y="480" width="96" height="48"/>
+<rect class="sh" data-role="shadow" data-for="s11" x="436" y="644" width="160" height="64"/>
+<rect class="hot" data-role="node" data-id="s11" data-shape="box" x="432" y="640" width="160" height="64"/>
+<path class="ek" data-role="edge" data-id="e1" data-from="s0" data-to="s1" d="M140 384L156 384L156 264L207 264"/>
+<path class="hk" data-role="head" data-for="e1" d="M216 264L206 269L206 259Z"/>
+<path class="ek" data-role="edge" data-id="e2" data-from="s1" data-to="s2" d="M316 264L332 264L332 96L423 96"/>
+<path class="hk" data-role="head" data-for="e2" d="M432 96L422 101L422 91Z"/>
+<path class="ek" data-role="edge" data-id="e3" data-from="s1" data-to="s3" d="M316 264L332 264L332 192L423 192"/>
+<path class="hk" data-role="head" data-for="e3" d="M432 192L422 197L422 187Z"/>
+<path class="ek" data-role="edge" data-id="e4" data-from="s0" data-to="s4" d="M140 384L156 384L156 344L207 344"/>
+<path class="hk" data-role="head" data-for="e4" d="M216 344L206 349L206 339Z"/>
+<path class="ek" data-role="edge" data-id="e5" data-from="s4" data-to="s5" d="M316 344L332 344L332 288L423 288"/>
+<path class="hk" data-role="head" data-for="e5" d="M432 288L422 293L422 283Z"/>
+<path class="ek" data-role="edge" data-id="e6" data-from="s4" data-to="s6" d="M316 344L332 344L332 384L423 384"/>
+<path class="hk" data-role="head" data-for="e6" d="M432 384L422 389L422 379Z"/>
+<path class="ek" data-role="edge" data-id="e7" data-from="s0" data-to="s7" d="M140 384L156 384L156 424L207 424"/>
+<path class="hk" data-role="head" data-for="e7" d="M216 424L206 429L206 419Z"/>
+<path class="ek" data-role="edge" data-id="e8" data-from="s7" data-to="s8" d="M316 424L332 424L332 480L423 480"/>
+<path class="hk" data-role="head" data-for="e8" d="M432 480L422 485L422 475Z"/>
+<path class="ek" data-role="edge" data-id="e9" data-from="s7" data-to="s9" d="M316 424L332 424L332 576L423 576"/>
+<path class="hk" data-role="head" data-for="e9" d="M432 576L422 581L422 571Z"/>
+<path class="ek" data-role="edge" data-id="e10" data-from="s0" data-to="s10" d="M140 384L156 384L156 504L207 504"/>
+<path class="hk" data-role="head" data-for="e10" d="M216 504L206 509L206 499Z"/>
+<path class="ek" data-role="edge" data-id="e11" data-from="s10" data-to="s11" d="M316 504L344 504L344 672L423 672"/>
+<path class="hk" data-role="head" data-for="e11" d="M432 672L422 677L422 667Z"/>
+<text class="tt ink" data-role="title" data-id="title"><tspan x="24" y="41">Transition diagram for &lt; &lt;= &gt; &gt;= = == !=</tspan></text>
+<text class="t ink" data-role="label" data-id="s0" data-in="s0" text-anchor="middle"><tspan x="80" y="379.5">0</tspan><tspan x="80" y="399">start</tspan></text>
+<text class="t ink" data-role="label" data-id="s1" data-in="s1" text-anchor="middle"><tspan x="264" y="269.2">1</tspan></text>
+<text class="t hink" data-role="label" data-id="s2" data-in="s2" text-anchor="middle"><tspan x="512" y="91.5">2</tspan><tspan x="512" y="111">return LE</tspan></text>
+<text class="t hink" data-role="label" data-id="s3" data-in="s3" text-anchor="middle"><tspan x="512" y="187.5">3 *</tspan><tspan x="512" y="207">return LT</tspan></text>
+<text class="t ink" data-role="label" data-id="s4" data-in="s4" text-anchor="middle"><tspan x="264" y="349.2">4</tspan></text>
+<text class="t hink" data-role="label" data-id="s5" data-in="s5" text-anchor="middle"><tspan x="512" y="283.5">5</tspan><tspan x="512" y="303">return GE</tspan></text>
+<text class="t hink" data-role="label" data-id="s6" data-in="s6" text-anchor="middle"><tspan x="512" y="379.5">6 *</tspan><tspan x="512" y="399">return GT</tspan></text>
+<text class="t ink" data-role="label" data-id="s7" data-in="s7" text-anchor="middle"><tspan x="264" y="429.2">7</tspan></text>
+<text class="t hink" data-role="label" data-id="s8" data-in="s8" text-anchor="middle"><tspan x="512" y="475.5">8</tspan><tspan x="512" y="495">return EQ</tspan></text>
+<text class="t hink" data-role="label" data-id="s9" data-in="s9" text-anchor="middle"><tspan x="512" y="571.5">9 *</tspan><tspan x="512" y="591">return ASSIGN</tspan></text>
+<text class="t ink" data-role="label" data-id="s10" data-in="s10" text-anchor="middle"><tspan x="264" y="509.2">10</tspan></text>
+<text class="t hink" data-role="label" data-id="s11" data-in="s11" text-anchor="middle"><tspan x="512" y="667.5">11</tspan><tspan x="512" y="687">return NE</tspan></text>
+<rect class="plate" data-role="plate" data-for="e1" x="174.9" y="253.6" width="18.2" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e1" text-anchor="middle"><tspan x="184" y="268.6">&lt;</tspan></text>
+<rect class="plate" data-role="plate" data-for="e2" x="376.9" y="85.6" width="18.2" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e2" text-anchor="middle"><tspan x="386" y="100.6">=</tspan></text>
+<rect class="plate" data-role="plate" data-for="e3" x="362.5" y="181.6" width="47" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e3" text-anchor="middle"><tspan x="386" y="196.6">other</tspan></text>
+<rect class="plate" data-role="plate" data-for="e4" x="174.9" y="333.6" width="18.2" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e4" text-anchor="middle"><tspan x="184" y="348.6">&gt;</tspan></text>
+<rect class="plate" data-role="plate" data-for="e5" x="376.9" y="277.6" width="18.2" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e5" text-anchor="middle"><tspan x="386" y="292.6">=</tspan></text>
+<rect class="plate" data-role="plate" data-for="e6" x="362.5" y="373.6" width="47" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e6" text-anchor="middle"><tspan x="386" y="388.6">other</tspan></text>
+<rect class="plate" data-role="plate" data-for="e7" x="174.9" y="413.6" width="18.2" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e7" text-anchor="middle"><tspan x="184" y="428.6">=</tspan></text>
+<rect class="plate" data-role="plate" data-for="e8" x="376.9" y="469.6" width="18.2" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e8" text-anchor="middle"><tspan x="386" y="484.6">=</tspan></text>
+<rect class="plate" data-role="plate" data-for="e9" x="362.5" y="565.5" width="47" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e9" text-anchor="middle"><tspan x="386" y="580.5">other</tspan></text>
+<rect class="plate" data-role="plate" data-for="e10" x="177.5" y="493.6" width="13.1" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e10" text-anchor="middle"><tspan x="184" y="508.6">!</tspan></text>
+<rect class="plate" data-role="plate" data-for="e11" x="376.9" y="661.5" width="18.2" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e11" text-anchor="middle"><tspan x="386" y="676.5">=</tspan></text>
+</svg>

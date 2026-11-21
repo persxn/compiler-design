@@ -117,17 +117,17 @@
       {
        "n": 2,
        "title": "Write a lexical analyzer in C",
-       "file": null,
-       "state": "planned",
-       "words": 0,
+       "file": "compiler-design/chapters/02-lexical-analyzer.md",
+       "state": "written",
+       "words": 19417,
        "sections": [
         {
          "id": "2.1",
          "title": "Reading source one character at a time, with one character of lookahead",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2151,
          "teaches": [
           "lookahead",
           "ungetc"
@@ -139,8 +139,8 @@
          "title": "Recognising identifiers and telling keywords apart",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 1894,
          "teaches": [
           "identifier-scan",
           "keyword-table"
@@ -152,11 +152,11 @@
          "title": "Numbers, operators and the longest-match rule",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 1965,
          "teaches": [
-          "number-scan",
-          "longest-match"
+          "longest-match",
+          "number-scan"
          ],
          "anchor": "23-numbers-operators-and-the-longest-match-rule"
         },
@@ -165,8 +165,8 @@
          "title": "Skipping white space and both kinds of C comment",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2110,
          "teaches": [
           "comment-skip"
          ],
@@ -177,8 +177,8 @@
          "title": "Transition diagrams: drawing the scanner before writing it",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2442,
          "teaches": [
           "transition-diagram"
          ],
@@ -189,8 +189,8 @@
          "title": "Input buffering: buffer pairs and sentinels",
          "kind": "short",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 689,
          "teaches": [
           "buffer-pair",
           "sentinel"
@@ -202,8 +202,8 @@
          "title": "Lexical errors and line numbers",
          "kind": "lesson",
          "level": 1,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2938,
          "teaches": [
           "lexical-error"
          ],
@@ -214,8 +214,8 @@
          "title": "A symbol table in C: insert, search, display, delete with a hash table",
          "kind": "lesson",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2776,
          "teaches": [
           "symbol-table",
           "hash-chaining"
@@ -227,8 +227,8 @@
          "title": "Practice: a complete scanner for a C subset that fills a symbol table",
          "kind": "practice",
          "level": 3,
-         "state": "planned",
-         "words": 0,
+         "state": "written",
+         "words": 2452,
          "teaches": [],
          "anchor": "29-practice-a-complete-scanner-for-a-c-subset-that-fills-a-symbol-table"
         }

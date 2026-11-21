@@ -8,9 +8,12 @@
 ## B
 
 - back end: [1.2](chapters/01-one-statement.md#12-the-phases-of-a-compiler-traced-on-pos--init--rate--60)
+- buffer pair: [2.6](chapters/02-lexical-analyzer.md#26-input-buffering-buffer-pairs-and-sentinels)
 
 ## C
 
+- chaining: [2.8](chapters/02-lexical-analyzer.md#28-a-symbol-table-in-c-insert-search-display-delete-with-a-hash-table)
+- comment skipping: [2.4](chapters/02-lexical-analyzer.md#24-skipping-white-space-and-both-kinds-of-c-comment)
 - compile pipeline: [1.1](chapters/01-one-statement.md#11-what-happens-between-progc-and-aout-watching-gcc-stop-after-each-stage)
 - cross compiler: [1.5](chapters/01-one-statement.md#15-passes-interpreters-cross-compilers-and-compiler-construction-tools)
 
@@ -18,15 +21,31 @@
 
 - front end: [1.2](chapters/01-one-statement.md#12-the-phases-of-a-compiler-traced-on-pos--init--rate--60)
 
+## H
+
+- hash table: [2.8](chapters/02-lexical-analyzer.md#28-a-symbol-table-in-c-insert-search-display-delete-with-a-hash-table)
+
 ## I
 
+- identifier scanning: [2.2](chapters/02-lexical-analyzer.md#22-recognising-identifiers-and-telling-keywords-apart)
 - interpreter: [1.5](chapters/01-one-statement.md#15-passes-interpreters-cross-compilers-and-compiler-construction-tools)
+
+## K
+
+- keyword table: [2.2](chapters/02-lexical-analyzer.md#22-recognising-identifiers-and-telling-keywords-apart)
 
 ## L
 
 - lab exam cycle: [1.6](chapters/01-one-statement.md#16-how-a-lab-exam-program-is-written-built-run-and-marked)
 - lexeme: [1.3](chapters/01-one-statement.md#13-tokens-lexemes-and-patterns)
+- lexical error: [2.7](chapters/02-lexical-analyzer.md#27-lexical-errors-and-line-numbers)
 - linker: [1.1](chapters/01-one-statement.md#11-what-happens-between-progc-and-aout-watching-gcc-stop-after-each-stage)
+- longest match: [2.3](chapters/02-lexical-analyzer.md#23-numbers-operators-and-the-longest-match-rule)
+- lookahead: [2.1](chapters/02-lexical-analyzer.md#21-reading-source-one-character-at-a-time-with-one-character-of-lookahead)
+
+## N
+
+- number scanning: [2.3](chapters/02-lexical-analyzer.md#23-numbers-operators-and-the-longest-match-rule)
 
 ## P
 
@@ -37,8 +56,14 @@
 
 ## S
 
+- sentinel: [2.6](chapters/02-lexical-analyzer.md#26-input-buffering-buffer-pairs-and-sentinels)
 - symbol table: [1.4](chapters/01-one-statement.md#14-the-symbol-table-the-notebook-every-phase-shares)
 
 ## T
 
 - token: [1.3](chapters/01-one-statement.md#13-tokens-lexemes-and-patterns)
+- transition diagram: [2.5](chapters/02-lexical-analyzer.md#25-transition-diagrams-drawing-the-scanner-before-writing-it)
+
+## U
+
+- ungetc: [2.1](chapters/02-lexical-analyzer.md#21-reading-source-one-character-at-a-time-with-one-character-of-lookahead)

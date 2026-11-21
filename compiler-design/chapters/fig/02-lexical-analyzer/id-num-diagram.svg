@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 768" width="560" height="768" role="img" aria-labelledby="id-num-diagram-t id-num-diagram-d" data-kind="flow" data-count="10">
+<title id="id-num-diagram-t">Transition diagrams for identifiers and Tiny numbers</title>
+<desc id="id-num-diagram-d">Flow chart, top to bottom. 12 start leads to 13 loop on letter, digit or _ (letter or _). 15 start leads to 16 loop on digit (digit). 13 loop on letter, digit or _ leads to 14 * return lookup() (other). 16 loop on digit leads to 18 * return NUM (other). 16 loop on digit leads to 17 (.). 17 leads to 19 loop on digit (digit). 17 leads to no other edge out of 17: 5. is an error by a dashed arrow. 19 loop on digit leads to 20 * return NUM (other). 14 * return lookup(), 18 * return NUM and 20 * return NUM are highlighted.</desc>
+<style>.bg{fill:#E6ECF0}.sh{fill:#000000}.box{fill:#FFFFFF;stroke:#000000;stroke-width:2.5}.hot{fill:#FFE600;stroke:#000000;stroke-width:4.5}.mut{fill:#CDD5DC;stroke:#000000;stroke-width:2.5;stroke-dasharray:6 4}.band{fill:#F6F8FA;stroke:#000000;stroke-width:2.5}.note{fill:#FFFFFF;stroke:#000000;stroke-width:1.5}.deco{stroke:#000000;fill:none;stroke-width:2}.ek{stroke:#000000;fill:none;stroke-width:2}.er{stroke:#D92B2B;fill:none;stroke-width:3}.eb{stroke:#1F4BFF;fill:none;stroke-dasharray:7 5;stroke-width:2}.ep{stroke:#1F4BFF;fill:none;stroke-dasharray:7 5;stroke-width:2}.hk{fill:#000000}.hr{fill:#D92B2B}.hb{fill:#1F4BFF}.hp{stroke:#1F4BFF;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5}.dot{fill:#1F4BFF}.tick{fill:#000000}.life{stroke:#3B4651;fill:none;stroke-dasharray:4 5;stroke-width:1.5}.plate{fill:#E6ECF0}.plateb{fill:#F6F8FA}.ink{fill:#000000}.soft{fill:#3B4651}.hink{fill:#000000}.t{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:15px;font-weight:600}.s{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:13px;font-weight:600}.tt{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;font-size:17px;font-weight:700}.m{font-family:ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace}@media (prefers-color-scheme:dark){svg:not([data-theme="light"]) .bg{fill:#2A2F36}svg:not([data-theme="light"]) .sh{fill:#000000}svg:not([data-theme="light"]) .box{fill:#343A42;stroke:#ECE9E2}svg:not([data-theme="light"]) .hot{fill:#F2D13A;stroke:#ECE9E2}svg:not([data-theme="light"]) .mut{fill:#1D2126;stroke:#ECE9E2}svg:not([data-theme="light"]) .band{fill:#2F343C;stroke:#ECE9E2}svg:not([data-theme="light"]) .note{fill:#343A42;stroke:#ECE9E2}svg:not([data-theme="light"]) .deco{stroke:#ECE9E2}svg:not([data-theme="light"]) .ek{stroke:#ECE9E2}svg:not([data-theme="light"]) .er{stroke:#FF7B72}svg:not([data-theme="light"]) .eb{stroke:#8EA6FF}svg:not([data-theme="light"]) .ep{stroke:#8EA6FF}svg:not([data-theme="light"]) .hk{fill:#ECE9E2}svg:not([data-theme="light"]) .hr{fill:#FF7B72}svg:not([data-theme="light"]) .hb{fill:#8EA6FF}svg:not([data-theme="light"]) .hp{stroke:#8EA6FF}svg:not([data-theme="light"]) .dot{fill:#8EA6FF}svg:not([data-theme="light"]) .tick{fill:#ECE9E2}svg:not([data-theme="light"]) .life{stroke:#B9BFC7}svg:not([data-theme="light"]) .plate{fill:#2A2F36}svg:not([data-theme="light"]) .plateb{fill:#2F343C}svg:not([data-theme="light"]) .ink{fill:#ECE9E2}svg:not([data-theme="light"]) .soft{fill:#B9BFC7}svg:not([data-theme="light"]) .hink{fill:#000000}}svg[data-theme="dark"] .bg{fill:#2A2F36}svg[data-theme="dark"] .sh{fill:#000000}svg[data-theme="dark"] .box{fill:#343A42;stroke:#ECE9E2}svg[data-theme="dark"] .hot{fill:#F2D13A;stroke:#ECE9E2}svg[data-theme="dark"] .mut{fill:#1D2126;stroke:#ECE9E2}svg[data-theme="dark"] .band{fill:#2F343C;stroke:#ECE9E2}svg[data-theme="dark"] .note{fill:#343A42;stroke:#ECE9E2}svg[data-theme="dark"] .deco{stroke:#ECE9E2}svg[data-theme="dark"] .ek{stroke:#ECE9E2}svg[data-theme="dark"] .er{stroke:#FF7B72}svg[data-theme="dark"] .eb{stroke:#8EA6FF}svg[data-theme="dark"] .ep{stroke:#8EA6FF}svg[data-theme="dark"] .hk{fill:#ECE9E2}svg[data-theme="dark"] .hr{fill:#FF7B72}svg[data-theme="dark"] .hb{fill:#8EA6FF}svg[data-theme="dark"] .hp{stroke:#8EA6FF}svg[data-theme="dark"] .dot{fill:#8EA6FF}svg[data-theme="dark"] .tick{fill:#ECE9E2}svg[data-theme="dark"] .life{stroke:#B9BFC7}svg[data-theme="dark"] .plate{fill:#2A2F36}svg[data-theme="dark"] .plateb{fill:#2F343C}svg[data-theme="dark"] .ink{fill:#ECE9E2}svg[data-theme="dark"] .soft{fill:#B9BFC7}svg[data-theme="dark"] .hink{fill:#000000}</style>
+<rect class="bg" data-role="bg" x="0" y="0" width="560" height="768"/>
+<rect class="sh" data-role="shadow" data-for="s12" x="156" y="68" width="112" height="64" rx="32"/>
+<rect class="box" data-role="node" data-id="s12" data-shape="pill" x="152" y="64" width="112" height="64" rx="32"/>
+<rect class="sh" data-role="shadow" data-for="s13" x="108" y="212" width="160" height="96"/>
+<rect class="box" data-role="node" data-id="s13" data-shape="box" x="104" y="208" width="160" height="96"/>
+<rect class="sh" data-role="shadow" data-for="s14" x="44" y="388" width="160" height="64"/>
+<rect class="hot" data-role="node" data-id="s14" data-shape="box" x="40" y="384" width="160" height="64"/>
+<rect class="sh" data-role="shadow" data-for="s15" x="300" y="68" width="112" height="64" rx="32"/>
+<rect class="box" data-role="node" data-id="s15" data-shape="pill" x="296" y="64" width="112" height="64" rx="32"/>
+<rect class="sh" data-role="shadow" data-for="s16" x="308" y="212" width="144" height="96"/>
+<rect class="box" data-role="node" data-id="s16" data-shape="box" x="304" y="208" width="144" height="96"/>
+<rect class="sh" data-role="shadow" data-for="s17" x="252" y="388" width="96" height="64"/>
+<rect class="box" data-role="node" data-id="s17" data-shape="box" x="248" y="384" width="96" height="64"/>
+<rect class="sh" data-role="shadow" data-for="s18" x="388" y="388" width="144" height="64"/>
+<rect class="hot" data-role="node" data-id="s18" data-shape="box" x="384" y="384" width="144" height="64"/>
+<rect class="sh" data-role="shadow" data-for="s19" x="132" y="532" width="144" height="64"/>
+<rect class="box" data-role="node" data-id="s19" data-shape="box" x="128" y="528" width="144" height="64"/>
+<rect class="sh" data-role="shadow" data-for="s20" x="132" y="676" width="144" height="64"/>
+<rect class="hot" data-role="node" data-id="s20" data-shape="box" x="128" y="672" width="144" height="64"/>
+<rect class="note" data-role="node" data-id="e" data-shape="note" x="304" y="528" width="192" height="64"/>
+<path class="ek" data-role="edge" data-id="e1" data-from="s12" data-to="s13" d="M208 132L208 148L184 148L184 199"/>
+<path class="hk" data-role="head" data-for="e1" d="M184 208L179 198L189 198Z"/>
+<path class="ek" data-role="edge" data-id="e2" data-from="s13" data-to="s14" d="M184 308L184 324L120 324L120 375"/>
+<path class="hk" data-role="head" data-for="e2" d="M120 384L115 374L125 374Z"/>
+<path class="ek" data-role="edge" data-id="e3" data-from="s15" data-to="s16" d="M352 132L352 148L376 148L376 199"/>
+<path class="hk" data-role="head" data-for="e3" d="M376 208L371 198L381 198Z"/>
+<path class="ek" data-role="edge" data-id="e4" data-from="s16" data-to="s18" d="M376 308L376 324L456 324L456 375"/>
+<path class="hk" data-role="head" data-for="e4" d="M456 384L451 374L461 374Z"/>
+<path class="ek" data-role="edge" data-id="e5" data-from="s16" data-to="s17" d="M376 308L376 324L296 324L296 375"/>
+<path class="hk" data-role="head" data-for="e5" d="M296 384L291 374L301 374Z"/>
+<path class="ek" data-role="edge" data-id="e6" data-from="s17" data-to="s19" d="M288 452L288 468L200 468L200 519"/>
+<path class="hk" data-role="head" data-for="e6" d="M200 528L195 518L205 518Z"/>
+<path class="ek" data-role="edge" data-id="e7" data-from="s19" data-to="s20" d="M200 596L200 663"/>
+<path class="hk" data-role="head" data-for="e7" d="M200 672L195 662L205 662Z"/>
+<path class="eb" data-role="edge" data-id="e8" data-from="s17" data-to="e" d="M304 452L304 468L400 468L400 519"/>
+<path class="hb" data-role="head" data-for="e8" d="M400 528L395 518L405 518Z"/>
+<text class="tt ink" data-role="title" data-id="title"><tspan x="24" y="41">Transition diagrams for identifiers and Tiny numbers</tspan></text>
+<text class="t ink" data-role="label" data-id="s12" data-in="s12" text-anchor="middle"><tspan x="208" y="91.5">12</tspan><tspan x="208" y="111">start</tspan></text>
+<text class="t ink" data-role="label" data-id="s13" data-in="s13" text-anchor="middle"><tspan x="184" y="241.8">13</tspan><tspan x="184" y="261.2">loop on letter,</tspan><tspan x="184" y="280.8">digit or _</tspan></text>
+<text class="t hink" data-role="label" data-id="s14" data-in="s14" text-anchor="middle"><tspan x="120" y="411.5">14 *</tspan><tspan x="120" y="431">return lookup()</tspan></text>
+<text class="t ink" data-role="label" data-id="s15" data-in="s15" text-anchor="middle"><tspan x="352" y="91.5">15</tspan><tspan x="352" y="111">start</tspan></text>
+<text class="t ink" data-role="label" data-id="s16" data-in="s16" text-anchor="middle"><tspan x="376" y="251.5">16</tspan><tspan x="376" y="271">loop on digit</tspan></text>
+<text class="t ink" data-role="label" data-id="s17" data-in="s17" text-anchor="middle"><tspan x="296" y="421.2">17</tspan></text>
+<text class="t hink" data-role="label" data-id="s18" data-in="s18" text-anchor="middle"><tspan x="456" y="411.5">18 *</tspan><tspan x="456" y="431">return NUM</tspan></text>
+<text class="t ink" data-role="label" data-id="s19" data-in="s19" text-anchor="middle"><tspan x="200" y="555.5">19</tspan><tspan x="200" y="575">loop on digit</tspan></text>
+<text class="t hink" data-role="label" data-id="s20" data-in="s20" text-anchor="middle"><tspan x="200" y="699.5">20 *</tspan><tspan x="200" y="719">return NUM</tspan></text>
+<text class="s ink" data-role="label" data-id="e" data-in="e" text-anchor="middle"><tspan x="400" y="556.1">no other edge out of</tspan><tspan x="400" y="573">17: <tspan class="m">5.</tspan> is an error</tspan></text>
+<rect class="plate" data-role="plate" data-for="e1" x="144.3" y="165.6" width="79.3" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e1" text-anchor="middle"><tspan x="184" y="180.6">letter or _</tspan></text>
+<rect class="plate" data-role="plate" data-for="e2" x="96.5" y="341.6" width="47" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e2" text-anchor="middle"><tspan x="120" y="356.6">other</tspan></text>
+<rect class="plate" data-role="plate" data-for="e3" x="355.6" y="165.6" width="40.7" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e3" text-anchor="middle"><tspan x="376" y="180.6">digit</tspan></text>
+<rect class="plate" data-role="plate" data-for="e4" x="432.5" y="341.6" width="47" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e4" text-anchor="middle"><tspan x="456" y="356.6">other</tspan></text>
+<rect class="plate" data-role="plate" data-for="e5" x="289.5" y="341.6" width="12.9" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e5" text-anchor="middle"><tspan x="296" y="356.6">.</tspan></text>
+<rect class="plate" data-role="plate" data-for="e6" x="179.6" y="485.6" width="40.7" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e6" text-anchor="middle"><tspan x="200" y="500.6">digit</tspan></text>
+<rect class="plate" data-role="plate" data-for="e7" x="176.5" y="621.5" width="47" height="20.9"/>
+<text class="s ink" data-role="label" data-id="e7" text-anchor="middle"><tspan x="200" y="636.5">other</tspan></text>
+</svg>

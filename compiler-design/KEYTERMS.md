@@ -18,3 +18,19 @@
 - **interpreter** ([§1.5](chapters/01-one-statement.md#15-passes-interpreters-cross-compilers-and-compiler-construction-tools)): An interpreter runs the source program directly, statement by statement, instead of producing a target program to run later.
 - **cross compiler** ([§1.5](chapters/01-one-statement.md#15-passes-interpreters-cross-compilers-and-compiler-construction-tools)): A cross compiler runs on one kind of machine and produces code for another.
 - **lab exam cycle** ([§1.6](chapters/01-one-statement.md#16-how-a-lab-exam-program-is-written-built-run-and-marked)): (no definition found)
+
+## Chapter 2: Write a lexical analyzer in C
+
+- **lookahead** ([§2.1](chapters/02-lexical-analyzer.md#21-reading-source-one-character-at-a-time-with-one-character-of-lookahead)): The character a scanner reads past the end of a lexeme, to find out that the lexeme has ended, is called the *lookahead* character.
+- **ungetc** ([§2.1](chapters/02-lexical-analyzer.md#21-reading-source-one-character-at-a-time-with-one-character-of-lookahead)): Giving it back with `ungetc` is called *pushback*.
+- **identifier scanning** ([§2.2](chapters/02-lexical-analyzer.md#22-recognising-identifiers-and-telling-keywords-apart)): *Identifier scanning* reads the longest run of characters that fits the identifier pattern, a letter or underscore followed by letters, digits and underscores, and stops ...
+- **keyword table** ([§2.2](chapters/02-lexical-analyzer.md#22-recognising-identifiers-and-telling-keywords-apart)): The *keyword table* is the card: a list of the *reserved words* of the language, each with its token.
+- **number scanning** ([§2.3](chapters/02-lexical-analyzer.md#23-numbers-operators-and-the-longest-match-rule)): *Number scanning* is identifier scanning with a different alphabet and one decision in the middle: 1.
+- **longest match** ([§2.3](chapters/02-lexical-analyzer.md#23-numbers-operators-and-the-longest-match-rule)): Longest match: the next lexeme is the longest prefix of the input that fits a pattern; the scanner never backs up to try a shorter ...
+- **comment skipping** ([§2.4](chapters/02-lexical-analyzer.md#24-skipping-white-space-and-both-kinds-of-c-comment)): *Comment skipping* starts from one character that is ambiguous: `/` may be the division operator, or the first half of `//` (a *line comment*) or ...
+- **transition diagram** ([§2.5](chapters/02-lexical-analyzer.md#25-transition-diagrams-drawing-the-scanner-before-writing-it)): A *transition diagram* is that board, drawn with a few fixed conventions: - A circle is a *state*: a point in the scanning of a ...
+- **buffer pair** ([§2.6](chapters/02-lexical-analyzer.md#26-input-buffering-buffer-pairs-and-sentinels)): A *buffer pair* is one array of 2N characters used as two halves of N each, where N is a disk block (4096 is common).
+- **sentinel** ([§2.6](chapters/02-lexical-analyzer.md#26-input-buffering-buffer-pairs-and-sentinels)): The trick is a *sentinel*: one extra place at the end of each half holding a special character (call it `eof`) that cannot appear in ...
+- **lexical error** ([§2.7](chapters/02-lexical-analyzer.md#27-lexical-errors-and-line-numbers)): A *lexical error* is a place where the remaining input does not begin with any lexeme: no pattern matches.
+- **hash table** ([§2.8](chapters/02-lexical-analyzer.md#28-a-symbol-table-in-c-insert-search-display-delete-with-a-hash-table)): In C, the notebook is a *hash table*: an array of *buckets*, here eleven, each holding the start of a list.
+- **chaining** ([§2.8](chapters/02-lexical-analyzer.md#28-a-symbol-table-in-c-insert-search-display-delete-with-a-hash-table)): *Chaining* is the answer used here: each bucket holds a linked list, a chain, of every record whose name hashes to it.
